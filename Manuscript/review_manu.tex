@@ -1,0 +1,247 @@
+%% ****** Start of file aiptemplate.tex ****** %
+%%
+%%   This file is part of the files in the distribution of AIP substyles for REVTeX4.
+%%   Version 4.1 of 9 October 2009.
+%%
+%
+% This is a template for producing documents for use with 
+% the REVTEX 4.1 document class and the AIP substyles.
+% 
+% Copy this file to another name and then work on that file.
+% That way, you always have this original template file to use.
+
+%\documentclass[aip,graphicx]{revtex4-1}
+%\documentclass[aip,reprint]{revtex4-1}
+
+%\usepackage{graphicx}
+
+%\draft % marks overfull lines with a black rule on the right
+%\documentclass[pre,aps,floatfix,authordate1-4,twocolumn]{revtex4-1}
+%\documentclass[pre,aps,floatfix,authordate1-4]{revtex4-1}
+
+\documentclass[aps,prl,superscriptaddress]{revtex4}
+
+
+
+%\documentclass[aps,prl,preprint,groupedaddress]{revtex4}
+
+\usepackage{rotating} 
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage[obeyFinal]{easy-todo}
+\begin{document}
+
+% Use the \preprint command to place your local institutional report number 
+% on the title page in preprint mode.
+% Multiple \preprint commands are allowed.
+%\preprint{}
+
+\title{Atomistic resolution structure and dynamics of lipid bilayers in simulations and experiments} %Title of paper
+
+% repeat the \author .. \affiliation  etc. as needed
+% \email, \thanks, \homepage, \altaffiliation all apply to the current author.
+% Explanatory text should go in the []'s, 
+% actual e-mail address or url should go in the {}'s for \email and \homepage.
+% Please use the appropriate macro for the type of information
+
+% \affiliation command applies to all authors since the last \affiliation command. 
+% The \affiliation command should follow the other information.
+
+\author{O. H. Samuli Ollila}
+\email[]{samuli.ollila@aalto.fi}
+%\homepage[]{Your web page}
+%\thanks{}
+%\altaffiliation{}
+\affiliation{Aalto University}
+
+
+% Collaboration name, if desired (requires use of superscriptaddress option in \documentclass). 
+% \noaffiliation is required (may also be used with the \author command).
+%\collaboration{}
+%\noaffiliation
+
+\date{\today}
+
+\begin{abstract}
+% insert abstract here
+Abstract.
+\end{abstract}
+
+%\pacs{}% insert suggested PACS numbers in braces on next line
+
+\maketitle %\maketitle must follow title, authors, abstract and \pacs
+
+% Body of paper goes here. Use proper sectioning commands. 
+% References should be done using the \cite, \ref, and \label commands
+
+
+%\label{}
+\section{Introduction}
+\todo{Samuli: Add citations to the introduction}
+Atomistic resolution molecular dynamics simulations of lipid bilayers are nowdays
+widely used technique to seek answer to various research questions.
+Typically interactions between other biological molecules (e.g. proteins, drugs, ions etc.)
+and lipids are studied but sometimes also lipid properties are directly under interest.
+The questions are often biologically motivated and the atomistic resolutions simulations
+gives very detailed information which is experimentally unattainable.
+
+When simulations are used in this kind of studies, it is necessary to understand
+the limitations of the method and also the accuracy of the used model.
+In the pioneering atomistic resolution lipid bilayer simulations the quality of
+the simulation respect to reality was measured mainly by comparing the 
+acyl chain order parameters and area per molecule between experiments and
+simulations. Especially some simulation models repruced these amazingly well
+which led to the wide usage of these models.
+
+%was convincing enough to large amount of scientists who started
+%to use simulations as their main or supplementary technique to study lipid bilayers. 
+
+Despite of the success of the models to reproduce the acyl chain properties and
+molecular density more or less correctly, already early days it was pointed out
+by comparing simulations to various experiments
+that the glycerol backbone and choline headgroup order structure may not have been 
+correctly described. However, at the time simulations were very short compared
+to currently accessible timescles and it was not clear if the molecules had
+time to sample all the states the model would predict. Also the method to 
+quantitatively measure atomistic resolution molecular dynamics and compare to
+simulations was not available, thus the real sampling timescales were not known.
+For these reasons the estimates of the quality of headgroup were inconclusive on
+the early days of molecular dynamics simulations of lipid bilayers and
+the issue has gained more attention only very recently.
+
+While the C-H bond order parameters for all hydrocarbon segments are yet the
+core parameter to quantify the lipid model quality, the area per molecule 
+is quite generally replaced with structure factor.
+The main reason is that the area per molecule is calculated from the scattering
+data using a model (set of assumptions). Thus, when this value is compared to
+the value from simulations, the simulations are not compared directly to experiments
+but to a value which comes from another model (set of assumptions to calculate the
+area per molecule). For this reason the area per molecule is nowdays replaced
+by comparison between structure factor from simulations and x-ray or neutron scattering.
+
+In this review we discuss the current state of the art methods to compare the 
+atomistic resolution lipid structure and dynamics in simulations to the experiments. 
+The C-H bond order parameters measured with NMR and structure factors measured
+with x-ray or neutron scattering are discussed for structural comparison,
+and spin lattice relaxation rates for the comparison of dynamics.
+The main advantages of these parameters are that
+the experimental techiques are non-invansive, they are measured from multilamellar phase 
+which is practically always present in simulations as well due to periodic boundary conditions
+and that the compared quantity (order parameter, spin lattice relaxation and structure factor) is achieved from 
+the actual experimental data in a robust way. The experimental results from these
+experimental techniques are also highly reproducible and the measured timescales
+are appropriate for the comparison to simulations. Also several other experimental
+parameters and techniques are used to quantify the simulation quality, however,
+none of these is as robust as order parameters, spin relaxation rates or structure factor. The most
+commonly used other techniques are shortly discussed in the end of the review.
+
+\section{C-H bond order parameters as atomistic resolution structural measure}
+
+\noindent {\bf Here will be described:}\\[0.1cm]
+
+\noindent How are the order parameters measured.\\
+What is the primary experimental observable. \\
+How accurate are the experimental results. \\
+How order parameter is calculated from simulations. \\
+How accurate are the order parameters from simulations. \\
+What can be learned about the structure when comparing order parameters between experiments and simulations \\[0.5 cm]
+
+\todo{This is quite straightforward to write for me and there is quite good support from the work
+done for NMRLipids project. I will write the first version as soon as I can.}
+
+\section{C-H bond dynamics from spin relaxation rates and simulations}
+
+\noindent {\bf Here will be described:}\\[0.1cm]
+
+\noindent How the rotational dynamics measured by using NMR relaxation experiments. \\
+How the relaxation experiments are connected and compared with simulations. \\
+What can be learned and what has been learned about the rotational dynamics from the comparison between spin relaxation and simulations \\[0.5 cm]
+
+\todo{This is quite straightforward to write for me and there is quite good support from our recent work~\cite{ferreira15}.
+I will write the first version as soon as I can.}
+
+\section{Stucture factors from scattering and simulations}
+
+\noindent {\bf For this section I would be more than happy for some help} \\[0.1cm]
+
+\noindent {\bf Here will be described:}\\[0.1cm]
+
+\noindent How are the structure factors are measured.\\
+What is the primary experimental observable. \\
+
+\noindent {\bf On these questions I do not know the answer and it is not exactly clear from where I can find the answers. More specifically:}  \\
+
+\todo{Which is the experimental quantity that the scattering machinary exatcly puts out? \\
+How the structure factor is determined from the experimental observables? \\
+Which assumptions are needed here? \\
+There is already some discussion about this in the blog by Peter Heftberger and Georg Pabst, but any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.}
+
+\vspace*{5mm}
+
+\noindent How accurate are the experimental stucture factors. \\
+
+\todo{Has this been discussed in the literature already?
+Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.}
+
+\vspace*{5mm}
+
+\noindent How structure factor is calculated from simulations and compared to experimental ones. \\
+
+\todo{I have calculated some structure factors in the NMRLipids project.
+However, I have not been able to install the simTOexp program so I have not been able to check my script against the
+most used one.}
+
+\todo{In addition, I do not really understand why people are tuning the experimental structure factors to
+fit better with their simulation results, as discussed in the NMRLipids project.
+Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.}
+
+\vspace*{5mm}
+
+\noindent How accurate are the structure factors from simulations. \\
+
+\todo{I think that from statistical point of view accuracy is quite high, however I am not sure about the effect of undulations etc.
+Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.}
+
+\vspace*{5mm}
+
+\noindent What can be learned about the structure when comparing structure factors between experiments and simulations \\
+
+\todo{I have thought that if the sturcture factor is reproduced by the simulation, the electron density profile should be 
+reasonale. However, since some people are tuning the peak highs for better agreement, I am not sure. 
+There is also some connection to the thickness.
+Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.}
+
+
+\section{Conclusions}
+
+% Tables may be be put in the text as floats.
+% Here is an example of the general form of a table:
+% Fill in the caption in the braces of the \caption{} command. Put the label
+% that you will use with \ref{} command in the braces of the \label{} command.
+% Insert the column specifiers (l, r, c, d, etc.) in the empty braces of the
+% \begin{tabular}{} command.
+%
+% \begin{table}
+% \caption{\label{} }
+% \begin{tabular}{}
+% \end{tabular}
+% \end{table}
+
+% If you have acknowledgments, this puts in the proper section head.
+\begin{acknowledgments}
+% Put your acknowledgments here.
+\end{acknowledgments}
+
+% Create the reference section using BibTe
+\bibliography{refs.bib}
+
+%\newpage
+%\section{APPENDIX: The NMR results reported by Tiago Ferreira}
+
+\listoftodos
+
+\end{document}
+%
+% ****** End of file aiptemplate.tex ******
