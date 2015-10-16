@@ -555,18 +555,75 @@ then the simulation model in question has unphysically slow dynamics.
 In the above sections we review the accuracy and availability of NMR order parameters in simulations and experiments.
 We have concluded that the order parameters for each segments of phospholipids in lipid bilayer are achievable
 with high accuracy from simulations and experiments, and also lot of these values are already available 
-in the literature. Since the order parameter give very detailed information about the orientations
-sampled by C--H bonds in the system.
+in the literature. The experimental order parameter give very detailed and local information about the orientations
+sampled by each C--H bonds in the lipid bilayer system. However, the structure cannot be resolved only by using 
+experimental order parameters since several $\theta$ angle (in Eq.~\ref{??}) distributions produces the same
+order parameter and not all segments of lipid molecule contains C--H groups (e.g. phosphate). 
+Historically several modeling techniques have been used to suggest structures which reproduce the 
+experimental order parameters, thus being realistic candidates for the atomistic resolution structure
+of lipids~\cite{??}. This has turned out to be extremely difficult task and unambigous solution has not
+been reached, although some details are agreed~\cite{??}.
 
-Why Simulate?
-From the experiments it is not clear how large conformational and energetical changes these small changes in the order parameters indicate. This could, however, be revealed with a molecular model that reproduces the measured order parameters. We have already succesfully applied this approach to explain the measured low order parameters (and their temperature dependence) in the lamellar phase of the nonionic surfactant C12E5 [Ferreira et al.]. For the lipid headgroup and glycerol region the problem is, however, that with the current force fields the order parameters from simulation models are both absolutely and relatively too far from the experimental values to be useful for interpretating the experiments. 
+The atomistic resolution molecular dynamics simulations of lipid bilayers gives automatically the 
+atomistics resolution structure of lipids sampled in a bilayer. Since the order parameters can 
+be calculated from these simulations with high accuracy, those can be compared to the experimental
+values. If the order parameters agree within experimental error, the simulated structures are realistic
+and can be considered as an interpretation of experimental numbers. 
+It should be noted, however, that even if the order parameters would be reproduced, it does not, in principle, 
+guarantee that the structures are correct. Further test can be done by using further dipolar coupling~\cite{??}
+and scattering data, see Section~\ref{??}.
+If the simulated order 
+parameter do not fit inside the experimental error bars, the simulation do not sample correct
+atomistic conformations and the simulation methdology and model should be reconsidered.
 
+As discussed in the previous section, many (if not all) simulations models have serious difficulties
+to reproduce the glycerol backbone and choline headgroup structure and energetics, their response
+to the cholesterol and ion concentrations. This indicates that the reliability of most simulation results 
+reported in the literature regarding these issues are not reliable and that the modelling of these
+parts should be paid more effort before the quantitative structural intepretation becomes possible.
+Despite of the problems, the qualitative response of headgroup to the dehydration and penetrating ions
+was correct which confirmed the connection between increasing choline $\alpha$ and $\beta$ order parameters
+and increasing P--N vector angle respect to the membrane normal ~\cite{??} suggested previously in~\cite{??}.
 
+As also discussed in the previous section the simulation methods have been much more successfull in describing
+the acyl chain region of lipid bilayer. Almost all simulation models are able to reproduce acyl chain
+order parameters with the very good accuracy, exception being the C$_2$ segment in the sn-2 chain.
+Also the changes induced in acyl chain region are reproduced well, at least qualitatively.
+Thus the sampled acyl chain structures given by simulations can be considered to be reasonable
+interpretation for experimental acyl chain order parameter measurements. 
 
+This is a significant advancement to the traditional structural models build based on the 
+fittings to the order paramters. The dynamical visualization of simulation trajectory immediately 
+reveals very dynamical nature of acyl chains, rapidly sampling large amount of different conformations 
+(for dynamics see the Section~\ref{??}). These dynamical visualizations gives significantly better
+intuitive understanding of dynamical nature of lipid bilayers compared to the static ones from 
+traditional models. Since the lipid bilayers can be considered as a simplistic models for cell
+membranes and other biological lipid layers, this understanding has significant impact on
+biophysics and biochemistry. 
 
-Until now, only the absolute values of order parameters have been looked at in the nmrlipids project. However, already the first comment to this blog pointed out the relevance of the signs. (I was a little bit sloppy in my reply and said that the signs of the order parameters are correct in Berger; this is not true as mentioned here and dicussed below). It is important to take the sign into account when the order parameters are discussed in relation to the structure of lipid molecules: Two C-H bonds whose order parameters have the same magnitude but different signs are sampling different orientations. Consequently, the correct signs are crucial if force field parameters are fitted to reproduce the correct order parameters, for example, by using the method suggested by Antti Lamberg in this blog. Thus, I think that from now on we have to start looking also at the signs of the order parameters, not just their magnitude.
+In addition, the simulations have been useful in understanding the effect of changes induced 
+in the acyl chain region. For example, the decrease of order parameters due to double bonds 
+has been reproduced in several simulations models with very good or decent accuracy~\cite{??}.
+These simulations has been then used to shown that the double bonds induce more disordered
+and fluid bilayer due to the more flexible dihedral potentials next to the rigid double bonds~\cite{??}.
+In this respect the simulations showed significant advancement compared to the traditional 
+approaches~\cite{??}. Also, increased acyl chain order and related thickening
+of lipid bilayers due to addition of cholesterol is generally reproduced by simulations giving
+also intuitive visualizations for these effects~\cite{??}. However, in this case the 
+strength and molecular details of this effect may not fully agree with experiments in all models
+indicating that there is still room for iprovement in lipid-cholesterol interactions in lipid
+models~\cite{??}.
 
+Simulation studies have also predicted changes in acyl chain region which are not yet experimentally 
+confirmed, e.g. disordering induced by the lipid oxidation~\cite{??}. A new experimental data
+can confirm if these predictions can be verified. In contrast to the glycerol bakcbone and headgroup~\cite{??},
+serious simulation artefacts in the acyl chain region in the state of the art simulation models are
+not reported. 
 
+In conclusion, the detailed comparison of atomistic resolution structures of lipids in bilayer between 
+simulations and reality has revealed that the acyl chain region is generally well described in simulations
+and has provided new information about lipid structures. In contrast, significant problems
+in glycerol backbone and headgroup region are observed which has led to questionable conclusions~\cite{??}.
 
 \section{C-H bond dynamics from spin relaxation rates and simulations}
 
