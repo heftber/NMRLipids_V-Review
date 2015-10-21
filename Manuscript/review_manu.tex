@@ -157,19 +157,24 @@ In lipid bilayer systems the order parameter of a hydrocarbon C--H vector is typ
 \begin{equation}\label{orderP}
 S_{{\rm CH}}=\frac{1}{2}\langle 3 \cos^2 \theta-1 \rangle,
 \end{equation} 
-where the angle brackets denote an ensemble average over the sampled conformations, and $\theta$ is the angle between the C--H bond and the membrane normal.
+where the angle brackets denote an ensemble average over the sampled conformations, and $\theta$ is the 
+angle between the C--H bond and the membrane normal.
 The numerical values of order parameters vary between $-\frac{1}{2} < S_{{\rm CH}} < +1$
 depending on the sampled $\theta$ distribution.
-The motivation for this definition is its connection to the dipolar and quadrupolar splitting measured with
-$^1$H-$^{13}$C NMR techniques and $^2$H NMR techniques, respectively. The definition has a form of
-second order lagrangian which arises from fundamental theory of interactions between spin systems~\cite{abragam}.
-This theory gives a connection between structures sampled by lipid molecules and experimental observables
-through the C-H (or C-D in $^2$H NMR) bond order parameter. However, the connection between structure
-and order parameters is not fully uniques since several angle distribution can give the same order parameter.
-On the other hand, the order parameter can be uniquely calculated from the known angle distribution.
-Thus, the order parameters can be calculated from the suggested structural model and compared against
-the experimental values to check the quality of the model but the structural models cannot be directly
-build fromt the order parameters. Molecular dynamics simulations is very popular techique to study the
+The definition is motivated by its connection to the dipolar and quadrupolar splitting measured with
+$^1$H-$^{13}$C and $^2$H NMR techniques, respectively. The functional form comes from 
+the fundamental theory of interactions between spin systems which gives a connection between 
+average molecules orientations and NMR measurables~\cite{abragam}. 
+
+If the sampled distribution of $\theta$ for a C--H bond are known, the order parameter
+can be straighfowardly calculated from Eq. \ref{orderP}. However, the sampled $\theta$ 
+distribtions cannot be uniquely determined from the known order parameter. Thus the experimental
+order parameter values gives a set of conditions which structural molecular model 
+(more specifically the C--H bond vectors of the model) has to fulfill
+but those cannot be used alone to resolve the structure. The same applies practically to all
+experimental parameter used in biomolecular structure determination. 
+
+Molecular dynamics simulations is very popular techique to study the
 sampled atomistic resolution stuctures of lipids and other biomolecules and comparison of them 
 to NMR order parameters has been very useful in order to validate simulation results, and also to interpret
 the experiments.
