@@ -223,14 +223,14 @@ the effective dipolar coupling $d_\mathrm{CH}$ through a scaling factor dependin
 experiment~\cite{hong95a,gross97,dvinskikh05a,ferreira13}. The effective dipolar coupling $d_{{\rm CH}}$ is 
 connected to the absolute value of order parameter through equation
 \begin{equation}\label{CNMRop}
-|S_{{\rm CH}}|=\frac{4\pi\langle r_\mathrm{CH}^3 \rangle}{\hbar \mu_0 \gamma_h \gamma_c} d_\mathrm{CH}, 
+|S_{{\rm CH}}|=(\frac{D_{{\rm max}}}{2\pi})^{-1}d_\mathrm{CH},
 \end{equation}
-where $r_{{\rm CH}}$ is the C-H distance, $\mu_0$ is the vacuum permittivity, and $\gamma_h$ and $\gamma_c$ are 
+where $D_{{\rm max}} = \frac{\hbar \mu_0 \gamma_h \gamma_c}{4\pi\langle r_\mathrm{CH}^3 \rangle}$. 
+$r_{{\rm CH}}$ is the C-H distance, $\mu_0$ is the vacuum permittivity, and $\gamma_h$ and $\gamma_c$ are 
 the gyromagnetic constants for $^1$H and $^{13}$C nuclei. In contrast to Eq.~\ref{HNMRop}, all the parameters in 
 Eq.~\ref{CNMRop} are in principle known. However, for the internuclear distance only the average $⟨r_{{\rm CH}}⟩$ 
 is known, not the third moment $⟨r^3_{{\rm CH}}⟩$. For this reason values between 20.2-22.7 kHz are used for
-$\frac{4\pi\langle r_\mathrm{CH}^3 \rangle}{\hbar \mu_0 \gamma_h \gamma_c}$ depending on the original 
-authors~\cite{hong95a,gross97,dvinskikh05a,ferreira13}.
+$\frac{D_{{\rm max}}}{2\pi}$ depending on the original authors~\cite{hong95a,gross97,dvinskikh05a,becker06,ferreira13,ferreira15}.
 
 \subsection{Quantitative accuracy of experimental order parameter values}
 
@@ -550,7 +550,7 @@ then the simulation model in question has unphysically slow dynamics.
 
 
 
-\subsection{Interplay between simulations through NMR order parameters: Validation and interpretation}
+\subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
 
 In the above sections we review the accuracy and availability of NMR order parameters in simulations and experiments.
 We have concluded that the order parameters for each segments of phospholipids in lipid bilayer are achievable
@@ -625,7 +625,7 @@ simulations and reality has revealed that the acyl chain region is generally wel
 and has provided new information about lipid structures. In contrast, significant problems
 in glycerol backbone and headgroup region are observed which has led to questionable conclusions~\cite{??}.
 
-\section{C-H bond dynamics from spin relaxation rates and simulations}
+\section{C-H bond rotational dynamics from spin relaxation rates and simulations}
 
 \noindent {\bf Here will be described:}\\[0.1cm]
 
@@ -635,6 +635,209 @@ What can be learned and what has been learned about the rotational dynamics from
 
 \todo{This is quite straightforward to write for me and there is quite good support from our recent work~\cite{ferreira15}.
 I will write the first version as soon as I can.}
+
+\subsection{Definition and properties of rotational autcorrelation function}
+The second order auto-correlation function for the reorientation of the C--H chemical bond axis is defined as \cite{Lip82:4546}
+\begin{equation}\label{gt}
+g(\tau) = \langle P_2[\vec{\mu}(t)\cdot\vec{\mu}(t+\tau)]\rangle,
+\end{equation} 
+where $P_2$ denotes the second Legendre polynomial, $P_2(\xi) = 1/2 (3\xi^2 - 1)$, $\vec{\mu}(t)$ is the unitary vector having the 
+direction of the C--H bond at time $t$, and the angular brackets denote a time-average. This autocorrelation is usually chosen
+to describe the C--H bond rotational dynamics since it is connected to the experimentally measurable spin relaxation rates 
+through its Fourier transformation called spectral density
+\begin{equation}\label{FT}
+j(\omega) =  2\int_0^{\infty} \cos(\omega \tau) g(\tau) d\tau.
+\end{equation}
+In this review we focus only on experiments measured from multilamellar samples with randomly oriented sheets, 
+hus only the second order auto-correlation function is needed~\cite{??}. 
+
+In randomly oriented multilamellar samples the auto--correlation function of bond orientations always decays to zero with
+long enough time scales. However, the relaxation timescales can be divided to two distinct timescales.
+First the relaxation processes shorter than microsecond timescales occurs when lipid molecules are reorienting
+in the lipid bilyer but are not essentially moving between lipid bilayer regions with different orientations.
+Then with larger than microsecond timescales the movement between differently oriented bilayer regions
+decays the rotational correlation function to zero. In addition, MAS experiments the sample spinning
+causes lead orientaitional relaxation in kHz region. The full auto--correlation decaying to zero 
+is illustrated in Fig.~\ref{correlationF}. Due to the timescale separation the correlation function can 
+be written as~\cite{Now10:16848}
+\begin{equation}\label{corrF}
+g(\tau)=g_{\rm{f}}(\tau) g_{\rm{s}}(\tau);
+\end{equation}
+$g_{\rm{f}}(\tau)$ describes the decay of $g(\tau)$ due to fast molecular motions and $g_{\rm{s}}(\tau)$ contains the contribution from slower motions
+\begin{equation}\label{MAS}
+g_{\rm{s}}(\tau)= e^{- \frac{\tau}{\tau_{\rm{s}}}} \bigg[ \frac{2}{3}\cos(\omega_R \tau) + \frac{1}{3}\cos(2\omega_R \tau)\bigg],
+\end{equation}
+where $\tau_s$ is a correlation time due to slower isotropic molecular motions originating from the diffusion between bilayers 
+with different orientations of their principal symmetry axis, and the cosine terms are the contribution from magic angle spinning 
+of the sample, rotating at $\omega_{\rm{R}}/2\pi$ cycles per second~\cite{Hir06:307}, typically in the kHz frequency range. 
+
+%We expect 
+%a two step model behavior \cite{Hal81:1928} of the correlation function $g(\tau)$ as illustrated in Figure \ref{correlation_function} 
+%and described as follows. First, $g(\tau)$ will decay due to fast anisotropic molecular motions to a plateau value equal to the square 
+%of the order parameter $S_{\rm{CH}}=\langle P_2(\cos\theta)\rangle$, where $\theta$ denotes the angle between the C--H bond and the bilayer 
+%normal. $|S_{\rm{CH}}|$ can be accurately measured by a number of NMR techniques~\cite{Lef11:818}. 
+%At much longer time scales,  $g(\tau)$ will then oscillate due to MAS and relax to zero because of slower isotropic motions. Since Pake 
+%pattern line shapes with splittings $\Delta\nu$ from a few to tens of kHz can be measured for lipid bilayers \cite{Lef11:818,Dav83:117}, 
+%the time scale for these isotropic slow motions must be much slower than $1/\Delta\nu$, or deviations from such Pake patterns would be 
+%detectable~\cite{Jag87:167}. Thus $g(\tau)$ will only start to decay from the plateau $S_{\rm{CH}}^2$  at time scales well above $\mu$s.
+
+
+The order parameter measurements with $^2$H NMR and $^{13}$C NMR measure the bond order after the relaxation
+of rotational motion inside the bilayer plane but before the relaxation between different bilayer orientations,
+as illustrated in Fig.~\ref{??}. In typical molecular dynamics simulations with periodic boundary conditions
+the lipid molecules are restricted to single bilayer orientation and also the timescales are currently
+typically below microsecond. In these simulations the auto--correlation function in Eq.~\ref{??} decays
+to the square of order parameter in Eg.~\ref{??} in bilayers with planar symmetry, i.e. no microscopic phase separation of defects present.
+Also this is illustrated in Fig.~\ref{??}.
+\begin{figure}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/correlationF.eps}
+\newline
+  \caption{\label{correlationF}
+    (Top) Illustration of the auto-correlation function g(τ) and effective
+correlation time τe for a C–H bond in a lipid or surfactant bilayer. Magicangle
+spinning with the frequency ωR leads to oscillations of g(τ) at the
+frequencies ωR and 2ωR. The slow correlation time τs gives the final decay
+of g(τ) towards zero. (Bottom) Example of g(τ) from a united-atom MD
+simulation of a POPC bilayer in excess water, illustrating the decay towards
+S2
+CH. The effective correlation time τe is equal to the area in gray scaled by
+(1 − S2
+CH
+)−1.
+} 
+\end{figure}
+
+The rotational correlation function describes how long does it take for a single molecule
+on average to sample the conformations. The effective correlation time 
+\begin{equation}\label{effCTdef}
+\tau_{e}:=\int_0^{\infty} \frac{g_{\rm{f}}(\tau)-S_{\rm{CH}}^2}{1-S_{\rm{CH}}^2} \mathrm{d}\tau
+\end{equation} 
+can be used as an intuitively useful single parameter to describe this time. 
+The larger this parameter is, the longer it takes in average to sample the conformations related to the
+bond. With this definition the area between the correlation function and its pleateau becomes $(1-S_{\rm{CH}}^2)\tau_{e}$.
+
+\subsection{Detecting C--H bond dynamics experimentally}
+
+The most used parameter to detect the C--H bond dynamics experimentally in time scales comparable to simulations
+are the spin-lattice relaxation rates $R_1$ from deuterium labels and $^{13}$C. 
+$R_1^{C}$ measured from $^{13}$C is connected to the spectral density (Eq.~\ref{FT}) through the equation
+\begin{equation}\label{R1C}
+R_{1}^{C}=\frac{D_{\rm{max}}^2N_{\rm{H}}}{20}\bigg[j(\omega_{\rm{H}}-\omega_{\rm{C}})+3j(\omega_{\rm{C}})+6j(\omega_{\rm{C}}+\omega_{\rm{H}})\bigg],
+\end{equation}
+where $\omega_{\rm{C}}$ and $\omega_{\rm{H}}$ are the Larmor angular frequencies of $^{13}$C and $^1$H respectively, 
+$N_{\rm{H}}$ is the number of bound protons and $\frac{D_{\rm{max}}}{2\pi}\approx$22 kHz as in section~\ref{??}.
+%is given by
+%\begin{equation}
+%d_{\rm{CH}}=-\frac{\mu_0\hbar\gamma_{\rm{H}}\gamma_{\rm{C}}}{4\pi\langle r_{\rm{CH}}^3\rangle},\nonumber
+%\end{equation}
+%where $\mu_0$ is the magnetic constant or vacuum permeability, $\hbar$ is the reduced Planck constant, 
+%$\gamma_{\rm{C}}$ and $\gamma_{\rm{H}}$ are the gyromagnetic constants of $^{13}$C and $^1$H, respectively, 
+%and $\langle r_{\rm{CH}}^3\rangle$ is the average cubic length of the C--H chemical bond. $d_{\rm{CH}}/2\pi$ is 
+%approximately equal to -22 kHz for a methylene C--H bond \cite{Bec05:23285,Dvi05:607}.
+$R_1^{D}$ measured from $^2$H is connected to the spectral density (Eq.~\ref{FT}) through the equation
+\begin{equation}\label{R1C}
+R_{1}^{D}=\frac{12\pi^2}{40}\bigg(\frac{e^2qQ}{h}\bigg)^2\bigg[j(\omega_{\rm{D}})+4j(2\omega_{\rm{D}})\bigg],
+\end{equation}
+where $\frac{e^2qQ}{h}$=170kHz as in the case of order parameters in section~\ref{??}.
+
+Also the model free approach to measure the effective correlation time (Eq.~\ref{effCTdef}) was recently
+introduced~\cite{ferreira15}. The method is based on the combination of experimental order parameter $S_{{\rm CH}}$,
+spin-lattice relaxation rates $R_1$ and the transverse magnetization under a spin lock pulse $R_{1\rho}$ with measured 
+appropriate nutation frequency.
+
+%, defines the equilibration of $^{13}$C transverse magnetization under a spin lock pulse and is normally approximated as~\cite{Har86:NMRS}
+%\begin{multline}\label{R1rho}
+%R_{1\rho}(\omega_1)=\frac{d_{\rm{CH}}^2N_{\rm{H}}}{40}\bigg[4j(\omega_1)+j(\omega_{\rm{H}}-\omega_{\rm{C}})
+%\\
+%+3j(\omega_{\rm{C}})+6j(\omega_{\rm{H}})+6j(\omega_{\rm{C}}+\omega_{\rm{H}})\bigg],
+%\end{multline}
+%where $\omega_1$ is the nutation
+
+%are spin
+%lattice relaxation rates $R_1$ and $R_{1\rho}$
+
+\subsection{Analyzing C--H bond dynamics from simulations}
+
+As in the case of order parameters, the auto--correlation function for each C--H bond can be
+calculated directly from simulations using the definition in Eq.~\ref{??} since the trajectories of each atom is known
+as a function of time. As in the case of order parameters the positions of hydrogens can be determined 
+for united atom models based on heavy atom positions and assuming tetrahedral configurations.
+Usually in the correlation function calculation all the available time intervals from the 
+simulation data are used and the average over those and all molecules is taken. However, since the 
+amount of data decreases when the the time interval approaches the total length of the simulation,
+usually the largest time interval used is the half of the total simulation length, for more details
+see~\ref{gromacsMANUAL}.
+
+To calculate the experimentally measurable spin lattice relaxation times, the spectral density (Eq.~\ref{FT})
+must be first calculated. In principle, this could be done using numerical fourier transformations techniques, 
+however this often leads to unneccessarily large fluctuations. Instead, commonly used apporach is to fit 
+analytical functional form to the calculated auto--correlation function and then use analytical Fourier
+transform of the fitted function. Most commonly the sum of ? or more exponentials is used as a fitting function but
+also streched exponential has been used. Numerically the functional form of the fitting function should not matter as
+long as the fit is good, however, theoretically the correct correlation function form to describe the modes of
+physical motion can be debated. It is clear from correlation functions from simulations that one exponential 
+is not enought to produce a good fit while ? gives a reasonable fit. This is not surprising since more
+than one relaxation timescale is definitiely expected to be present in lipids in bilayer.
+
+After the fitting the analytical form of the spectral density predicted by simulations is available.
+Then its values can be calculated at the required larmor frequency values and substituted to Eqs.~\ref{R1C}
+and~\ref{R1D} to get the $R_{1}^{C}$ and $R_{1}^{D}$. The value of the effective correlation time can be
+calculated directly from the interated area below the correlation function, see Fig.~\ref{??} or from 
+Eq. ??.
+
+
+
+
+\subsection{Interplay between simulations and NMR spin lattice relaxation times: Validation and interpretation of dynamics}
+
+The experimentally observable spin lattice relaxation parameter mentioned above ($R_1^{C}$, $R_1^{D}$ and $R_{1\rho}$)
+are connected to the actual molecular dynamics through the spectral density (Eq.~\ref{FT}) which is the Fourier transformation
+of the auto-correlation function~\ref{gt}. The spin lattice relaxation rates depends spectral density values only 
+with certain larmor frequecies as seen from Eqs.~\ref{R1C} and~\ref{R1D}. In experiments the Larmor frequency 
+depends on the external magnetic field of the used spectrometer. Thus, with a regular NMR spectrometer only
+a single~\ref{R1C} and~\ref{R1D} values can be measured. These will only give information about the size
+of the spectral density close to the used Larmor frequencies. However, to detect the whole rotational
+correlation function one should have information with all relevant larmor frequency values. 
+The single spin lattice relaxation rates only give an estimate how much of the dynamical prosesses
+are present with the timescales roughly with inverse of Larmor frequency. Even the qualitative
+changes in dynamics are difficult to detect by measuring single relaxation rate values since the
+increase (decrease) of the value only indicates the increase (decrease) of relative significance 
+of the relaxation with the detected timescales. If the general dynamics gets slower or faster depends
+what happens to the significance of relaxation processes with faster and slower timescales which 
+are not detected by measuring single relaxation rates.
+
+Several experimental and theoretical apporaches has been use to address this issue.
+Temperature dependence of spin relaxation rates have been measured to analyze the relative 
+molecular rotational relaxation. 
+Spectrometers with different magnetic field strenghts have been used to measure points with 
+several Larmor frequencies.
+Models are fitted to the spin relaxation data.
+The effective correlation time is measured which gives a quantitative measure of the general 
+rotational dynamics. Also MD simulations have been succesfull in interpretation of the 
+measurements of the effect of double bonds on molecular dynamics. 
+
+Comparison between spin lattice relaxation rates measured with NMR and calculated from MD
+is also used to validate the correctness of the dynamics in the simulations.
+The comparison in the early simulations revealed that there are dynamical
+time scales present in simulations are realistic~\cite{??}. Later on the 
+comparison between simulations and dispersion data indicated that the
+simulation dynamics more or less agrees with experiments for some carbons
+while there is room for improvement for others~\cite{??}. However, due to
+the complicated connection between spin lattice relaxation rates and molecular dynamics
+it is difficult to conclude from these comparison if the dynamics is too slow or
+fast in the simulations. This issue can be clarified by measuring the effective correlation
+times with recently introduced methods~\cite{ferrerira15}. The comparison between 
+effective correlation times from experiments and simulations reveals that
+the rotational correlation dynamics is too slow for the glycerol backbone and choline 
+in Berger model. However, this is not very surprising since the Berger model is also sampling wrong configurations for
+these segments. However, the experimental data and similar comparison would be useful
+for models sampling more realistic strucutres, e.g. CHARMM36 which dynamics do not fully
+satisfy the dispersion data.
+
+
+
+
 
 \section{Stucture factors from scattering and simulations}
 
