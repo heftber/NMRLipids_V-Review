@@ -322,43 +322,45 @@ acyl chain order parameters, however, for some segments the 0.02 accuracy might 
 
 \subsection{Qualitative accuracy of experimental order parameter values}
 
-When considering the change of an order parameter with a changing external condition (hydration, ion concentration, etc.), 
-the prefactor can be considered to be unchanging. Therefore, the change in a given order parameter, when measured by the 
-same people with the same technique and equipment, can be determined in a much higher accuracy than the absolute value of 
-the order parameter. We refer to this as the relative accuracy. It is determined by the accuracy of the splitting measurement. 
-Especially the very high spectral resolution of the $^2$H-measurements allows the measurement of very small order parameter changes. 
-Let us exemplify this with a classical experiment by Akutsu and Seelig~\cite{akutsu81}, where the effect of different ions on 
-the quadrupolar splittings of choline headgroup $\alpha$ and $\beta$ segments was measured, see Fig.~\ref{QUADsplitIONeffect}. 
+When order parameters are measured as function of changing condition (e.g. temperature, hydration level, ion concentration, etc.), 
+the prefactors connecting the order parameter and the experimentally measured couplings can be considered 
+to be unchanged. Therefore, accuracy of the measured change is determined by the accuracy of the splitting measurement
+in contrast to the previous section. Here we refer to this as a qualitative accuracy. Due to the high resolution of
+splitting measurements, especially in $ 2$H NMR, the qualitative accuracy is much higher than the
+quantitative accuracy discussed in previous section.
+
+The high qualitative accuracy of $ 2$H NMR experiments is exemplified in Fig. \ref{??} by using the
+the classical experiment by Akutsu and Seelig~\cite{akutsu81}, where the effect of different ions on 
+the quadrupolar splittings of choline headgroup $\alpha$ and $\beta$ segments was measured, 
+\footnote{These changes were later shown to be consistent with the addition of different charges into the bilayer, and the electrometer 
+concept was introduced to measure the amount of charge incorporated in the bilayer interface~\cite{scherer89}.}
+see Fig.~\ref{QUADsplitIONeffect}. 
+The effects of different ions on the quadrupole splittings are clearly differentiable with the experimental 
+accuracy in Fig.~\ref{QUADsplitIONeffect} A). However, when transformed to the order parameter units, 
+these changes correspond only changes below 0.03 units for $\beta$ and 0.05 for $\alpha$ as shown in 
+Fig.~\ref{QUADsplitIONeffect} B). 
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/QUADsplitIONeffect.eps}
-\newline
-  \caption{\label{QUADsplitIONeffect}
-    The measured quadrupolar splittings with the explanation in the original caption. 
-    Reprinted with permission from Akutsu and Seelig~\cite{akutsu81}. Copyright (1981) American Chemical Society.
-} 
-\end{figure}
-
-Clearly, the effects of different ions on the quadrupole splittings are differentiable within experimental accuracy in Fig.~\ref{QUADsplitIONeffect}. 
-(These changes were later shown to be consistent with the addition of different charges into the bilayer, and the electrometer 
-concept was introduced to measure the amount of charge incorporated in the bilayer interface~\cite{scherer89}.) Importantly, 
-when the results of Fig.~\ref{QUADsplitIONeffect} are transformed to order parameters in Fig.~\ref{opIONeffect}, 
-one can see that the numerical changes in $S_{{\rm CD}}$ are rather small: the y--axis only spans < 0.03 units for $\beta$ and 0.06 for $\alpha$.
-\begin{figure}[]
-%  \centering
   \includegraphics[width=8.6cm]{../Fig/OrderParameterIONSexp.eps}
-\newline
   \caption{\label{opIONeffect}
+    Especially the very high spectral resolution of the $^2$H-measurements allows the measurement of very small order parameter changes. 
     Same data as Fig.\ref{QUADsplitIONeffect} but given as order parameters instead of splittings.
   } 
 \end{figure}
-%Indeed, the measured (upon addition of 1M CaCl2 concentration, the changes due NaCl are negligible) changes in the β-and α-carbons are only ∼ 0.02 and ∼ 0.05, respectively.
 
-The resolution of $^{13}$C NMR experiment depends somewhat on the pulse sequence used. For example Dvinskikh et al. measured the effect of dehydration 
-in the lipid order parameters with APM-CP pulse sequence, and changes of 0.01 were measurable~\cite{dvinskikh05b}. Fig.~\ref{opDEHYDeffect} shows the 
-order parameters for $\alpha$-and $\beta$-carbons 
-as a function of dehydration independently measured with $^{13}$C NMR and $^2$H NMR for different PC lipids. All the results are qualitatively similar, that is, 
-they give the same relative change with dehydration.
+%The resolution of $^{13}$C NMR experiment depends somewhat on the pulse sequence used. 
+As another example of the high qualitative accuracy of order parameter experiments, the measured order parameters
+for $\beta$ and $\alpha$ carbons as a function of hydration level for different PC lipids are shown in 
+Fig.~\ref{opDEHYDeffect}. Quantitative numbers from different experiments show slight variation between
+different temperatures and lipid compositions. However, in all experiments the
+order parameters increase with decreasing hydration.
+\footnote{This increase is related to the P-N vector tilting more parallel to the membrane plane \cite{botan15}
+which is in agreement with electrometer concept suggesting that penetrating charge has opposite 
+effect on headgroup tilt leading to decrease of order parameters \cite{scherer89,ionpaper}.}
+The smallest order parameter change is only slightly above 0.01 units, measured by Dvinskikh et al. 
+with $ 13$C NMR~\cite{dvinskikh05b}, demonstrating that high qualitative accuracy can be
+also achieved with $ 13$C NMR. 
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/OrderParameterDEHYDexp.eps}
@@ -369,6 +371,18 @@ they give the same relative change with dehydration.
     Same data as Fig.\ref{QUADsplitIONeffect} but given as order parameters instead of splittings.
   } 
 \end{figure}
+
+In conclusion, the experimental qualitative accuracy order parameter measurements is very high.
+It is much higher than the accuracy achieved with state of the art MD simulations.
+Thus, the accuracy order parameter change comparison between simulations and experiments is
+limited by the simulation accuracy, not experimental. 
+
+On the other hand, it should be noted that since even very small splitting changes can 
+be detected experimentally one should always connect these to the changes in real molecules
+to avoid overinterpretation. For example, it has been measured that cholesterol induces 
+a measurable change in ? quadrupolar splitting which is ? \cite{??}. This may tempt to conclude that
+cholesterol affects to the choline structure, however, this quadrupolar splitting corresponds
+? unit change in the order parameter which indicates almost negligible conformational change \cite{botan15}.
 
 
 \subsection{Signs of order parameters}
