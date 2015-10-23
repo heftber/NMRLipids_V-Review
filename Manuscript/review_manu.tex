@@ -95,9 +95,6 @@ acyl chain order parameters and area per molecule between experiments and
 simulations. Especially some simulation models repruced these amazingly well
 which led to the wide usage of these models.
 
-%was convincing enough to large amount of scientists who started
-%to use simulations as their main or supplementary technique to study lipid bilayers. 
-
 Despite of the success of the models to reproduce the acyl chain properties and
 molecular density more or less correctly, already early days it was pointed out
 by comparing simulations to various experiments
@@ -339,15 +336,15 @@ The effects of different ions on the quadrupole splittings are clearly different
 accuracy in Fig.~\ref{QUADsplitIONeffect} A). However, when transformed to the order parameter units, 
 these changes correspond only changes below 0.03 units for $\beta$ and 0.05 for $\alpha$ as shown in 
 Fig.~\ref{QUADsplitIONeffect} B). 
-\begin{figure}[]
+\begin{figure*}[]
 %  \centering
-  \includegraphics[width=8.6cm]{../Fig/QUADsplitIONeffect.eps}
-  \includegraphics[width=8.6cm]{../Fig/OrderParameterIONSexp.eps}
+  \includegraphics[width=17.2cm]{../Fig/QPandOPwithIONS.eps}
   \caption{\label{opIONeffect}
-    Especially the very high spectral resolution of the $^2$H-measurements allows the measurement of very small order parameter changes. 
-    Same data as Fig.\ref{QUADsplitIONeffect} but given as order parameters instead of splittings.
+    A) Quadrupolar splittings as function of different ion concetrations measured by Akutsu and Seelig with $^2$H NMR~\cite{akutsu81}. 
+    B) The data from A) translated to order parameters ($S_{{\rm CD}}=0.00784 \times \Delta \nu_{{\rm Q}}$). Also the sign of $\beta$ order parameter is put negative according
+    to more recent experiments~\cite{??} (see also Ref.~\cite{botan15} and Section~\ref{??}).
   } 
-\end{figure}
+\end{figure*}
 
 %The resolution of $^{13}$C NMR experiment depends somewhat on the pulse sequence used. 
 As another example of the high qualitative accuracy of order parameter experiments, the measured order parameters
@@ -368,7 +365,8 @@ also achieved with $ 13$C NMR.
   \caption{\label{opDEHYDeffect}
     Dehydration changes on $\alpha$ and $\beta$ order parameters measured with different methods. 
     The data taken from Dvinskikh et al.~\cite{dvinskikh05b}, Ulrich et al.~\cite{ulrich94} and Bechinger et al.~\cite{bechinger91}
-    Same data as Fig.\ref{QUADsplitIONeffect} but given as order parameters instead of splittings.
+    Also the sign of $\beta$ order parameter is put negative according
+    to more recent experiments~\cite{??} (see also Ref.~\cite{botan15} and Section~\ref{??}).
   } 
 \end{figure}
 
@@ -387,32 +385,37 @@ cholesterol affects to the choline structure, however, this quadrupolar splittin
 
 \subsection{Signs of order parameters}
 
-The absolute values of order parameters are accessible with both $^2$H NMR and $^1$H-$^{13}$C NMR techniques. 
-However, only $^1$H-$^{13}$C NMR techniques allow also the measurement of the sign of the order parameter~\cite{hong95a,hong95b,gross97}. 
-In older publications that used $^2$H NMR measurements, only the absolute values of the order parameters (or quadrupolar splittings) were discussed 
-since the sign was not measurable. For the tail C-H vectors, however, the sign was believed to be negative because $\theta$ was expected to fluctuate 
+While only the absolute values of order parameters are accessible with $^2$H NMR, two different 
+$^1$H-$^{13}$C NMR techniques allow also the measurement of the sign: 
+first Hong et al. first measured order parameter signs for eggPC~\cite{hong95a} and DMPC~\cite{hong95b}; 
+then later Gross et al. used a different NMR technique to measure signs for DMPC~\cite{gross97}. 
+All the experiments report negative order parameters for almost all the segments, only $\alpha$ and $\gamma$ are positive.
+
+Furthermore, the signs~\cite{hong95a,hong95b,gross97}  and magnitudes~\cite{gally81,ferreira13,botan15} of choline headgroup 
+and glycerol backbone order parameters are practically unaffected by the acyl tail contents of the bilayers. 
+Thus, it can be fairly assumed that the order parameter signs for these segments are the same in all PC lipids in bilayer. 
+On the other hand, the positive signs for g$_1$, g$_3$ and C$_2$ has been reported by Aussenac et al.~\cite{aussenac03} 
+which has led to some confusion in comparison between simulations and experiments~\cite{hogberg08}. 
+However, these signs are not directly measured but extracted from the model used to interpret 
+$^2$H NMR order parameters from DMPC bicelles. Thus, it is reasonable conclude that 
+order parameters are negative for all segments except for $\alpha$ and $\gamma$, as 
+directly measured with $^1$H-$^{13}$C NMR~\cite{hong95a,hong95b,gross97}.
+
+Even though the sign was not measurable with $^2$H NMR, the sign was believed to be negative for acyl chains because $\theta$ was expected to fluctuate 
 around 90$^o$ leading to negative order parameters~\cite{seelig77c}. This was later confirmed by using $^{13}$C NMR measurements~\cite{hong95a}. 
+Also MD simulations always produce negative order parameters for acyl chains.
 
-The signs of the $^{13}$C-H order parameters have been measured by at least two different techniques and groups: Hong et al. first measured 
-eggPC~\cite{hong95a} and then DMPC~\cite{hong95b}; later Gross et al. used a different NMR technique to measure DMPC~\cite{gross97}. 
-These experiments are in good agreement with one another and report negative order parameters for almost all the segments, only $\alpha$ and $\gamma$ are positive.
-Furthermore, it seems that the signs of choline headgroup and glycerol backbone order parameters~\cite{hong95a,hong95b,gross97} 
-and their absolute values~\cite{gally81,ferreira13} are practically unaffected by the acyl tail contents of the bilayers. 
-Thus, it can be fairly assumed that the signs of order parameters for all PC lipids in bilayers are the same. 
-On the other hand, the positive signs reported for g$_1$, g$_3$ and C$_2$ in acyl chain from $^2$H NMR measurements for DMPC bicelles by Aussenac et al.~\cite{aussenac03}
-has generated some confusion in comparison between simulations and experiments~\cite{hogberg08}. However, Aussenac et al. have not actually measured the 
-signs but used a model to extract the signs. 
-
-In conclusion, it seems reasonable to assume that the signs measured with $^{13}$C NMR methods~\cite{hong95a,hong95b,gross97}
-can be used for all PC lipids in bilayer, i.e. the signs for almost all the carbons are negative, only  $\alpha$ and $\gamma$ are positive.
+%In conclusion, it seems reasonable to assume that the signs measured with $^{13}$C NMR methods~\cite{hong95a,hong95b,gross97}
+%can be used for all PC lipids in bilayer, i.e. the signs for almost all the carbons are negative, only  $\alpha$ and $\gamma$ are positive.
 
 Typically when the response of order parameters to varying conditions (ions, dehydration and cholesterol) is measured, only the absolute 
-values are reported. Where clear responses are observed, like for multivalent ions and dehydration, the experiments are done by gradually 
-changing the conditions. The responses of the magnitudes to these changes are systematic, see Figs.~\ref{QUADsplitIONeffect},~\ref{opIONeffect}
-and~\ref{opDEHYDeffect}. Thus, it is reasonable to assume that also the signs are not suddenly changing. However, it seems that the sign of 
+values are reported~\cite{akutsu81,altenbach84,bechinger91,ulrich94,dvinskikh05b,ferreira13}. Where clear responses are observed, 
+like with multivalent ions~\cite{akutsu81,altenbach84} and dehydration~\cite{bechinger91,ulrich94,dvinskikh05b}, the experiments are done by gradually 
+changing the conditions and the order parameter response is systematic, see Figs.~\ref{opIONeffect} and~\ref{opDEHYDeffect}. 
+Thus, it is reasonable to assume that also the signs are not suddenly changing. However, it seems that the sign of 
 the $\alpha$ carbon order parameter does change in response to a large amount of bound charge, such as multivalent ions. In this case, 
-the absolute value of the order parameter first decreases to zero and then starts to increase again~\cite{altenbach84,seelig87}; 
-the behaviour of the spectra has been nicely illustrated by Altenbach et al.~\cite{altenbach84}, see Fig.~\ref{qsCACLeffect}.
+the absolute value of the order parameter first decreases to zero and then starts to increase again~\cite{altenbach84,seelig87}, 
+as seen from the nicely illustrated spectra shown Fig.~\ref{qsCACLeffect} by Altenbach et al.~\cite{altenbach84}.
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/QUADsplitCACLeffect.eps}
