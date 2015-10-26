@@ -508,40 +508,55 @@ gives accurate experimental parameters which can be directly compared to MD simu
 
 
 \subsection{Order parameters from simulations}
-In molecular dynamics simulations the trajectories of each atom as a function of time 
-are solved by using the Newton's equation of motion and the parameters describing the 
-forces between atoms (force field). Also the thermal motion is included in the simulations, thus 
-the molecules are expected to sample the realistic phase space during the simulation.
-Since the coordinates of all atoms are known from the simuation trajectory,
-the order parameters can calculated directly using the definition of Eq.~\ref{orderP}
-for each hydrocarbon segment. 
+In atomistic resolution molecular dynamics simulations molecules are sampling the defined ensemble
+according to the used simulation parameters and the coordinates of each atom as a function of time are saved
+to the trajectory files. The coordinates in the trajectory file can be straighforwardly used to calculate 
+order parameters directly from the definition in Eq.~\ref{orderP}. The average is taken over the molecules and time.
 
-For simulations models without explicit hydrogen atoms 
-(united atom models), the hydrogen positions can be generated post-simulationally from 
-the positions of the heavy atoms and the known hydrocarbon geometries.
-Alternatively, the equations 
-??
-can be used to calculate the order parameters directly.
-These two approaches are almost identical and give essentially the 
-same results. However, the Eq.~\ref{??} is valid only for the case where there is no
-forking, i.e. order parameters are equal for both hydrogens attached to the 
-same carbon.
+For simulations with united atom models without explicit hydrogen atoms~\cite{??}, the hydrogen positions 
+can be generated post-simulationally from the positions of the heavy atoms and the known hydrocarbon geometries.
+This can be done explicitly by creating a trajectory with added hydrogens~\cite{??}, or by using equations
+which directly calculate order parameters from heavy atom positions~\cite{??}.
+For C--H and C--H$_2$ segments without forking these two approaches gives essentially identical results
+when applied correctly. However, the latter is valid only for the cases with no forking, i.e. order 
+parameters are equal for both hydrogens attached to the same carbon. Since this is not known {\it a priori}
+for the analyzed model, it is better to use the first approach with explicitly added hydrogens.
 
-In general the order parameters for the acyl chain reported from the same
-models by different authors are in good agreement in the literature.
-The exeption is, however, the order parameters for C-H order parameters
-which are calculated incorrectly by the {\it g\_order} program which
-is part of the Gromacs package. This discrepancy can be seen
-for example by comparing the order parameters between ? (calculated with {\it g\_order}) and ?
-(calculated with Eq.~\ref{??} and generating hydrogen positions with {\it protonate}) for
-oleyl chain of POPC. In some cases the order parameters are also formally reported 
-to be positive~\cite{??}. However, in these cases it almost certain that negative values are
-actually achieved from actual calculations. Most likely explanation for reported positive 
-values are the missing absolute value lines from the figure label, or the confusion arising
-from the fact that the {\it g\_order} gives actually -S$_{{\rm CH}}$.
-By takig into account the above mentioned and well understood issues, 
-the simulation order parameters for acyl chain in literature are in good
-agreement with each others and simulations.
+The difference in the forking analysis is most likely reason for different choline and glycerol
+backbone order parameters reported in the literature for the same model~\cite{poger??,botan15}.
+Also different order parameters from the same model for C-H bonds has been reported in literature~\cite{??,??}
+which most likely arises from incorrect implementation of widely used version of {\it g\_order} program in the Gromacs package
+for this segment. Also, the {\it g\_order} program prints -S$_{{\rm CH}}$ which is most likely the reason to
+the reported positive order parameters for acyl chains in some studies~\cite{??}.
+When these issues are taken into account, the order parameters from the same models reported in the
+literature are generally in good agreement.
+
+The statistical error estimates for order parameters in simulations are estimated by
+using the error of the mean calculated averaging over time blocks~\cite{ollila07}, over independent 
+simulations~\cite{poger12} and over different lipids~\cite{botain15}. The maximum error bars given by
+all these approaches are $\sim \pm$0.01.
+
+It was recently pointed out that the sampling of individual dihedral angles might be very
+slow compared to the typical (100~ns) simulation timescales~\cite{vogel12}.
+This result raises a question if typical simulation time scales are long enough to allow
+the molecules to sample the full phase phase. On the other, another recent study showed
+that slowest rotational correlation function (for g$_1$ segment) in the Berger model~\cite{??} reached a
+a plateau ($S_\mathrm{CH}^2$) after 200~ns~\cite{ferreira15}. The comparison of rotational dynamics
+of this and other segments to the experiments reveled that the rotational relaxation was, however, 
+too slow in these simulations, for more details see Section~\ref{??} and~\cite{ferreira13}.
+
+, however, even the slowest rotational correlation function of a C--H bond  (g$_1$) reaches
+a plateau ($S_\mathrm{CH}^2$) in the Berger model~\cite{berger97}---and, notably,
+the dynamics of this segment have been shown to be significantly slower in simulations
+than in experiments~\cite{ferreira15}.
+In practise,
+due to averaging over different lipid molecules,
+less than 200~ns of simulation data should be enough for the order parameter calculation;
+if the sampling within typical simulation times
+is not enough for the convergence of the order parameters,
+then the simulation model in question has unphysically slow dynamics.
+
+\subsection{Comparison between order parameters from simulations and experiments}
 
 Especially the generally good quantitative agreement between experimental and simulated
 order parameters in acyl chain region for pure lipid bilayers (except for C$_2$ segment in sn-2 chain) should be emphasized.
@@ -564,25 +579,6 @@ field, and also one of the most important justification for the usage of such mo
 There is more discrepancies in the order parameters and their interpretation reported for glycerol backbone and
 choline in the literature. In recent publication from the NMRLipids project~\ref{botan15} the results 
 from 12 different models were calculated and compared to the experiments, see Fig.~\ref{HGorderparameters}. 
-\begin{figure}[]
-%  \centering
-  \includegraphics[width=8.6cm]{../../nmrlipids.blogspot.fi/DATAreportediINblog/comparisonSorted.pdf}
-\newline
-  \caption{\label{HGorderparameters}
-    Order parameteres from simulations with different models and experiments for glycerol and choline groups reported by Botan et al.~\cite{botan15}.
-    The experimental values were taken from the following publications:
-    DMPC 303~K from \cite{gross97},
-    DMPC 314~K from \cite{dvinskikh05a},
-    DPPC 322~K from \cite{gally75},
-    DPPC 323~K from \cite{akutsu81},
-    POPC 296~K from \cite{bechinger91}, and
-    POPC 300~K from \cite{ferreira13}.
-    The vertical bars shown for some of the computational values are not error bars, but demonstrate that for 
-    these systems we had at least two data sets (see Ref.~\cite{botan15});
-    the ends of the bars mark the extreme values from the sets, and the dot marks their measurement-time-weighted average. 
-    An interactive version of this figure is available at  https://plot.ly/$\sim$HubertSantuz/72/lipid-force-field-comparison/.
-} 
-\end{figure}
 In this study significant differences in order parameters and structures were observed between the models,
 however, none of the models reproduced the order parameters within experimental error.
 This indicates that the simulations models are not in the level that those could be used to
@@ -595,29 +591,7 @@ by the most used model. The conclusions from NMRLipids project and the reported
 numbers differ from some earlier investigations. Some studies have interpreted
 essentially same simuation results to be in good agreement with experiments~\cite{??}.
 This difference in interpretation seems to arise from the underestimated accuracy
-of experimental order parameters. On the other hand, some studies report different
-order parameter values than Botan et al. for the same models~\cite{??}.
-However, in these studies the order parameter signs and forking are not carefully analyzed
-which probably explains the differences. It should be noted that all the data
-and analysis by Botan et al. is openly available, so their calculations can 
-be carefully re-examinated, which is not the case for other studies.
-
-The statistical error estimates of simulated order parameters are systematically
-small. The error of the mean calculated averaging ove time blocks~\cite{ollila07}, independent 
-simulations~\cite{poger12} or different lipids~\cite{botain15} all give maximum error $\sim \pm$0.01.
-
-It has been pointed out recently that the sampling of individual dihedral angles might be very
-slow compared to the typical (100~ns) simulation timescales~\cite{vogel12}.
-After 200~ns, however, even the slowest rotational correlation function of a C--H bond  (g$_1$) reaches
-a plateau ($S_\mathrm{CH}^2$) in the Berger model~\cite{berger97}---and, notably,
-the dynamics of this segment have been shown to be significantly slower in simulations
-than in experiments~\cite{ferreira15}.
-In practise,
-due to averaging over different lipid molecules,
-less than 200~ns of simulation data should be enough for the order parameter calculation;
-if the sampling within typical simulation times
-is not enough for the convergence of the order parameters,
-then the simulation model in question has unphysically slow dynamics.
+of experimental order parameters.
 
 
 
