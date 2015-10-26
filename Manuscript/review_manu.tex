@@ -540,34 +540,43 @@ It was recently pointed out that the sampling of individual dihedral angles migh
 slow compared to the typical (100~ns) simulation timescales~\cite{vogel12}.
 This result raises a question if typical simulation time scales are long enough to allow
 the molecules to sample the full phase phase. On the other, another recent study showed
-that slowest rotational correlation function (for g$_1$ segment) in the Berger model~\cite{??} reached a
-a plateau ($S_\mathrm{CH}^2$) after 200~ns~\cite{ferreira15}. The comparison of rotational dynamics
-of this and other segments to the experiments reveled that the rotational relaxation was, however, 
-too slow in these simulations, for more details see Section~\ref{??} and~\cite{ferreira13}.
+that the slowest rotational auto-correlation function observed (for g$_1$ segment) 
+in the Berger model reached a plateau ($S_\mathrm{CH}^2$) after $\sim$200~ns
+and its relaxation was significantly too slow compared to NMR relaxation experiments~\cite{ferreira15}. 
+This indicates that if the typical simulation times are too short for the full sampling
+of the structures, then the dynamics is unrealistically slow in the simulation model.
 
-, however, even the slowest rotational correlation function of a C--H bond  (g$_1$) reaches
-a plateau ($S_\mathrm{CH}^2$) in the Berger model~\cite{berger97}---and, notably,
-the dynamics of this segment have been shown to be significantly slower in simulations
-than in experiments~\cite{ferreira15}.
-In practise,
-due to averaging over different lipid molecules,
-less than 200~ns of simulation data should be enough for the order parameter calculation;
-if the sampling within typical simulation times
-is not enough for the convergence of the order parameters,
-then the simulation model in question has unphysically slow dynamics.
 
 \subsection{Comparison between order parameters from simulations and experiments}
 
-Especially the generally good quantitative agreement between experimental and simulated
-order parameters in acyl chain region for pure lipid bilayers (except for C$_2$ segment in sn-2 chain) should be emphasized.
-This means that the atomistic resolution structures sampled by the acyl chains are correct
-with high probability in the simulations and that the simulations give better and more illustrative
-description on acyl chain conformations than the traditionally build models based on NMR data. 
+The acyl chain order parameters are commonly calculated and compared to experiments
+in simulation studies. Practically all force field parametrization publications report these
+as one of experimental parameters which the models are reproducing in good agreement \cite{??}.
+Indeed the agreement between simulations and experiments is almost always in strikingly good 
+for acyl chain order parameters in pure lipid bilayers in full hydration \cite{??}, see also Fig \ref{??}.
+
+Exception is the C$_2$ segment in {\it sn-2} chain in all PC lipids which is known
+to have measurable forking and lower magnitudes compared to other order parameters in 
+the beginning of the acyl chain \cite{??}. This important structural fingerprint is
+related to the different conformations between carboxyl segments in the beginning of chains \cite{??}.
+This feature is, however, not reproduced by several lipid models \cite{??} while other ones have been
+more successfull \cite{??}.
+
 In addition to the quantitatively good agreement in pure bilayers, the changes in 
 acyl chain order parameters as a function of changing conditions are generally reasonable.
-For example, increase of order parameters as a function of cholesterol concetration and with 
-hydration are reproduced in simulations. In contrast the decrease due to addition of
-double bonds is also reproduced. It should be noted, however, that the quantitative changes
+For example, increase of order parameters as a function of cholesterol concetration \cite{??} and with 
+hydration are reproduced in simulations \cite{??}. Further, the decrease due to the addition of
+double bonds is also reproduced \cite{??}. 
+
+On the other hand, the quantitative comparison of order parameter responses to varying conditions
+have not been very popular. Recent comparison between widely used model (Berger lipids \cite{??} and Höltje cholesterol model \cite{??}
+\footnote{In this work CH$_2$/CH$_3$ groups in cholesterol were changed to LP$_2$/LP$_3$ groups to make it more consistent with the Berger
+parameters. This is not usually done in the studies done with these model.})
+for cholesterol containing lipid bilayer revealed that even though the acyl chain response is reasonable,
+with 34\% and higher cholesterol concentration the simulation model cannot be considered to agree with experiments.
+The orientation of cholesterol itself was in better agreement with experiments, except the acyl chain. 
+ 
+It should be noted, however, that the quantitative changes
 are often not reproduced correctly when compared. This indicates that even though
 the models reproduce atomistic resolution changes into the correct direction, 
 the changes are often over or underestimated. There is room for improvement
@@ -596,6 +605,12 @@ of experimental order parameters.
 
 
 \subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
+
+Especially the generally good quantitative agreement between experimental and simulated
+order parameters in acyl chain region for pure lipid bilayers (except for C$_2$ segment in sn-2 chain) should be emphasized.
+This means that the atomistic resolution structures sampled by the acyl chains are correct
+with high probability in the simulations and that the simulations give better and more illustrative
+description on acyl chain conformations than the traditionally build models based on NMR data. 
 
 In the above sections we review the accuracy and availability of NMR order parameters in simulations and experiments.
 We have concluded that the order parameters for each segments of phospholipids in lipid bilayer are achievable
