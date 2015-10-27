@@ -564,18 +564,59 @@ more successfull \cite{??}.
 
 In addition to the quantitatively good agreement in pure bilayers, the changes in 
 acyl chain order parameters as a function of changing conditions are generally reasonable.
-For example, increase of order parameters as a function of cholesterol concetration \cite{??} and with 
-hydration are reproduced in simulations \cite{??}. Further, the decrease due to the addition of
-double bonds is also reproduced \cite{??}. 
-
-On the other hand, the quantitative comparison of order parameter responses to varying conditions
-have not been very popular. Recent comparison between widely used model (Berger lipids \cite{??} and Höltje cholesterol model \cite{??}
+For example, experimentally observed increase of order parameters as a function of cholesterol 
+concetration \cite{??} and with dehydration \cite{??} are reproduced in simulations \cite{??}. 
+However, systematic and quantitative comparisons of these effects between experiments and simulations are rare.
+Comparison between widely used model (Berger lipids \cite{??} and Höltje cholesterol model \cite{??}
 \footnote{In this work CH$_2$/CH$_3$ groups in cholesterol were changed to LP$_2$/LP$_3$ groups to make it more consistent with the Berger
 parameters. This is not usually done in the studies done with these model.})
 for cholesterol containing lipid bilayer revealed that even though the acyl chain response is reasonable,
-with 34\% and higher cholesterol concentration the simulation model cannot be considered to agree with experiments.
-The orientation of cholesterol itself was in better agreement with experiments, except the acyl chain. 
- 
+the simulation model cannot be considered to agree with experiments with 34\% and higher cholesterol concentrations.
+CHARMM36 model has been shown to slightly underestimate the cholesterol ordering effect in DMPC bilayer \cite{??},
+while Slipids and Lipid14 models show satisfactory agreement. Lipid14 is also compared to the same
+extensive experimental data for POPC/cholesterol as Berge/Hötje model and the agreement is significantly better \cite{??}. 
+Also the orientation of cholesterol itself is reasonable in all models \cite{??}, however, the cholesterol
+acyl chain has some issues in Höltje model (too low order parameters) and in Lipid14 (significant forking) while
+CHARMM36 reproduces experiments well \cite{??}. Despite of the problems the Höltje model 
+is used to study the cholesterol acyl chain length effect on bilayer properties \cite{??}.  
+
+The decrease of acyl chain order parameters due to the addition of double bonds is also 
+generally reproduced by different simulation models \cite{??}. For oleyl chain in POPC 
+with one {\it cis} double bond the
+order parameters around double bonds are in almost perfect agreement with experiments
+in many models \cite{??} (see also Fig. \ref{??}) but practically all models reproduce some
+kind of decrease \cite{??}. Also the difference between {\it cis} and {\it trans} double bonds
+can be reproduced in MD simulations \cite{??}.
+
+In contrast to acyl chains, the order parameters for the glycerol backbone are not routinely
+reported in simulation literature and when reported, the agreement with experiments is often poor \cite{??}.
+The NMRLipids collaboration recently carefully compared glycerol backbone and choline order parameters  
+from 12? different models to the experiments and concluded that none of the available models
+reproduces these within experimental error, see Fig.~\ref{HGorderparameters}.
+Also responses of glycerol backbone and choline order parameters to 
+dehydration, cholesterol concetration and charge penetration were 
+studied by the NMRLipids collaboration \cite{botan15,ionpaper}.
+Despite of the incorrect structures in simulation models the experimentally measured choline order
+parameter increase due to dehydration \cite{botan15} and decrease due to penetrating 
+ions \cite{ionpaper} (see Fig. \ref{??}) were qualitatively reproduced. 
+The comparison reveals, however, that the Na$ +$ penetration is significantly
+overestimated by many models \cite{ionpaper}. 
+Also the effect of cholesterol on glycerol backbone and choline was overestimated
+by the Berger/Höltje model while CHARMM36 and MacRog performed better. 
+The conclusions from NMRLipids project and the reported 
+numbers differ from some earlier investigations. Some studies have interpreted
+essentially same simuation results to be in good agreement with experiments~\cite{??}.
+This difference in interpretation seems to arise from the underestimated accuracy
+of experimental order parameters.
+
+
+
+\subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
+
+This indicates that the simulations models are not in the level that those could be used to
+study the glycerol backbone or choline structrure, or phenoma related to their strucuture or
+energetics.
+
 It should be noted, however, that the quantitative changes
 are often not reproduced correctly when compared. This indicates that even though
 the models reproduce atomistic resolution changes into the correct direction, 
@@ -585,26 +626,6 @@ structure and its qualitative changes are generally well described by the
 molecular dynamics simulations and this is one of biggest achievements of the
 field, and also one of the most important justification for the usage of such models.
 
-There is more discrepancies in the order parameters and their interpretation reported for glycerol backbone and
-choline in the literature. In recent publication from the NMRLipids project~\ref{botan15} the results 
-from 12 different models were calculated and compared to the experiments, see Fig.~\ref{HGorderparameters}. 
-In this study significant differences in order parameters and structures were observed between the models,
-however, none of the models reproduced the order parameters within experimental error.
-This indicates that the simulations models are not in the level that those could be used to
-study the glycerol backbone or choline structrure, or phenoma related to their strucuture or
-energetics. Despite of the incorrect structures in simulation models the qualitative
-responses to the dehydration and charge penetration were qualitatitevly correct. 
-However, the ion partition coefficient was significantly off from experiments in
-several models. Also the effect of cholesterol on glycerol backbone was overestimated
-by the most used model. The conclusions from NMRLipids project and the reported 
-numbers differ from some earlier investigations. Some studies have interpreted
-essentially same simuation results to be in good agreement with experiments~\cite{??}.
-This difference in interpretation seems to arise from the underestimated accuracy
-of experimental order parameters.
-
-
-
-\subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
 
 Especially the generally good quantitative agreement between experimental and simulated
 order parameters in acyl chain region for pure lipid bilayers (except for C$_2$ segment in sn-2 chain) should be emphasized.
