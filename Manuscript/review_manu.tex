@@ -589,7 +589,10 @@ kind of decrease \cite{??}. Also the difference between {\it cis} and {\it trans
 can be reproduced in MD simulations \cite{??}.
 
 In contrast to acyl chains, the order parameters for the glycerol backbone are not routinely
-reported in simulation literature and when reported, the agreement with experiments is often poor \cite{??}.
+reported in simulation literature and when reported, the agreement with experiments is concluded to
+be poor \cite{??} or good \cite{??} depending on the authors, not on the numbers reported.
+This probably due to different estimations of the accuracy of experimental and simulated order parameters,
+see also section \ref{??}.
 The NMRLipids collaboration recently carefully compared glycerol backbone and choline order parameters  
 from 12? different models to the experiments and concluded that none of the available models
 reproduces these within experimental error, see Fig.~\ref{HGorderparameters}.
@@ -602,109 +605,100 @@ ions \cite{ionpaper} (see Fig. \ref{??}) were qualitatively reproduced.
 The comparison reveals, however, that the Na$ +$ penetration is significantly
 overestimated by many models \cite{ionpaper}. 
 Also the effect of cholesterol on glycerol backbone and choline was overestimated
-by the Berger/Höltje model while CHARMM36 and MacRog performed better. 
-The conclusions from NMRLipids project and the reported 
-numbers differ from some earlier investigations. Some studies have interpreted
-essentially same simuation results to be in good agreement with experiments~\cite{??}.
-This difference in interpretation seems to arise from the underestimated accuracy
-of experimental order parameters.
+by the Berger/Höltje model while CHARMM36 and MacRog performed better \cite{botan15}. 
+
+In conclusion, the experimental order parameters for acyl chains and their changes are resonably
+reproduced all state of the art lipid models (except for C$_2$ segment in {\it sn}-2).
+However, all models have difficulties with varying severity to reproduce the glycerol backbone
+and choline order parameters, and their changes.
 
 
 
 \subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
 
-This indicates that the simulations models are not in the level that those could be used to
-study the glycerol backbone or choline structrure, or phenoma related to their strucuture or
-energetics.
+As reviewed here, the order parameters can be measured with high accuracy for each hydrocarbon segment in lipid
+in bilayer and the values are available in the literature for wide range of different lipids in different conditions.
+Thus, the experimental order parameters give very detailed and local information about the orientations
+sampled by each C--H bonds in the lipid bilayer system. The order parameters can 
+be also calculated from MD simulations with high accuracy and compared to the experiments.
+If the order parameters agree within experimental error, the simulated structures can considered as
+an structural intepretation for order parameter experiments. On the other hand, if the agreement is not good, 
+the simulation is sampling incorrect structures.
 
-It should be noted, however, that the quantitative changes
-are often not reproduced correctly when compared. This indicates that even though
-the models reproduce atomistic resolution changes into the correct direction, 
-the changes are often over or underestimated. There is room for improvement
-in the models in this respect. However, in conclusion, the acyl chain 
-structure and its qualitative changes are generally well described by the
-molecular dynamics simulations and this is one of biggest achievements of the
-field, and also one of the most important justification for the usage of such models.
-
-
-Especially the generally good quantitative agreement between experimental and simulated
-order parameters in acyl chain region for pure lipid bilayers (except for C$_2$ segment in sn-2 chain) should be emphasized.
-This means that the atomistic resolution structures sampled by the acyl chains are correct
-with high probability in the simulations and that the simulations give better and more illustrative
-description on acyl chain conformations than the traditionally build models based on NMR data. 
-
-In the above sections we review the accuracy and availability of NMR order parameters in simulations and experiments.
-We have concluded that the order parameters for each segments of phospholipids in lipid bilayer are achievable
-with high accuracy from simulations and experiments, and also lot of these values are already available 
-in the literature. The experimental order parameter give very detailed and local information about the orientations
-sampled by each C--H bonds in the lipid bilayer system. However, the structure cannot be resolved only by using 
-experimental order parameters since several $\theta$ angle (in Eq.~\ref{??}) distributions produces the same
-order parameter and not all segments of lipid molecule contains C--H groups (e.g. phosphate). 
-Historically several modeling techniques have been used to suggest structures which reproduce the 
-experimental order parameters, thus being realistic candidates for the atomistic resolution structure
-of lipids~\cite{??}. This has turned out to be extremely difficult task and unambigous solution has not
-been reached, although some details are agreed~\cite{??}.
-
-The atomistic resolution molecular dynamics simulations of lipid bilayers gives automatically the 
-atomistics resolution structure of lipids sampled in a bilayer. Since the order parameters can 
-be calculated from these simulations with high accuracy, those can be compared to the experimental
-values. If the order parameters agree within experimental error, the simulated structures are realistic
-and can be considered as an interpretation of experimental numbers. 
-It should be noted, however, that even if the order parameters would be reproduced, it does not, in principle, 
-guarantee that the structures are correct. Further test can be done by using further dipolar coupling~\cite{??}
-and scattering data, see Section~\ref{??}.
-If the simulated order 
-parameter do not fit inside the experimental error bars, the simulation do not sample correct
-atomistic conformations and the simulation methdology and model should be reconsidered.
-
-As discussed in the previous section, many (if not all) simulations models have serious difficulties
-to reproduce the glycerol backbone and choline headgroup structure and energetics, their response
-to the cholesterol and ion concentrations. This indicates that the reliability of most simulation results 
-reported in the literature regarding these issues are not reliable and that the modelling of these
-parts should be paid more effort before the quantitative structural intepretation becomes possible.
-Despite of the problems, the qualitative response of headgroup to the dehydration and penetrating ions
-was correct which confirmed the connection between increasing choline $\alpha$ and $\beta$ order parameters
-and increasing P--N vector angle respect to the membrane normal ~\cite{??} suggested previously in~\cite{??}.
-
-As also discussed in the previous section the simulation methods have been much more successfull in describing
-the acyl chain region of lipid bilayer. Almost all simulation models are able to reproduce acyl chain
-order parameters with the very good accuracy, exception being the C$_2$ segment in the sn-2 chain.
-Also the changes induced in acyl chain region are reproduced well, at least qualitatively.
-Thus the sampled acyl chain structures given by simulations can be considered to be reasonable
-interpretation for experimental acyl chain order parameter measurements. 
-
+As discussed in the previous section, the order parameters for acyl chain region from MD simulations generally 
+agree well with experiments (except for the C$_2$ segment in the {\it sn}-2 chain). Thus, the acyl chain structure 
+is most likely realistic in simulations and they can used for structural interpretation for this region. 
 This is a significant advancement to the traditional structural models build based on the 
-fittings to the order paramters. The dynamical visualization of simulation trajectory immediately 
+fittings to the order paramters~\cite{??}. The dynamical visualization of simulation trajectory immediately 
 reveals very dynamical nature of acyl chains, rapidly sampling large amount of different conformations 
-(for dynamics see the Section~\ref{??}). These dynamical visualizations gives significantly better
-intuitive understanding of dynamical nature of lipid bilayers compared to the static ones from 
+(for dynamics see the Section~\ref{??}). These videos published by several authors in supplementary information~\cite{??}
+gives significantly better intuitive understanding of dynamical nature of lipid bilayers compared to the static ones from 
 traditional models. Since the lipid bilayers can be considered as a simplistic models for cell
 membranes and other biological lipid layers, this understanding has significant impact on
 biophysics and biochemistry. 
 
-In addition, the simulations have been useful in understanding the effect of changes induced 
-in the acyl chain region. For example, the decrease of order parameters due to double bonds 
-has been reproduced in several simulations models with very good or decent accuracy~\cite{??}.
-These simulations has been then used to shown that the double bonds induce more disordered
-and fluid bilayer due to the more flexible dihedral potentials next to the rigid double bonds~\cite{??}.
-In this respect the simulations showed significant advancement compared to the traditional 
-approaches~\cite{??}. Also, increased acyl chain order and related thickening
-of lipid bilayers due to addition of cholesterol is generally reproduced by simulations giving
-also intuitive visualizations for these effects~\cite{??}. However, in this case the 
-strength and molecular details of this effect may not fully agree with experiments in all models
-indicating that there is still room for iprovement in lipid-cholesterol interactions in lipid
-models~\cite{??}.
+Also the order parameter changes with changing conditions are qualitatively reproduced in the acyl chain region, 
+however the systematic quantitative comparison of changes is rare~\cite{??}.
+The MD simulations have been especially useful to explain the origin of order parameter decrease
+due to {\it cis} double bonds in the acyl chain~\cite{??}. The order parameter decrease might arise
+from reduced order of the chain or from the changed average $\theta$ angle in Eq.~\ref{??}.
+From NMR experiments alone it was impossible to judge which is the correct explanation for
+the decreased order parameters due double bonds~\cite{??}. Several simulation studies by different
+authors using different models has showed that the decreased order parameter order parameter due to {\it cis} double
+bonds can be reproduced by introducing proper dihedral potentials next to double bonds,
+and due to the fexility of these dihedrals the polyunsaturated acyl chain becomes more flexible and
+the order is reduced~\cite{??}. These studies concluded that order parameter decrease due to double 
+bonds arises from genuine disorder of the chain, not from the changes in average angle~\cite{??}.
+This is a prime example of the case where MD simulations have significant advance over more traditional 
+modeling approaches~\cite{??}.
 
-Simulation studies have also predicted changes in acyl chain region which are not yet experimentally 
-confirmed, e.g. disordering induced by the lipid oxidation~\cite{??}. A new experimental data
-can confirm if these predictions can be verified. In contrast to the glycerol bakcbone and headgroup~\cite{??},
-serious simulation artefacts in the acyl chain region in the state of the art simulation models are
-not reported. 
+The increase of acyl chain order parameters and related bilayer thickening due to addition of cholesterol 
+is also qualitatively reproduced by simulations giving also intuitive visualizations for these effects~\cite{??}. 
+However, systematic and quantitative comparison to experimental data has been rare and often unsuccessfull, at
+least for some acyl chain segments with high cholesterol concentration~\cite{??}. Thus, from most models
+available it is not clear if they can be used to quantitatively interpret the atomistic resolution interaction between 
+lipid acyl chain and cholesterol. Also order induced by dehydration is mentioned to be weaker in simulations
+compred to experiments~\cite{hogberg06}.
 
-In conclusion, the detailed comparison of atomistic resolution structures of lipids in bilayer between 
-simulations and reality has revealed that the acyl chain region is generally well described in simulations
-and has provided new information about lipid structures. In contrast, significant problems
-in glycerol backbone and headgroup region are observed which has led to questionable conclusions~\cite{??}.
+Simulation studies have also predicted changes in the acyl chain region which are not yet experimentally 
+confirmed, e.g. order parameter decrease due to lipid oxidation and changes in order parameter sign in oxidized 
+acyl chain~\cite{??}. %A new experimental data can confirm if these predictions can be verified. 
+
+
+As discussed in the previous section, simulations models are not able to reproduce the glycerol backbone 
+and choline headgroup order parameters within experimental error~\cite{botan15} in contrast to acyl chains.
+Thus, even the state of the art simulation models are not able to resolve the sampled atomistic resolution
+structure of these segments which has been also tremendeous challenge to the more traditional models~\cite{??}.
+Consequently, the conclusions made from MD simulations which depend on atomistic resolution structure
+of energetics of these segments should be taken with extreme caution.
+On the other hand, the qualitative response of choline $\alpha$ and $\beta$ order parameters to the dehydration 
+and penetrating ions (increase and decrease, respectively) was correctly reproduced by several models, 
+despite of the incorrect structure in fully hydrated lipid bilayer~\cite{botan15,ionpaper}.
+These changes could be related with the changes of P--N vector angle respect to the membrane normal as 
+suggested previously in~\cite{??}: the tilting of P--N vector more parallel to membrane plane with
+dehydration leads to the increase of choline order parameters~\cite{botan15} and {\it vice versa} with penetrating ions~\cite{ionpaper}.
+\todo{The analysis with ions not actually done yet!}
+As a function of added cholesterol, the widely used Berger/Höltje model significantly overestimates 
+the effects in glycerol backbone and choline region~\cite{ferreira13,botan15} which seems to be the 
+case also for Lipid14~\cite{??}.
+
+The simulations were also able to confirm the electrometer concept suggested by Seelig et al. in a serie
+of classical publications~\cite{??}: the decrease of $\alpha$ and $\beta$ order parameters is a measure of 
+charge penetrated in PC lipid bilayer~\cite{ionpaper}. This concept gives a direct and quantitative
+route to compare charge binding to PC lipid bilayers since the order parameters can be directly compared
+between experiments and simulations~\cite{ionpaper}. The experimental results clearly show that
+Na$^{+}$ binding is very weak to the PC bilayers while Ca$^{2+}$ has stronger binding~\cite{??}. 
+The comparison with simulations revealed that several lipid models significantly overestimate cation 
+binding~\cite{ionpaper}. This a serious artefact since specific cation binding makes lipid bilayer 
+positively charged, which has a potential to lead incorrect conclusion when interactions with
+charged objects are studied. Thus the conclusions from simulation studies with strongly binding 
+cations has to be taken with extreme caution.
+
+In conclusion, the atomistic resolution MD simulations are invaluable in understanding the 
+structural details and their changes in acyl chain region, especially for double bonds.
+However, serious artefacts are possible, or even likely, in simulations where choline or
+glycerol backbone structure, or cation binding are important.
+
 
 \section{C-H bond rotational dynamics from spin relaxation rates and simulations}
 
@@ -917,8 +911,8 @@ for models sampling more realistic strucutres, e.g. CHARMM36 which dynamics do n
 satisfy the dispersion data.
 
 
-
-
+\newpage
+\onecolumngrid
 
 \section{Stucture factors from scattering and simulations}
 
