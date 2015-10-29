@@ -66,7 +66,26 @@
 
 \begin{abstract}
 % insert abstract here
-Abstract.
+Recent progress in the analysis of lipid bilayer atomistic resolution structure and dynamics
+using combination of robust experimental data and molecular dynamics simulations is reviewed.
+The focus is on order parameters and spin relaxation times measured with NMR and on form factors
+measured with SAXS and SANS for phosphatidylcholine lipid bilayers. The experimental observables
+are chosen since these experiments are robust, well understood, highly reproducible and the connection
+between raw data and simulations is straightforward. Also the comparison between simulations
+and these observables is bidirectionally useful; it will quantitatively measure the quality 
+of the simulation model respect to the reality, and if the quality is sufficient, the simulations
+give structural interpretation for the experimental data. Significant advance of molecular dynamics
+simulation models is that the same simulation model can be simultaneously compared to all of
+this parameters. If satisfactory agreement is found, it is highly likely that the model
+represents the reality due to the large amount of reproduced independent experimental parameters. 
+In this case all the mentioned experiments would be simultaneously interpreted with the same model.
+Phosphatidylcholine lipids are chosen since large portion of model membrane studies have been 
+focused on this lipid, producing enough experimental and simulation data to draw comprehensive
+picture on the level of understanding atomistic resolution structure and dynamics.
+We conclude that the acyl chain region structure and its changes are generally well described in simulations, 
+in contrast to the glycerol backbone and choline. Also cation binding is significantly overestimated
+by several models.
+
 \end{abstract}
 
 %\pacs{}% insert suggested PACS numbers in braces on next line
@@ -79,7 +98,7 @@ Abstract.
 
 %\label{}
 \section{Introduction}
-\todo{Samuli: Add citations to the introduction}
+\todo{Samuli: Add citations to the introduction. Rewriting is also needed}
 Atomistic resolution molecular dynamics simulations of lipid bilayers are nowdays
 widely used technique to seek answer to various research questions.
 Typically interactions between other biological molecules (e.g. proteins, drugs, ions etc.)
@@ -479,10 +498,10 @@ is different for each carbon segment. In the second dimension the dipolar coupli
 (order parameter) corresponding each chemical shift value is measured, and its value 
 can be connected, in principle, to each carbon segment by using the chemical shift value.  
 In practise, challenges occur in the acyl chain region where chemical shift values 
-of different segments are very close to each others \cite{??}. This issue has been
+of different segments are very close to each others \cite{hong95a,gross97,dvinskikh05a,ferreira13,leftin14}. This issue has been
 addressed by filtering the spectra by using partially deuterated lipids \cite{ferreira13}
 and using data from simulations and specifically deuterated experiments to help in 
-the assigment \cite{ferreira13,??}. It should be noted that the overlapping spectra 
+the assigment \cite{ferreira13,leftin14}. It should be noted that the overlapping spectra 
 is a challenge only for acyl chain regions with several similar segments. On the other hand, 
 the order parameters for hydrocarbon segments in choline, glycerol backbone, close to the 
 double bonds, and in the beginning and the end of acyl chains can be straighforwardly 
@@ -498,11 +517,11 @@ The available experimental data for order parameters is reviewed
 quite recently~\cite{leftin11,marsh13}. These reviews are comprehensive especially for 
 acyl chains in pure lipid bilayer samples. In addition to this, there is significant
 amount of order parameter data for glycerol backbone and headgroup segments \cite{botan15}, and
-also data as a function of changing conditions for all lipid segments \cite{??}.
-The amount of data, especially from $^{13}$C NMR, has been also increasing lately~\cite{ferreira13,leftin??,??}.
+also data as a function of changing conditions for all lipid segments \cite{akutsu81,dvinskikh05a,mallikarjunaiah11,ferreira13,??}.
+The amount of data, especially from $^{13}$C NMR, has been also increasing lately~\cite{ferreira13,leftin13,leftin14}.
 Especially the order parameter data of headgroup responses to varying conditions 
 has a lot of unused pontential since it can used to measure, e.g. ion partitioning to lipid
-bilayer \cite{??,ionpaper} and lipid protein interactions \cite{??}. Simultaneously, it
+bilayer \cite{akutsu81,??,ionpaper} and lipid protein interactions \cite{roux89,kuchinka89,leftin13}. Simultaneously, it
 gives accurate experimental parameters which can be directly compared to MD simulations \cite{botan15,ionpaper}.
 
 
