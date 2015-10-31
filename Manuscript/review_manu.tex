@@ -24,7 +24,7 @@
 
 
 %\documentclass[aps,prl,preprint,groupedaddress]{revtex4}
-
+\usepackage{eurosym}
 \usepackage{rotating} 
 \usepackage{times}
 \usepackage{graphicx}
@@ -534,19 +534,19 @@ order parameters directly from the definition in Eq.~\ref{orderP}. The average i
 
 For simulations with united atom models without explicit hydrogen atoms~\cite{??}, the hydrogen positions 
 can be generated post-simulationally from the positions of the heavy atoms and the known hydrocarbon geometries.
-This can be done explicitly by creating a trajectory with added hydrogens~\cite{??}, or by using equations
-which directly calculate order parameters from heavy atom positions~\cite{??}.
+This can be done explicitly by creating a trajectory with added hydrogens~\cite{ollila07a,botan15}, or by using equations
+which directly calculate order parameters from heavy atom positions~\cite{??,vermeer07}.
 For C--H and C--H$_2$ segments without forking these two approaches gives essentially identical results
 when applied correctly. However, the latter is valid only for the cases with no forking, i.e. order 
 parameters are equal for both hydrogens attached to the same carbon. Since this is not known {\it a priori}
 for the analyzed model, it is better to use the first approach with explicitly added hydrogens.
 
 The difference in the forking analysis is most likely reason for different choline and glycerol
-backbone order parameters reported in the literature for the same model~\cite{poger??,botan15}.
-Also different order parameters from the same model for C-H bonds has been reported in literature~\cite{??,??}
+backbone order parameters reported in the literature for the same model~\cite{poger12,botan15}.
+Also different order parameters from the same model for C-H bonds has been reported in literature~\cite{bachar04,ollila07a}
 which most likely arises from incorrect implementation of widely used version of {\it g\_order} program in the Gromacs package
 for this segment. Also, the {\it g\_order} program prints -S$_{{\rm CH}}$ which is most likely the reason to
-the reported positive order parameters for acyl chains in some studies~\cite{??}.
+the reported positive order parameters for acyl chains in some studies~\cite{ekkabut07}.
 When these issues are taken into account, the order parameters from the same models reported in the
 literature are generally in good agreement.
 
@@ -568,18 +568,20 @@ of the structures, then the dynamics is unrealistically slow in the simulation m
 
 \subsection{Comparison between order parameters from simulations and experiments}
 
-The acyl chain order parameters are commonly calculated and compared to experiments
-in simulation studies. Practically all force field parametrization publications report these
-as one of experimental parameters which the models are reproducing in good agreement \cite{??}.
-Indeed the agreement between simulations and experiments is almost always in strikingly good 
-for acyl chain order parameters in pure lipid bilayers in full hydration \cite{??}, see also Fig \ref{??}.
+Since the early days of lipid bilayer simulations the acyl chain order parameters are commonly calculated and compared to experiments
+when validating simulation studies~\cite{ploeg82,egberts88,stouch93,egberts94,essex94,robinson94,hyvonen95,kothekar96,tieleman96,shinoda97,berger97,tieleman97,klauda08}. 
+Practically all the state of the art force field parametrization publications report these
+to be in good agreement with experiments~\cite{berger97,hogberg08,poger10,ulmschneider09,kukol09,chiu09,klauda10,dickson12,jambeck12,chowdhary13,maciejewski14,tjornhammar14,dickson14,lee14}.
+It is remarkable that the experimental order parameters for acyl chains in fully hydrated pure lipid bilayers
+can be reproduced within experimental error, see also Fig \ref{allOPs} C). 
 
 Exception is the C$_2$ segment in {\it sn-2} chain in all PC lipids which is known
 to have measurable forking and lower magnitudes compared to other order parameters in 
-the beginning of the acyl chain \cite{??}. This important structural fingerprint is
+the beginning of the acyl chain~\cite{??}. This important structural fingerprint is
 related to the different conformations between carboxyl segments in the beginning of chains \cite{??}.
-This feature is, however, not reproduced by several lipid models \cite{??} while other ones have been
-more successfull \cite{??}.
+This feature is, however, not analyzed or not reproduced for several lipid models~\cite{hogberg08,chiu09,kukol09,ulmschneider09,jambeck12,dickson12,chowdhary13,tjornhammar14,maciejewski14}
+while some models report the lower magnitude but the forking is not reproduced correctly or analyzed~\cite{klauda10,chowdhary13,dickson14}.
+The united atom CHARMM36 is really close the experimental results~\cite{lee14}.
 
 In addition to the quantitatively good agreement in pure bilayers, the changes in 
 acyl chain order parameters as a function of changing conditions are generally reasonable.
@@ -597,21 +599,19 @@ while Slipids~\cite{jambeck13} and Lipid14~\cite{madej15} models show satisfacto
 extensive experimental data for POPC/cholesterol as Berge/H{\"o}ltje model~\cite{ferreira13} and the agreement is significantly better~\cite{madej15}. 
 Also the orientation of cholesterol itself is reasonable in all models \cite{vermeer07,lim12,ferreira13,madej15}, however, the cholesterol
 acyl chain has some issues in H{\"o}ltje model~\cite{ferreira13} (too low order parameters) and in Lipid14~\cite{madej15} (significant forking) while
-CHARMM36 reproduces experiments well~\cite{lim12}. Despite of the problems the Höltje model 
-is used to study the cholesterol acyl chain length effect on bilayer properties \cite{??}.  
+CHARMM36 reproduces experiments well~\cite{lim12}. 
+%Despite of the problems the Höltje model is used to study the cholesterol acyl chain length effect on bilayer properties \cite{??}.  
 
 The decrease of acyl chain order parameters due to the addition of double bonds is also 
-generally reproduced by different simulation models \cite{??}. For oleyl chain in POPC 
-with one {\it cis} double bond the
-order parameters around double bonds are in almost perfect agreement with experiments
-in many models \cite{??} (see also Fig. \ref{??}) but practically all models reproduce some
-kind of decrease \cite{??}. Also the difference between {\it cis} and {\it trans} double bonds
-can be reproduced in MD simulations \cite{??}.
+generally reproduced by different simulation models~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,dickson12,klauda10,ferreira13,jambeck13,lee14,dickson14}. 
+Very good agreement for oleyl chain in POPC bilayer with one {\it cis} double bond is demonstrated in Fig.~\ref{allOPs} taken from Ferrereira et al.~\cite{ferreira13}.
+Also the effect of multiple double bonds (polyunsaturation)~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,??} and
+difference between {\it cis} and {\it trans} double bonds can be reproduced in MD simulations \cite{kulig15b}.
 
 In contrast to acyl chains, the order parameters for the glycerol backbone are not routinely
 reported in simulation literature and when reported, the agreement with experiments is concluded to
-be poor \cite{??} or good \cite{??} depending on the authors, not on the numbers reported.
-This probably due to different estimations of the accuracy of experimental and simulated order parameters,
+be poor \cite{hogberg06,poger12,botan15} or good \cite{hogberg06,hogberg08,kapla12} depending on the authors.
+The difference arises from different estimations for the accuracy of experimental and simulated order parameters,
 see also section \ref{??}.
 The NMRLipids collaboration recently carefully compared glycerol backbone and choline order parameters  
 from 13 different models to the experiments and concluded that none of the available models
