@@ -30,6 +30,7 @@
 \usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{epstopdf}
 \usepackage[obeyFinal]{easy-todo}
 \begin{document}
 
@@ -276,7 +277,7 @@ Eq.~\ref{CNMRop} are in principle known. However, for the internuclear distance 
 is known, not the third moment $⟨r^3_{{\rm CH}}⟩$. For this reason values between 20.2-22.7 kHz are used for
 $\frac{D_{{\rm max}}}{2\pi}$ depending on the original authors~\cite{hong95a,gross97,dvinskikh05a,becker06,ferreira13,ferreira15}.
 
-\subsection{Quantitative accuracy of experimental order parameter values}
+\subsection{Quantitative accuracy of experimental order parameter values}\label{QUANTaccuracySECTION}
 
 It must be stressed that $^2$H NMR and $^{13}$C NMR are fully independent experiments since the deuterium quadrupolar splitting $\Delta \nu_Q$
 and the dipolar splitting $d_{{\rm CH}}$ are different physical observables. In addition, the prefactors connecting the observables to the order 
@@ -311,6 +312,20 @@ simulation models are shown in Fig.~\ref{allOPs} A).
     DPPC 323~K from \cite{akutsu81},
     POPC 296~K from \cite{bechinger91}, and
     POPC 300~K from \cite{ferreira13}.
+    The original citations for the force fields used in the simulations are
+    Berger \cite{berger97},
+    Hogberg08 \cite{hogberg08},
+    Poger \cite{poger10},
+    Ulmschneiders \cite{ulmschneider09},
+    Kukol \cite{kukol09},
+    Chiu \cite{chiu09},
+    CHARMM36 \cite{klauda10},
+    GAFFlipid \cite{dickson12},
+    Slipid \cite{jambeck12},
+    MacRog \cite{maciejewski14},
+    Tj{\"o}rnhammar14 \cite{tjornhammar14},
+    Lipid14 \cite{dickson14},
+    CHARMM36-UA \cite{lee14}. 
     The vertical bars shown for some of the computational values are not error bars, but demonstrate that for 
     these systems we had at least two data sets (see Table 1 in Botan et al.~\cite{botan15});
     the ends of the bars mark the extreme values from the sets, and the dot marks their measurement-time-weighted average. 
@@ -596,23 +611,68 @@ for cholesterol containing lipid bilayer revealed that even though the acyl chai
 the simulation model cannot be considered to agree with experiments with 34\% and higher cholesterol concentrations.
 CHARMM36 model has been shown to slightly underestimate the cholesterol ordering effect in DMPC bilayer~\cite{lim12},
 while Slipids~\cite{jambeck13} and Lipid14~\cite{madej15} models show satisfactory agreement. Lipid14 is also compared to the same
-extensive experimental data for POPC/cholesterol as Berge/H{\"o}ltje model~\cite{ferreira13} and the agreement is significantly better~\cite{madej15}. 
+extensive experimental data for POPC/cholesterol as Berge/H{\"o}ltje model~\cite{ferreira13} and the agreement is 
+significantly better~\cite{madej15}, see Fig. \ref{cholTAILmadej}. 
 Also the orientation of cholesterol itself is reasonable in all models \cite{vermeer07,lim12,ferreira13,madej15}, however, the cholesterol
 acyl chain has some issues in H{\"o}ltje model~\cite{ferreira13} (too low order parameters) and in Lipid14~\cite{madej15} (significant forking) while
 CHARMM36 reproduces experiments well~\cite{lim12}. 
 %Despite of the problems the Höltje model is used to study the cholesterol acyl chain length effect on bilayer properties \cite{??}.  
+\begin{figure*}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/cholTAILmadej.eps}
+\newline
+  \caption{\label{cholTAILmadej}
+    Cholesterol effect on acyl chain order parameters compared between ? model \cite{madej15} and experiments \cite{ferreira13}.
+    The agreement with experiments with this model is significanly better than Beger/H{\"o}ltje based model compared by 
+    Ferreira et al. \cite{ferreira13}.
+  } 
+\end{figure*}
+
 
 The decrease of acyl chain order parameters due to the addition of double bonds is also 
-generally reproduced by different simulation models~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,dickson12,klauda10,ferreira13,jambeck13,lee14,dickson14}. 
-Very good agreement for oleyl chain in POPC bilayer with one {\it cis} double bond is demonstrated in Fig.~\ref{allOPs} taken from Ferrereira et al.~\cite{ferreira13}.
-Also the effect of multiple double bonds (polyunsaturation)~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,??} and
-difference between {\it cis} and {\it trans} double bonds can be reproduced in MD simulations \cite{kulig15b}.
+generally reproduced by different simulation 
+models~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,dickson12,klauda10,ferreira13,jambeck13,lee14,dickson14}. 
+Very good agreement for oleyl chain in POPC bilayer with one {\it cis} double bond is demonstrated in Fig.~\ref{allOPs} 
+taken from Ferrereira et al.~\cite{ferreira13}.
+Also the effect of multiple double bonds (polyunsaturation)~\cite{hyvonen97,hyvonen97b,hyvonen05,ollila07a,??} (see Fig. \ref{polyunsat})
+and difference between {\it cis} and {\it trans} double bonds can be reproduced in MD simulations \cite{kulig15b}.
+\begin{figure}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/polyunsat.eps}
+\newline
+  \caption{\label{polyunsat}
+   Figure comparing order parameters in polyunsaturated acyl chains between simulations and 
+   experiments taken from \cite{ollila07a}.
+   Order parameters for the sn-1 (squares) and sn-2 (triangles)
+   chains of (A) DPPC, (B) POPC, (C) PLPC, (D) PAPC, and (E) PDPC.
+   Simulation results are shown in full black, and experimental results
+   for comparison in gray. Additionally, part F summarizes the data for
+   all bilayers from the simulations. Experimental order parameters were
+   chosen for comparison as follows. The order parameters for DPPC (T=323K) 
+   are based on studies by Petrache et al. \cite{petrache??} whereas the
+   experimental S$_{{\rm CD}}$ values for PDPC and for the sn-1 chain of POPC (T=310 K) 
+   are based on studies by Huber et al. \cite{huber??} For the sn-1 chain of
+   PDPC, the data set at 310 K is obtained by linearly interpolating
+   between data at 303 and 323 K, whereas for the sn-2 chain the data at
+   303 K are presented \cite{??}. Experimental values for the sn-2 chain of POPC
+   are based on studies by Seelig et al. \cite{seelig??} A single experimental value is
+   available also for the sn-2 chain of the PLPC bilayer at 313 K
+   (diamond) \cite{??} to compare with our simulated order parameters for PLPC.
+   Together with PLPC, there are also experimental results for PiLPC (T=313K) \cite{??}. 
+   Experimental order parameters for the sn-1 and sn-2 chains
+   of PAPC (T=303 K) are based on quadrupole splittings measured by
+   Rajamoorthi et al. \cite{rajamoorthi??}. For the sn-1 chain the monotonic decrease through
+   the acyl chain is expected. For the sn-2 chain, values are fitted such
+   that the agreement is as good as possible.
+  } 
+\end{figure}
+
 
 In contrast to acyl chains, the order parameters for the glycerol backbone are not routinely
 reported in simulation literature and when reported, the agreement with experiments is concluded to
 be poor \cite{hogberg06,poger12,botan15} or good \cite{hogberg06,hogberg08,kapla12} depending on the authors.
 The difference arises from different estimations for the accuracy of experimental and simulated order parameters,
-see also section \ref{??}.
+see also section \ref{QUANTaccuracySECTION}.
 The NMRLipids collaboration recently carefully compared glycerol backbone and choline order parameters  
 from 13 different models to the experiments and concluded that none of the available models
 reproduces these within experimental error, see Fig.~\ref{HGorderparameters}.
@@ -621,11 +681,25 @@ dehydration, cholesterol concetration and charge penetration were
 studied by the NMRLipids collaboration \cite{botan15,ionpaper}.
 Despite of the incorrect structures in simulation models the experimentally measured choline order
 parameter increase due to dehydration \cite{botan15} and decrease due to penetrating 
-ions \cite{ionpaper} (see Fig. \ref{??}) were qualitatively reproduced. 
+ions \cite{ionpaper} (see Fig. \ref{changesDUEna}) were qualitatively reproduced. 
 The comparison reveals, however, that the Na$ +$ penetration is significantly
 overestimated by many models \cite{ionpaper}. 
 Also the effect of cholesterol on glycerol backbone and choline was overestimated
 by the Berger/Höltje model while CHARMM36 and MacRog performed better \cite{botan15}. 
+\begin{figure}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/changesDUEna.eps}
+\newline
+  \caption{\label{changesDUEna}
+    Changes in order parameters as a function of Na$ +$ concentration (left column) and
+    ion density distributions (right column). With Berger model significant order parameter
+    reduction and ion partition is observed while with CHARMM36 modest order parameter change
+    and ion parition observed. The results confirm the concept by Seelig et al. which allows
+    the ion partition to be measured by changes in $\alpha$ and $\beta$ order parameters.
+    The results clearly show that Berger model has too strong Na partition. 
+    For more discussion see \cite{ionpaper}.
+  } 
+\end{figure}
 
 In conclusion, the experimental order parameters for acyl chains and their changes are resonably
 reproduced all state of the art lipid models (except for C$_2$ segment in {\it sn}-2).
@@ -658,9 +732,9 @@ membranes and other biological lipid layers, this understanding has significant 
 biophysics and biochemistry. 
 
 Also the order parameter changes with changing conditions are qualitatively reproduced in the acyl chain region, 
-however the systematic quantitative comparison of changes is rare~\cite{??}.
+however the systematic quantitative comparison of changes is rare~\cite{ollila07a,ferreira13,madej15}.
 The MD simulations have been especially useful to explain the origin of order parameter decrease
-due to {\it cis} double bonds in the acyl chain~\cite{??}. The order parameter decrease might arise
+due to {\it cis} double bonds in the acyl chain~\cite{??,ollila07a}. The order parameter decrease might arise
 from reduced order of the chain or from the changed average $\theta$ angle in Eq.~\ref{??}.
 From NMR experiments alone it was impossible to judge which is the correct explanation for
 the decreased order parameters due double bonds~\cite{??}. Several simulation studies by different
@@ -673,16 +747,20 @@ This is a prime example of the case where MD simulations have significant advanc
 modeling approaches~\cite{??}.
 
 The increase of acyl chain order parameters and related bilayer thickening due to addition of cholesterol 
-is also qualitatively reproduced by simulations giving also intuitive visualizations for these effects~\cite{??}. 
-However, systematic and quantitative comparison to experimental data has been rare and often unsuccessfull, at
-least for some acyl chain segments with high cholesterol concentration~\cite{??}. Thus, from most models
-available it is not clear if they can be used to quantitatively interpret the atomistic resolution interaction between 
-lipid acyl chain and cholesterol. Also order induced by dehydration is mentioned to be weaker in simulations
-compred to experiments~\cite{hogberg06}.
+is also qualitatively reproduced by simulations giving also intuitive visualizations for these effects~\cite{??,ferreira13,madej15}. 
+However, quantitative comparison reviewed in previous section revels that some models do not reproduce the 
+acyl chain order parameters within experimental error in cholesterol mixtures \cite{lim12,ferreira13}.
+This indicates that these models are not yet accurate enough to give atomistic resolution interpretation
+to delicate lipid cholesterol interactions which are known to induce liquid-ordereded and liquid-disordered
+phase coexistence \cite{??}. The recent Amber model \cite{madej15} seems promising in this respect, see also Fig. \ref{cholTAILmadej}. 
+Careful quantitative comparison of dehydration induced ordering effect has not been made but it is mentioned to be 
+weaker in simulations compared to experiments~\cite{hogberg06}. Thus it is not clear if currect simulations
+can be used to intepretate atomistic resolution acyl chain ordering due to dehydration which has been
+suggested to play an important role in hydration repulsion \cite{??}.
 
-Simulation studies have also predicted changes in the acyl chain region which are not yet experimentally 
+Simulation studies have also predicted changes in the acyl chain region which are yet to be experimentally 
 confirmed, e.g. order parameter decrease due to lipid oxidation and changes in order parameter sign in oxidized 
-acyl chain~\cite{??}. %A new experimental data can confirm if these predictions can be verified. 
+acyl chain~\cite{ekkabut07}. %A new experimental data can confirm if these predictions can be verified. 
 
 
 As discussed in the previous section, simulations models are not able to reproduce the glycerol backbone 
@@ -698,25 +776,29 @@ These changes could be related with the changes of P--N vector angle respect to 
 suggested previously in~\cite{??}: the tilting of P--N vector more parallel to membrane plane with
 dehydration leads to the increase of choline order parameters~\cite{botan15} and {\it vice versa} with penetrating ions~\cite{ionpaper}.
 \todo{The analysis with ions not actually done yet!}
-As a function of added cholesterol, the widely used Berger/Höltje model significantly overestimates 
-the effects in glycerol backbone and choline region~\cite{ferreira13,botan15} which seems to be the 
-case also for Lipid14~\cite{??}.
+The widely used Berger/Höltje model significantly overestimates the structural effects due to cholesterol 
+in the glycerol backbone and choline regions~\cite{ferreira13,botan15} which seems to be the 
+case also for Lipid14~\cite{madej15}.
 
-The simulations were also able to confirm the electrometer concept suggested by Seelig et al. in a serie
-of classical publications~\cite{??}: the decrease of $\alpha$ and $\beta$ order parameters is a measure of 
-charge penetrated in PC lipid bilayer~\cite{ionpaper}. This concept gives a direct and quantitative
-route to compare charge binding to PC lipid bilayers since the order parameters can be directly compared
-between experiments and simulations~\cite{ionpaper}. The experimental results clearly show that
-Na$^{+}$ binding is very weak to the PC bilayers while Ca$^{2+}$ has stronger binding~\cite{??}. 
-The comparison with simulations revealed that several lipid models significantly overestimate cation 
-binding~\cite{ionpaper}. This a serious artefact since specific cation binding makes lipid bilayer 
-positively charged, which has a potential to lead incorrect conclusion when interactions with
-charged objects are studied. Thus the conclusions from simulation studies with strongly binding 
-cations has to be taken with extreme caution.
+The recent progress in the NMRlipids collaboration has shown that simulations confirm the electrometer 
+concept suggested by Seelig et al. in a serie of classical publications~\cite{??}: 
+the decrease of $\alpha$ and $\beta$ order parameters is a measure of 
+charge penetrated in PC lipid bilayer~\cite{ionpaper}, see also Fig, \ref{??}. The concept gives a 
+direct and quantitative route to compare charge binding into PC lipid bilayers between simulations
+and experiments through the choline order parameters~\cite{ionpaper}. While experimental results show 
+only very weak or negligible Na$^{+}$ binding, some simulation models predict significantly stronger
+binding, see~\cite{ionpaper} and Fig. \ref{??}. This is a serious artefact since specific cation binding 
+makes a lipid bilayer positively charged, which has a potential to lead incorrect conclusion when interactions with
+charged objects are studied. Thus the numerous conclusions from simulation studies with strongly binding 
+Na$^{+}$ has to be taken with extreme caution. In contrast to monovalent ions the Ca$^{2+}$ and other multivalent ions
+significantly partition to PC bilayers~\cite{??}. This is also seen in simulations, however, the structural
+effects are overestimated at least in the Berger model \cite{ionpaper}. The CHARMM36 behaves more realistically, 
+however, more careful simulation studies are needed to conclude if some of the existing models in capable to correctly
+reproduce PC ion interactions \cite{ionpaper}. 
 
 In conclusion, the atomistic resolution MD simulations are invaluable in understanding the 
 structural details and their changes in acyl chain region, especially for double bonds.
-However, serious artefacts are possible, or even likely, in simulations where choline or
+However, serious artefacts are possible, or even likely, in simulations studies where choline or
 glycerol backbone structure, or cation binding are important.
 
 
@@ -732,7 +814,7 @@ What can be learned and what has been learned about the rotational dynamics from
 I will write the first version as soon as I can.}
 
 \subsection{Definition and properties of rotational autcorrelation function}
-The second order auto-correlation function for the reorientation of the C--H chemical bond axis is defined as \cite{Lip82:4546}
+The second order auto-correlation function for the reorientation of the C--H chemical bond axis is defined as \cite{Lipari82}
 \begin{equation}\label{gt}
 g(\tau) = \langle P_2[\vec{\mu}(t)\cdot\vec{\mu}(t+\tau)]\rangle,
 \end{equation} 
@@ -754,7 +836,7 @@ Then with larger than microsecond timescales the movement between differently or
 decays the rotational correlation function to zero. In addition, MAS experiments the sample spinning
 causes lead orientaitional relaxation in kHz region. The full auto--correlation decaying to zero 
 is illustrated in Fig.~\ref{correlationF}. Due to the timescale separation the correlation function can 
-be written as~\cite{Now10:16848}
+be written as~\cite{Nowacka10}
 \begin{equation}\label{corrF}
 g(\tau)=g_{\rm{f}}(\tau) g_{\rm{s}}(\tau);
 \end{equation}
@@ -779,28 +861,26 @@ of the sample, rotating at $\omega_{\rm{R}}/2\pi$ cycles per second~\cite{Hir06:
 
 The order parameter measurements with $^2$H NMR and $^{13}$C NMR measure the bond order after the relaxation
 of rotational motion inside the bilayer plane but before the relaxation between different bilayer orientations,
-as illustrated in Fig.~\ref{??}. In typical molecular dynamics simulations with periodic boundary conditions
+as illustrated in Fig.~\ref{correlationF}. In typical molecular dynamics simulations with periodic boundary conditions
 the lipid molecules are restricted to single bilayer orientation and also the timescales are currently
-typically below microsecond. In these simulations the auto--correlation function in Eq.~\ref{??} decays
-to the square of order parameter in Eg.~\ref{??} in bilayers with planar symmetry, i.e. no microscopic phase separation of defects present.
-Also this is illustrated in Fig.~\ref{??}.
+typically below microsecond. In these simulations the auto--correlation function in Eq.~\ref{gt} decays
+to the square of order parameter in Eg.~\ref{orderP} in bilayers with planar symmetry, i.e. no microscopic phase separation of defects present.
+Also this is illustrated in Fig.~\ref{correlationF}.
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/correlationF.eps}
 \newline
   \caption{\label{correlationF}
-    (Top) Illustration of the auto-correlation function g(τ) and effective
-correlation time τe for a C–H bond in a lipid or surfactant bilayer. Magicangle
-spinning with the frequency ωR leads to oscillations of g(τ) at the
-frequencies ωR and 2ωR. The slow correlation time τs gives the final decay
-of g(τ) towards zero. (Bottom) Example of g(τ) from a united-atom MD
-simulation of a POPC bilayer in excess water, illustrating the decay towards
-S2
-CH. The effective correlation time τe is equal to the area in gray scaled by
-(1 − S2
-CH
-)−1.
-} 
+    (Top) Illustration of the auto-correlation function $g(\tau)$ and effective
+    correlation time $\tau_e$ for a $ 13$C–H bond in a lipid bilayer in MAS experiment (x--axis with logarithmic scale).
+    Plateau after short timescale relaxation processes ($g(\tau)_f$) is shown between roughly 10$^{-7}$s and 10$^{-4}$s.
+    After this timescale the slow relaxation processes ($g(\tau)_f$) and oscillation due to MAS (Eq. \ref{??}) are shown.
+    (Bottom) Example of $g(\tau)$ from a united-atom MD simulation of a POPC bilayer in excess water, 
+    illustrating the decay towards $S^2_{{\rm CH}}$ (x--axis with linear scale). This represents the $g(\tau)_f$ in Eq. \ref{??} and 
+    decrease to the plateau in the top figure.
+    The effective correlation time $\tau_e$ is equal to the area in gray scaled by $(1−S^2_{{\rm CH}})^{−1}$.
+    Figure adapted from \cite{ferreira15}
+  } 
 \end{figure}
 
 The rotational correlation function describes how long does it take for a single molecule
