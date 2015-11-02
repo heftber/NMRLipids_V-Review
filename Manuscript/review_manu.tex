@@ -911,7 +911,7 @@ $N_{\rm{H}}$ is the number of bound protons and $\frac{D_{\rm{max}}}{2\pi}\appro
 %and $\langle r_{\rm{CH}}^3\rangle$ is the average cubic length of the C--H chemical bond. $d_{\rm{CH}}/2\pi$ is 
 %approximately equal to -22 kHz for a methylene C--H bond \cite{Bec05:23285,Dvi05:607}.
 $R_1^{D}$ measured from $^2$H is connected to the spectral density (Eq.~\ref{FT}) through the equation
-\begin{equation}\label{R1C}
+\begin{equation}\label{R1D}
 R_{1}^{D}=\frac{12\pi^2}{40}\bigg(\frac{e^2qQ}{h}\bigg)^2\bigg[j(\omega_{\rm{D}})+4j(2\omega_{\rm{D}})\bigg],
 \end{equation}
 where $\frac{e^2qQ}{h}$=170kHz as in the case of order parameters in section~\ref{??}.
@@ -937,36 +937,89 @@ appropriate nutation frequency.
 As in the case of order parameters, the auto--correlation function for each C--H bond can be
 calculated directly from simulations using the definition in Eq.~\ref{??} since the trajectories of each atom is known
 as a function of time. As in the case of order parameters the positions of hydrogens can be determined 
-for united atom models based on heavy atom positions and assuming tetrahedral configurations.
+for united atom models based on heavy atom positions and assuming tetrahedral configurations~\cite{??}.
 Usually in the correlation function calculation all the available time intervals from the 
 simulation data are used and the average over those and all molecules is taken. However, since the 
 amount of data decreases when the the time interval approaches the total length of the simulation,
 usually the largest time interval used is the half of the total simulation length, for more details
-see~\ref{gromacsMANUAL}.
+see~\cite{gromacsMANUAL}.
 
-To calculate the experimentally measurable spin lattice relaxation times, the spectral density (Eq.~\ref{FT})
+To connect the auto--correltaion functions from simulations to the experimentally measurable spin lattice relaxation times, the spectral density (Eq.~\ref{FT})
 must be first calculated. In principle, this could be done using numerical fourier transformations techniques, 
 however this often leads to unneccessarily large fluctuations. Instead, commonly used apporach is to fit 
 analytical functional form to the calculated auto--correlation function and then use analytical Fourier
-transform of the fitted function. Most commonly the sum of ? or more exponentials is used as a fitting function but
-also streched exponential has been used. Numerically the functional form of the fitting function should not matter as
+transform of the fitted function~\cite{??}. Most commonly the sum of ? or more exponentials is used as a fitting function~\cite{??} but
+also streched exponential has been used~\cite{??}. Numerically the functional form of the fitting function should not matter as
 long as the fit is good, however, theoretically the correct correlation function form to describe the modes of
-physical motion can be debated. It is clear from correlation functions from simulations that one exponential 
-is not enought to produce a good fit while ? gives a reasonable fit. This is not surprising since more
+physical motion can be debated~\cite{??}. It is clear from correlation functions from simulations that one exponential 
+is not enought to produce a good fit while ? gives a reasonable fit~\cite{??}. This is not surprising since more
 than one relaxation timescale is definitiely expected to be present in lipids in bilayer.
 
 After the fitting the analytical form of the spectral density predicted by simulations is available.
 Then its values can be calculated at the required larmor frequency values and substituted to Eqs.~\ref{R1C}
 and~\ref{R1D} to get the $R_{1}^{C}$ and $R_{1}^{D}$. The value of the effective correlation time can be
-calculated directly from the interated area below the correlation function, see Fig.~\ref{??} or from 
+calculated directly from the interated area below the correlation function, see Fig.~\ref{correlationF} or from 
 Eq. ??.
 
 
 
 
+\subsection{Comparing C--H bond dynamcis between simulations and NMR experiments}
+
+The spin lattice relaxation parameters $R_1^{C}$, $R_1^{D}$ and $R_{1\rho}$ are considered as
+directly measurable experimental parameters and the effective correlation time $\tau_e$ can be derived directly
+from directly measurable parameters without further assumptions (see Eq.~\ref{??} and Ref.~\cite{ferreira15}).
+Spin lattice relaxation parameters $R_1^{C}$ and $R_1^{D}$ can be calculated from simulations
+by first calculating the auto--correlation function (Eq.~\ref{??}), then calculating the spectral
+density from the Fourier transformation (Eq.~\ref{??}) and finally substituting its values into
+Eqs.~\ref{??} and~\ref{??} (see also previous section). The effective correlation time can be calculated
+directly from integrated area and order parameter or from Eq.~\ref{??}.
+In practise, the $R_{1\rho}$ cannot be calculated from simulations directly since its value depends
+also on the slow relaxation dynamics ($g_s(t)$ in Eqs.~\ref{??}) which is not present in simulations.
+The same applies to the calculation of NOE relaxations rates and in this case decay time of ?ns was assumed for the
+$g_s(t)$, while 4.2~ms was measured by Ferreira et al.~\cite{ferrereira15}.
+
+As seen from Eqs.~\ref{??}, the numerical values of $R_1^{C}$ and $R_1^{D}$ depend also on the carbon $\omega_C$, hydrogen $\omega_H$ and
+deuterium $\omega_D$ Larmor frequencies which, in turn, depend on the spectrometer external magnetic field.
+From simulations it is straighforwad to calculate the spectral density with any Larmor frequncy value to get
+the $R_1^{C}$ and $R_1^{D}$ as a function of external magnetic field, as shown in Fig.~\ref{??}.
+However, in experiments with standard spectrometers the external field cannot be changed, i.e. each 
+spectrometer has their specific field strengths. Thus, to measure $R_1^{C}$ or $R_1^{D}$ values as
+a function of magnetic field one has to use several spectrometers which is tedious and spectrometers
+excists only with limited amount of magnetic field strengths. Despite of these challenges this kind 
+of experiments have been done and the available data is reviewed by Leftin et al.~\cite{leftin11}.
+Another approach to measure the magnetic field strength depedence of spin lattice relaxation times
+is the Field Cycling NMR~\cite{roberts04a,roberts04b}. However, this is not yet feasible with standard spectrometer
+and only limited amount of data is available, mostly from $^{31}$P NMR~\cite{roberts04a,roberts04b,roberts09}
+but also from $^{13}$C NMR~\cite{sivanandam09}.
+
+Few studies have compared the magnetic field strength dependence of spin relaxation times between simulations and
+experiments~\cite{lindahl01,klauda08a,klauda08b,wohlert06}. Examples of such comparison for acyl chain segments are shown in Fig.~\ref{Rdispersion}.
+\begin{figure}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/Rdisperion.eps}
+\newline
+  \caption{\label{Rdispersion}
+    A) Comparison of $R_1^{C}$ dependence on magnetic field between experiments and CHARMM simulations for acyl chain carbons (DPPC bilayer in 323K) adapted from~\cite{klauda08a}.
+    Experiments as points; MD simulations as solid and dashed lines; and a model-free fit to the vesicle data as dotted lines. 
+    B) Comparison of $R_1^{D}$ dependence on magnetic field between experiments and Berger simulations for acyl chain carbons (DMPC bilayer in 300K) adapted from~\cite{wohlert06}.
+  } 
+\end{figure}
+On the other, several studies compared $R_1^{C}$ and $R_1^{D}$ measured with one magnetic field strenght to the value calculated from
+simulations~\cite{??}. Example of such comparison between $R_1^{C}$ from simulations and experiments is shown in Fig.~\ref{RandEFFCT}
+\begin{figure}[]
+%  \centering
+  \includegraphics[width=8.6cm]{../Fig/RandEFFCT.eps}
+\newline
+  \caption{\label{RandEFFCT}
+    (top)  $R_1^{C}$ for POPC bilayer in 298K calculated from simulations with Berger model compared to experimental results measured 
+    with field strength correspondin to the Larmor frequency of 125 MHz for $^{13}$C.
+    (bottom) Effective correlation times for the same system compared between simulations and experiments. Figure adapted from Ferreira et al.~\cite{ferreira15}.
+  } 
+\end{figure}
+
 \subsection{Interplay between simulations and NMR spin lattice relaxation times: Validation and interpretation of dynamics}
 
-The experimentally observable spin lattice relaxation parameter mentioned above ($R_1^{C}$, $R_1^{D}$ and $R_{1\rho}$)
 are connected to the actual molecular dynamics through the spectral density (Eq.~\ref{FT}) which is the Fourier transformation
 of the auto-correlation function~\ref{gt}. The spin lattice relaxation rates depends spectral density values only 
 with certain larmor frequecies as seen from Eqs.~\ref{R1C} and~\ref{R1D}. In experiments the Larmor frequency 
@@ -1009,6 +1062,8 @@ in Berger model. However, this is not very surprising since the Berger model is 
 these segments. However, the experimental data and similar comparison would be useful
 for models sampling more realistic strucutres, e.g. CHARMM36 which dynamics do not fully
 satisfy the dispersion data.
+
+
 
 
 \newpage
