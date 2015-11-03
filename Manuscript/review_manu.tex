@@ -160,9 +160,8 @@ data available and the basis of our approach applies to other lipid types as wel
 
 \section{C-H bond order parameters as atomistic resolution structural measure}
 
-\todo{This is the first sketch of this section. It is composed from the content in the blog
-and from the things which came into my mind. A lot of references should be added, the text should polished,
-things should be added and checked and figures should be improved. However, the main strucutre and idea of the section should be visible.}
+\todo{References should be added, the text should polished, things should be added and checked and figures 
+should be improved. However, the main strucutre and idea of the section should be visible.}
 
 %\noindent {\bf Here will be described:}\\[0.1cm]
 
@@ -804,14 +803,14 @@ glycerol backbone structure, or cation binding are important.
 
 \section{C-H bond rotational dynamics from spin relaxation rates and simulations}
 
-\noindent {\bf Here will be described:}\\[0.1cm]
+%\noindent {\bf Here will be described:}\\[0.1cm]
 
-\noindent How the rotational dynamics measured by using NMR relaxation experiments. \\
-How the relaxation experiments are connected and compared with simulations. \\
-What can be learned and what has been learned about the rotational dynamics from the comparison between spin relaxation and simulations \\[0.5 cm]
+%\noindent How the rotational dynamics measured by using NMR relaxation experiments. \\
+%How the relaxation experiments are connected and compared with simulations. \\
+%What can be learned and what has been learned about the rotational dynamics from the comparison between spin relaxation and simulations \\[0.5 cm]
 
-\todo{This is quite straightforward to write for me and there is quite good support from our recent work~\cite{ferreira15}.
-I will write the first version as soon as I can.}
+\todo{This is the first sketch of this section. A lot of references should be added, the text should polished,
+things should be added and checked and figures should be improved. However, the main strucutre and idea of the section should be visible.}
 
 \subsection{Definition and properties of rotational autcorrelation function}
 The second order auto-correlation function for the reorientation of the C--H chemical bond axis is defined as \cite{Lipari82}
@@ -1053,48 +1052,52 @@ experiments while $\tau_e$ does.
 
 \subsection{Interplay between simulations and NMR spin lattice relaxation times: Validation and interpretation of dynamics}
 
-are connected to the actual molecular dynamics through the spectral density (Eq.~\ref{FT}) which is the Fourier transformation
-of the auto-correlation function~\ref{gt}. The spin lattice relaxation rates depends spectral density values only 
-with certain larmor frequecies as seen from Eqs.~\ref{R1C} and~\ref{R1D}. In experiments the Larmor frequency 
-depends on the external magnetic field of the used spectrometer. Thus, with a regular NMR spectrometer only
-a single~\ref{R1C} and~\ref{R1D} values can be measured. These will only give information about the size
-of the spectral density close to the used Larmor frequencies. However, to detect the whole rotational
-correlation function one should have information with all relevant larmor frequency values. 
-The single spin lattice relaxation rates only give an estimate how much of the dynamical prosesses
-are present with the timescales roughly with inverse of Larmor frequency. Even the qualitative
-changes in dynamics are difficult to detect by measuring single relaxation rate values since the
-increase (decrease) of the value only indicates the increase (decrease) of relative significance 
-of the relaxation with the detected timescales. If the general dynamics gets slower or faster depends
-what happens to the significance of relaxation processes with faster and slower timescales which 
-are not detected by measuring single relaxation rates.
+By measuring single spin relaxation time values it is almost impossible to make any conclusions
+about molecular dynamics due to their complicated connection through the spectral density.
+Even changes of relaxation times cannot be directly related to molecular dynamics without further
+information since, e.g. faster dynamics may lead to the decrease or increase of spin relaxation times,
+depending on the other dynamics processes present and the used magnetic field strength as demonstrated, for example in~\cite{ferreira15}.
 
-Several experimental and theoretical apporaches has been use to address this issue.
-Temperature dependence of spin relaxation rates have been measured to analyze the relative 
-molecular rotational relaxation. 
-Spectrometers with different magnetic field strenghts have been used to measure points with 
-several Larmor frequencies.
-Models are fitted to the spin relaxation data.
-The effective correlation time is measured which gives a quantitative measure of the general 
-rotational dynamics. Also MD simulations have been succesfull in interpretation of the 
-measurements of the effect of double bonds on molecular dynamics. 
+Careful studies of spin relaxation times as a function of temperature and magnetic field to overcome this issue are 
+recently reviewed by Leftin and Brown~\cite{leftin11}. From compilation of different experimental data sets it was possible 
+to conclude, for example, that the interfacial region of lipid molecules has slower dynamics than acyl chains~\cite{leftin11}.
+Another successfull approach to interpret the spin relaxation times has been to use the atomistic resolution molecular dynamics
+simulations to reproduce the measured changes and then analyze the dynamical changes from the simulation trajectory~\cite{??}.
+This approach has been especially useful in the studies of polyunsaturated acyl chain dynamics which concluded
+by combining the simulation and NMR relaxation data that the double bonds speed us the chain dynamics
+due to flexible dihedrals next to the double bonds~\cite{??}.
 
-Comparison between spin lattice relaxation rates measured with NMR and calculated from MD
-is also used to validate the correctness of the dynamics in the simulations.
-The comparison in the early simulations revealed that there are dynamical
-time scales present in simulations are realistic~\cite{??}. Later on the 
-comparison between simulations and dispersion data indicated that the
-simulation dynamics more or less agrees with experiments for some carbons
-while there is room for improvement for others~\cite{??}. However, due to
-the complicated connection between spin lattice relaxation rates and molecular dynamics
-it is difficult to conclude from these comparison if the dynamics is too slow or
-fast in the simulations. This issue can be clarified by measuring the effective correlation
-times with recently introduced methods~\cite{ferreira15}. The comparison between 
-effective correlation times from experiments and simulations reveals that
-the rotational correlation dynamics is too slow for the glycerol backbone and choline 
-in Berger model. However, this is not very surprising since the Berger model is also sampling wrong configurations for
-these segments. However, the experimental data and similar comparison would be useful
-for models sampling more realistic strucutres, e.g. CHARMM36 which dynamics do not fully
-satisfy the dispersion data.
+To ease the interpretation of the measured spin relaxation times Ferreira et al. recently introduced a model
+free connection between effective correlation time and directly measurable spin relaxation rates~\cite{ferrerira15}.
+The main advantages of effective correlation time is that its connection to molecular dynamics is straightforward in
+the sense that the general dynamics is faster when effective correlation time decreases and {\it vice versa} and
+that it can be quantitatively compared to simulations. As shown in Fig.~\ref{RandEFFCT} these experiments
+immediately show that the glycerol backbone has the slowest dynamics of lipid segments (in agreement with conclusions from the
+combination of several previous experimental sets~\cite{leftin11}) and that the dynamics
+of these is significantly underestimated by the Berger model.
+
+Most importantly, the rough agreement of spin relaxation rates and effective correlation times between 
+simulations and experiments shows that the rotational dynamical processes present in simulations has the 
+correct order of magnitude~\cite{??}. Consequently, the dynamical visualizations of simulation trajectories 
+(videos) can be considered as a realistic intuitive presentations of lipid bilayers. However,
+in more detailed studies it should be kept in mind that all the dynamical (and also structural) details
+are not exactly correct. 
+
+The lipid rotational dynamics has been often interpreted by using the so called wobble in the cone model~\cite{??}.
+The main idea of the model is that the whole lipid molecule is wobbling as a cone such that all the
+all the segments share the time scale for this wobbling. In addition, each segments have further timescales
+related to their dynamincs inside the cone. The auto--correlation functions assuming the wobble in the cone
+model can be nicely fit to the simulation data and also some experimental results can be reproduced. 
+However, also auto--correlation functions having different type of dynamics can be used to do the same.
+On the other hand, it has been recently pointed out that significant changes of structure and dynamics 
+experienced in acyl chain region may not reflect ot the headgroup~\cite{??} inficating weak coupling 
+between these segments. This idea is also in line with one interpretation of recent field cycling experiments~\cite{??}.
+In addition, the role of undulations in the relaxation data measured with low frequencies is under discussion~\cite{??}.
+
+In conclusion, the timescale of rotational dynamics is correct in simulations while the exact correlation times
+and relaxation processes are not fully reproduced. More experimental and simulation studies are needed 
+to fully understand current quality of dynamics in current models. To interpretate the relaxation prcosesses
+present in lipid bilayer, a model which can be shown to agree with experiments on all fast timescales is needed.
 
 
 
