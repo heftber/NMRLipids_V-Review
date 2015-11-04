@@ -99,7 +99,35 @@ by several models.
 
 %\label{}
 \section{Introduction}
-\todo{Samuli: Add citations to the introduction. Rewriting is also needed}
+\todo{CURRENTLY IN PROGESS, THUS A BIT MESSY}
+Atomistic resolution structure and dynamics of lipid bilayers has been studied
+with wide range of techniques for many decades motivated mainly
+by their presence and important role in biological systems \cite{??}.
+Lipid bilayers play direct or indirect role in several physiological and pathological
+molecular scale processes \cite{??}. To fully understand these processes the atomistic and
+molecular level understanding of lipids is required. Since atomistic resolution studies are
+extremely difficult from biological samples, purified lipid systems are often used \cite{??}.
+The biological relevance of these model systems is supported, e.g. by similar NMR order parameters 
+mesured from living cells, lipid extracts and model systems \cite{??}. 
+
+The most detailed information about lipid bilayer atomistic resolution structure and dynamics has been
+achieved with various Nuclear Magnetic Resonance (NMR) and scattering techiques \cite{??}. 
+The first one giving direct information on structures sampled by individual lipid molecules \cite{??} and
+the latter one giving complementary information on average bilayer properties, like density and thickness \cite{??}.
+Both techniques give robust, accurate and reproducible quantities related to the strucuture and dynamics.
+However, for structural and dynamical interpretation both techniques needs a model which reproduceing 
+the measured quantities \cite{??}. 
+
+On the other hand, remarkable progress in hardware and software has made possible to 
+routinely perform classical atomistic resolution lipid bilayer simulations with 
+duration of tens or hundreds nanoseconds. Ideally the molecules are sampling realistic
+conformations with realistic speed in these simulations. This can be verified by calculating
+directly measurable quantities from simulations and comparing these to experimental values.
+Here we review such comparisons for different experimental observables: C--H bond order parameters,
+spin relaxation times and form factor. The first and second are measured with NMR thus they 
+represent to structure and dynamics sampled by individual lipid molecules, respectively.
+The last is measured with scattering techniques and represents the bilayer average properties.
+ 
 Atomistic resolution molecular dynamics simulations of lipid bilayers are nowdays
 widely used technique to seek answer to various research questions.
 Typically interactions between other biological molecules (e.g. proteins, drugs, ions etc.)
@@ -214,7 +242,8 @@ possibility of getting unrealistic structures reproducing correct order paramete
 The probability for unrealistic structures with correct order order parameters is further reduced by
 the detailed and accurate experimental data available for order parameters.
 Order parameters are known with high quantitative accuracy for each C-H bond present in the lipid molecule
-for several lipid types~\cite{leftin11,marsh13,dvinskikh05a,ferrereira13,leftin13,leftin14,botan15}. The absolute values of order parameters can be measured two independent
+for several lipid types~\cite{leftin11,marsh13,dvinskikh05a,ferreira13,leftin13,leftin14,botan15}. 
+The absolute values of order parameters can be measured two independent
 techniques by using either $^2$H NMR~\cite{seelig77c} or $^1$H-$^{13}$C NMR~\cite{hong95a,gross97,dvinskikh05a,ferreira13} and
 the sign can be measured with two different $^1$H-$^{13}$C NMR techniques~\cite{hong95a,hong95b,gross97}.
 It is also possible that two hydrogen bonds in the same carbon has different order parameters ({\it forking})
@@ -1121,66 +1150,157 @@ present in lipid bilayer, a model which can be shown to agree with experiments o
 
 \noindent {\bf For this section I would be more than happy for some help} \\[0.1cm]
 
-\noindent {\bf Here will be described:}\\[0.1cm]
+\subsection{Form factor measured with X-ray or Neutron scattering}
 
-\noindent How are the form factors are measured.\\
-What is the primary experimental observable. \\
+In scattering experiments the scattering intensity $I(q)\sim|F(q)|^2S(q)$ is observed,
+where $F(q)$ is the form factor and $S(q)$ is the structure factor. In the case of lipid
+bilayer the structure factor describes the structure of lamellar sheets and the form factor
+describes the internal structure of lipid bilayers. The structure factor depends on the
+topological phase of lipids and can be considered to be practically constant for unilamellar
+vesicles while in multilamellar phase its form is known. Thus, in practise direct
+information about form factor is achieved from the measured scattering intensity.
 
-\noindent {\bf On these questions I do not know the answer and it is not exactly clear from where I can find the answers. More specifically:}  \\
-
-\todo{Which is the experimental quantity that the scattering machinary exatcly puts out? \\
-How the form factor is determined from the experimental observables? \\
-Which assumptions are needed here? \\
-There is already some discussion about this in the blog by Peter Heftberger and Georg Pabst, but any kind of information from full 
-exaplanation with citations to the hints of relevant literature are helpful here.
-The more detailed discussion can be found at:
+Form factor for a lipid bilayer is defined as a Fourier transformation of the scattering length density
+$\rho_s(z)$ along the membrane normal coordinate
+\begin{equation}\label{FF}
+F(q)=\int_0^\infty \rho_s(z) \cos(qz) {\rm d}z.
+\end{equation}
+The X-rays are scattering mainly from electrons thus the scattering lenght density in this
+case is $\rho_S(z)=\rho_w(z)-\rho_l(z)$, where $\rho_w(z)$ and $\rho_l(z)$ are the water and lipid 
+electron density profiles along the membrane normal, respectively. The neutrons are scattered from nucleai thus
+the scattering length density is \todo{I do not have correct papers at hand now. I will do this later}.
+\todo{Discussion about related issues can be found at:
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/1}}
 
-\vspace*{5mm}
+Form factors are quite accurate given that experimental care has been taken. A delicate issue 
+can be subtraction of background (from water and capillary). 
+\todo{The discussion is going in at:
+{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/2} \\
+Key questions now:\\
+Do we get independetly measured Form Factors plotted to the same figure? \\
+Are there good references for the accuracy?
+}
 
-\noindent How accurate are the experimental form factors. \\
 
-\todo{Has this been discussed in the literature already?
-Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.
-The more detailed discussion can be found at:
-{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/2}}
+\subsection{Form factor calculation from simulations}
+To calculate the form factor measured with scattering from simulations the
+scattering lenght density profile needs to be first calculated and then substituted in Eq. \ref{FF}.
+In the case of x-ray scattering this is the electron density profile along membrane normal.
+Since electrons are not explicitly present in classical MD simulations, those exact locations
+needs to be placed when calculating the electron density profile. The most common practise
+is to assume that all the electrons belonging to each atom are pointwisely located at nucleus location
+in the MD simulation \cite{??}. Electrons are also assumed to be distributed as gaussian \cite{??} or ? functions \cite{??}
+around the atom positions. Very popular SimtoExp program uses the last approch \cite{??} while most 
+molecular dynamics simulation modelling papers are using the first option \cite{??}. However,
+the results are not expected to strongly depend on this choise since this affects only to very
+fine details of the electron density profile and the thermal motion of atoms in MD simulations
+will coarse the diffrences furhter \cite{??}.
 
-\vspace*{5mm}
+The neutron scattering length density is typically calculated from atom positions using the
+neutran scattering lenghts known for different atoms \cite{??}.
 
-\noindent How the form factor is calculated from simulations and compared to experimental ones. \\
+\todo{More discussion at: \\
+{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/3} \\
+and \\
+{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/4} \\
+The most important question is now to check the discussion about undulations in the literature
+}
 
-\todo{As far as I have understood, the form factor is simply a Fourier transform of electron density. I have some quick and dirty scripts to calculate those in the NMRLipids III repository: \\
-{\tt https://github.com/NMRLipids/NmrLipidsCholXray/blob/master/scratch/FFactor/FFstructCALC.sh}\\
-{\tt https://github.com/NMRLipids/NmrLipidsCholXray/tree/master/scratch/FFactor}\\
-However, I have not been able to install the SIMtoEXP program ({\tt http://link.springer.com/article/10.1007\%2Fs00232-010-9254-5}) so I have not been able to check my script against the standard method.
-This should be straighforward issue and should become clear once I check the details. Anyway, any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.
-The more detailed discussion can be found at:
-{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/3}}
 
-\vspace*{5mm}
+\subsection{Interplay between simulations and scattering experiments: Validation and interpretation}
+Similarly to NMR order parameter, the form factor gives accurate information about lipid
+bilayer structure but the structure cannot be uniquely resolved from the experimental data only.
+To solve the structure different models have been introduced \cite{??}. The general idea of
+these models is to introduce plausible functional form for the scattering length density profile arising
+from different molecular components of lipids and then fit the weights of these components such that
+the experimental form factor is reproduced \cite{??}. Also MD simulations have been used in structural
+interpretation \cite{??}. Also combination of other structural models and MD simulations have been used \cite{??}.
 
-\noindent How accurate are the calculated form factors from simulations. \\
+The stuctural models based on pure fitting to scattering data are shown to easily produce unphysical structures
+arising from the fact that several scattering density distributions can produce correct form factors \cite{??}.
+However, when the most obvious unphysicalities are removed, the models based on fitting produce form factors
+with better agreeement with experiments than MD simulation models \cite{??}. Careful comparison
+between structures from MD models and fittings to x-ray and neutron data shows that the structures 
+from different approaches are very similar but not exatcly same \cite{??}. Differences are found
+especially in the lipid headgroup region which is in agreement with the NMR order parameter studies
+which has shown that glycerol backbone and choline structures are not reproduced within experimental
+error in MD simulations \cite{botan15}.
+  
+Ideally the MD simulations would correctly reproduce the experimental form factors in zero tension
+giving the atomistic resolution interpretation for the experiment and simultaneously confirming the
+quality of the used model. This comparison is nowdays routinely done in almost all force field parametrization
+publications instead of comparing area per molecules as previously done \cite{??}. 
+The agreement is often concluded to be good, however, almost always detectable differences
+between experiments and simulations can be seen \cite{??}. The attempts to run simulations 
+with fixed area per molecule (generating tension in bilayer) in order or intepret the experiments
+have shown that this can be improve the agreement, however, the models based on fitting gives
+better agreement and slightly different structure \cite{??}. On the other hand, different simulation
+models with different electron density profiles and form factors are concluded both to be in good 
+agreement with experiments \cite{??}. This is possible since the absolute electron density is not
+known from experiments and is thus fitted to the simulation results when comparing \cite{??}. 
 
-\todo{I think that from statistical point of view accuracy is quite high, however I am not sure about the effect of undulations etc.
-Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here. 
-The more detailed discussion can be found at:
-{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/4}}
+In conclusion, all the state of the art simulation models gives form factor very close to experimental
+data, however, it seems still the best agreement can be produced by fitting the scattering density models
+to the experimental data \cite{??}. The problems to exactly reproduce the scattering data has been often 
+related to the lipid headgroup structure which agrees with the conclusions from the NMR studies \cite{??}.
 
-\vspace*{5mm}
 
-\noindent What can be learned about the structure when comparing the form factors between experiments and simulations \\
-
-\todo{I have thought that if the form factor is reproduced by the simulation, the electron density profile should be 
-reasonable. However, since some people are tuning the peak highs for better agreement, I am not sure. 
-There is also some connection to the thickness. There is already some discussion about this in the blog with
-Peter Heftberger and Georg Pabst.
-Any kind of information from full exaplanation with citations to the hints of relevant literature are helpful here.
-The more detailed discussion can be found at:
+\todo{The more detailed discussion can be found at: \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/5}}
 
 
 
 \section{Conclusions}
+
+Recent studies quantitatively comparing atomistic resolution structure and dynamics of lipid
+bilayer between experiments using C--H bond order parameters, spin relaxation rates and
+scattering form factors are reviewed. The purpose of these studies is to quantify the atomistic
+resolution structural and dynamical quality of simulation models as well as to give an 
+atomistic resolution interpretation for the experimental results. For interpretation of
+these experiments the atomistic resolution MD simulations reproducing all the experiments would be
+an ultimate tool since the same model can be used to interpret all the experiments. For the same 
+reason, this atomistic resolution model would be most likely a realistic representation for
+atomistic resolution strucutre and dynamics of lipid bilayers. The main conclusion of this
+review is that the current MD simulations are not quite yet on the level to perform this task,
+however, in several aspects indicate that there is potential to improve the models to become 
+truly realistic atomistic resolution representations of these systems. 
+
+More specific conclusions are the following: \\
+- The order parameters for each C--H bond in lipid molecules in bilayers can be measured
+with high quantitative accuracy with both $ 2$H NMR and $ 13$C NMR and this data
+is available for wide range of lipids in different conditions. Comparison of this data to simulations
+gives a very detailed picture about the quality of sampled atomistic resolution structures
+in lipid bilayer and may also help in structural interpretation of experiments. 
+The order parameter changes with varying conditions can be used to study and compare structural changes
+between simulations and experiments.\\
+- The main conclusions from the comparison of order parameters between experiments and simulations are:
+1) the acyl chain structures are generally described realistically for PC lipid bilayers in simulations, 
+2) the changes in acyl chain region are qualitatively correct but not always quantitatively,
+3) the glycerol backbone and choline structures are not within experimental error for any available model and
+4) the results depending on structure and energetics of these sections, like ion binding and lipid--cholesterol interactions
+should be taken with caution. \\
+- The C--H bond rotational dynamics has correct timescale in simulations models for which comparison has been done.
+Most likely the same applies for all models. However, more careful comparison reveals that, e.g. the
+glycerol backbone dynamics is too slow in Berger model. Also for CHARMM model all relaxation prosess
+do not seem to correctly described. \\
+- The development in the scattering methodology has allowed the direct comparison of whole bilayer 
+structure between experimental form factor and simulations. This is complementary to the NMR order parameter
+which are related to the sampled structures of individual molecules. These comparisons show that the
+structural lipid bilayer properties like thickness and area per molecule are close to real values, however,
+it seems that there is room for improvement especially in the lipid headgroup region, in agreement with conclusions
+from NMR experiments.  
+
+When applying lipid bilayer simulations to study complicated biochemical systems it is crusial to recoknize 
+potential artefacts arising from the inaccuracies revealed by these comparisons. Hyphotetical example of
+a situation where artificial conclusions might be difficult to avoid would be study of protein approaching
+PC lipid bilayer in physiological NaCl concentration. If the above mentioned issues are not carefully taken
+into account one might choose a model where the protein is approaching an effectively positively charged 
+lipid bilayer due to artificial Na$ +$ binding with incorrect choline structure. In addition to
+this the protein might be incorrectly folded already in the bulk water \cite{??}.
+
+
+
+
 
 % Tables may be be put in the text as floats.
 % Here is an example of the general form of a table:
