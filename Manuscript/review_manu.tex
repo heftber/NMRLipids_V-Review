@@ -1134,21 +1134,29 @@ topological phase of lipids and can be considered to be practically constant for
 vesicles while in multilamellar phase its form is known. Thus, in practise direct
 information about form factor is achieved from the measured scattering intensity.
 
-Form factor for a lipid bilayer is defined as a Fourier transformation of the scattering length density
-$\rho_s(z)$ along the membrane normal coordinate
+Follwing the notation from Ref. \cite{kucerka10}, the form factor can be written as 
 \begin{equation}\label{FF}
-F(q)=\int_0^\infty \rho_s(z) \cos(qz) {\rm d}z.
+|F(q)|=|\int_{-D/2}^{D/2}(\sum_\alpha f_\alpha(q_z)n_\alpha(z) - \rho_s)(\cos(zq_z) + i \sin(zq_z)) {\rm d}z|,
 \end{equation}
-The X-rays are scattering mainly from electrons thus the scattering lenght density in this
-case is $\rho_S(z)=\rho_w(z)-\rho_l(z)$, where $\rho_w(z)$ and $\rho_l(z)$ are the water and lipid 
-electron density profiles along the membrane normal, respectively. The neutrons are scattered from nucleai thus
-the scattering length density is \todo{I do not have correct papers at hand now. I will do this later}.
+where $n_\alpha(z)$ in the atom $\alpha$ number density as a function of membrane normal coordinate $z$,
+$f_\alpha(q_z)$ is the scattering length density, $\rho_s$ is the solvent scattering lenght density
+and integral spans over bilayer with total thickness $D$.
+Neutron scattering length density or X-ray atomic form factors are used for $f_\alpha(q_z)$ depending
+on the used scattering technique. The values for these are available in the literature \cite{??}.
+The last term disappers for symmetric bilayer but not for asymmetric \cite{??}.
+If bilayer symmetry and delta functions for electron densities around atom center are assumed, the Eq. \ref{FF}
+becomes to the commonly used form for x-ray scattering
+\begin{equation}\label{FFsimpl}
+|F(q)|=|\int_{-D/2}^{D/2}\Delta \rho_e(z) \cos(zq_z) {\rm d}z|,
+\end{equation}
+where $\Delta \rho_e(z)$ is the difference between solvent and the total electron densities.
+
 \todo{Discussion about related issues can be found at:
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/1}}
 
 Form factors are quite accurate given that experimental care has been taken. A delicate issue 
-can be subtraction of background (from water and capillary). 
-\todo{The discussion is going in at:
+can be subtraction of background (from water and capillary).  \\
+\todo{The discussion is going in at: \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/2} \\
 Key questions now:\\
 Do we get independetly measured Form Factors plotted to the same figure? \\
@@ -1157,8 +1165,11 @@ Are there good references for the accuracy?
 
 
 \subsection{Form factor calculation from simulations}
-To calculate the form factor measured with scattering from simulations the
-scattering lenght density profile needs to be first calculated and then substituted in Eq. \ref{FF}.
+To calculate the scattering form factors from simulations the number density from
+simulations can be substituted into Eq. \ref{FF}. In the case of neutrons the scattering 
+length densities $f_\alpha(q_z)$ are assumed to not depend on $q$ and numerical are usually 
+taken from \cite{??}. For 
+
 In the case of x-ray scattering this is the electron density profile along membrane normal.
 Since electrons are not explicitly present in classical MD simulations, those exact locations
 needs to be placed when calculating the electron density profile. The most common practise
