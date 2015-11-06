@@ -1153,15 +1153,15 @@ where $\Delta \rho_e(z)$ is the difference between solvent and the total electro
 
 The form factor can be measured from unilamellar vesicles, multilamellar vesicles or from order bilayer samples. 
 The results from samples with different topologies are in good agreement, indicating that the bilayer
-structure is similar independently of the lamellar phase topology~\cite{??}.
+structure is similar independently of the lamellar phase topology~\cite{kucerka05,kucerka07}.
 Different sample topologies gives the highest resoution with different $q$ ranges,
 thus the combination of form factors measured from different topologies are of the used
-to maximize the available form factor information~\cite{??}. In addition, the neutron scattering
+to maximize the available form factor information~\cite{kucerka05}. In addition, the neutron scattering
 resolution is highest with small $q$ values this giving more accurate on longer scales in real spave, like 
-on bilayer thickness. On the other hand, x-ray scattering has larger resolution with larger $q$ values
+on bilayer thickness \cite{??}. On the other hand, x-ray scattering has larger resolution with larger $q$ values
 thus giving more accurate information on fine details of the bilayer density profile. Consequently,
 the neutron and x-ray scattering measurements complement each others and the combining the information
-from both gives the most comprehensible picture on bilayer strucuture~\cite{??}.
+from both gives the most comprehensible picture on bilayer strucuture~\cite{kucerka08a}.
 
 Form factors are quite accurate given that experimental care has been taken. A delicate issue 
 can be subtraction of background (from water and capillary).  \\
@@ -1195,20 +1195,20 @@ by Benz et al.~\cite{benz05}, however, it is not clear how significant this is w
 compared between simulations and experiments.
 
 The small bilayer patches used in simulations might depress bilayer undulation modes which are present in large 
-scale experiments~\cite{braun14}. Braun et al. showed that undulations seen in large enough simulations do
-not change the locations of form factor minimaz but depress the peak hights in the lobes~\cite{braun14}.
+scale experiments~\cite{braun11}. Braun et al. showed that undulations seen in large enough simulations do
+not change the locations of form factor minimaz but depress the peak hights in the lobes~\cite{braun11}.
 Since the undulations are expected to be present in the experiments, the potential discrepancies 
 between simulations and experiments in the lobe heights may be explained by the lack of undulation 
 motions in experiments.
 
 The simulations give the form factors on absolute scale while experiments obtain them only on relative scale,
-thus the experimental form factors from different sources has to be scaled for comparison~\cite{kucerka08,kucerka10}.
+thus the experimental form factors from different sources has to be scaled for comparison~\cite{kucerka08a,kucerka10}.
 In SIMtoEXP program the scaling is performed using the scaling factor $k$ determined from equation
 \begin{equation}
 k=\frac{\sum_{i=1}^N\frac{|F_s(q_i)||F_e(q_i)|}{(\Delta F_e(q_i))^2}}{\sum_{i=1}^N\frac{|F_e(q_i)|^2}{(\Delta F_e(q_i))^2}},
 \end{equation} 
 where $F_e(q)$ and $F_s(q)$ are experimental and simulated form factors, respectively, $\Delta F_e(q)$ is the uncertainty
-of the experimental form factor and the summation goes over all $N$ data points~\cite{kucerka08,kucerka10}.
+of the experimental form factor and the summation goes over all $N$ data points~\cite{kucerka08a,kucerka10}.
 In many studies which compare the form factors between experiments and simulations, the details on the scaling
 factor used is not given~\cite{??}. 
 
@@ -1233,28 +1233,48 @@ Similarly to the NMR order parameters, also MD simulations can be used in the st
 interpretation if they reproduce the experimental form factors. And in turn,
 if simulation model do not reproduce the experimental form factor its structure is not 
 realistic. The comparison between experimental and simulated form factors has been done 
-in several studies for both purposes, to validate the simulations model~\cite{??} and to
-intepret the experiments~\cite{??}. The simulations have been also used to improve the 
-fitting based structural models~\cite{??}.
+in several studies for both purposes, to validate the simulations 
+model~\cite{hogberg08,chiu09,klauda10,dickson12,jambeck12,lim12,klauda12,jambeck13,chowdhary13,lee14,maciejewski14,dickson14,tjornhammar14,madej15,kulig15b} and to intepret the experiments~\cite{sachs03,klauda06,kucerka08a,kucerka08b,braun13}. 
+The simulations have been also used to improve the fitting based structural models~\cite{??}.
 
 The comparison to experimental area per molecule values to validate the lipid density simulations~\cite{tieleman97} has
 been often replaced nowdays with more direct comparison~\cite{nagle00} using x-ray form 
 factors~\cite{hogberg08,chiu09,klauda10,dickson12,jambeck12,lim12,klauda12,jambeck13,chowdhary13,lee14,maciejewski14,dickson14,tjornhammar14,madej15,kulig15b}.
-In some studies the comparison is complemented with the comparison to the neutron scattering data~\cite{dickson12,jambeck12,lee14,dickson14,tjornhammar14,madej15}
+In some studies the comparison is complemented with the comparison to the neutron scattering 
+data~\cite{dickson12,jambeck12,lee14,dickson14,tjornhammar14,madej15}
 In general the models reproduce form factors in good agreement with experiments, especially with lower $q$ values
 indicating that the bilayer dimensions, like thickness, are in good agreement. However, the agreement gets often worse
-with higher $q$ values~\cite{chiu09,klauda10,klauda12,dickson12,lim12,jambeck12,chowdhary13,jambeck13,lee14,maciejewski14,dickson14,kulig15b,madej15}
+with higher $q$ 
+values~\cite{chiu09,klauda10,klauda12,dickson12,lim12,jambeck12,chowdhary13,jambeck13,lee14,maciejewski14,dickson14,kulig15b,madej15}
 indicating some differences in detailed electron density profiles~\cite{??}.
+For example of the comparison see Fig. \ref{FFcomp}.
+The comparison has been usually done based on visual inspection while also quantitative measure
+for simulated form factor is suggested \cite{kucerka10}.
+In some studies also fourier transform coeffiecients are compared \cite{benz05,??}
+\begin{figure*}[]
+%  \centering
+  \includegraphics[width=10.6cm]{../Fig/FFcompMADEJ.eps}
+\newline
+  \caption{\label{FFcomp}
+    Example of comparison between simulation model and experiment.
+    The agreement is better with low $q$ values and cholesterol induced thickening is overestimated.
+    Figure adapted from Madej et al.~\cite{madej15}.
+  } 
+\end{figure*}
 
-Also changes in form factor due to temperature~\cite{jambeck12,zhuang14}, cholesterol concentration~\cite{jambeck13,madej15} and acyl chain polyunsaturation~\cite{eldho03,klauda12} 
+
+Also changes in form factor due to temperature~\cite{jambeck12,zhuang14}, cholesterol concentration~\cite{jambeck13,madej15} 
+and acyl chain polyunsaturation~\cite{eldho03,klauda12} 
 has been compared between simulations and experiments~\cite{eldho03,kucerka05,pan08,hodzic08,kucerka08,pan09,khelasvili10,kucerka11}.
-Simulation generally reproduce the decreased thickness and increased area with increasing temperature~\cite{jambeck12,zhuang14} and polyunsaturation level~\cite{eldho03,klauda12}, 
+Simulation generally reproduce the decreased thickness and increased area with increasing temperature~\cite{jambeck12,zhuang14} and 
+polyunsaturation level~\cite{eldho03,klauda12}, 
 as well as increased thickness and decreased area with increasing cholesterol concentration~\cite{jambeck13,madej15}.
 However, the temperature dependence is underestimated for some systems~\cite{jambeck12,zhuang14} while cholesterol
-effect is overestimated~\cite{jambeck13,madej15}.
+effect is overestimated~\cite{jambeck13,madej15}. Example of such comparison is shown in Fig. \ref{FFcomp}.
 
 In studies where the main goal is to interpret the form factors using MD simulations instead of validating the model,
-the area per molecule is often fixed to a certain value in order to reproduce the experimental form factor better~\cite{sachs03,klauda06,kucerka08a,kucerka08b,braun13}.
+the area per molecule is often fixed to a certain value in order to reproduce the experimental form factor 
+better~\cite{sachs03,klauda06,kucerka08a,kucerka08b,braun13}.
 With this contaraint is indeed, possible to get the form factors close to the experiments, however, 
 careful comparisons between experimental form factors, MD simulations and SDP model suggest small but measurable 
 structural differences~\cite{kucerka08a,braun13}. The form factor from the SDP model is in better agreement
