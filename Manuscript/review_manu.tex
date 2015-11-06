@@ -1117,8 +1117,8 @@ present in lipid bilayer, a model which can be shown to agree with experiments o
 
 
 
-\newpage
-\onecolumngrid
+%\newpage
+
 
 \section{Stucture factors from scattering and simulations}
 
@@ -1134,7 +1134,7 @@ topological phase of lipids and can be considered to be practically constant for
 vesicles while in multilamellar phase its form is known. Thus, in practise direct
 information about form factor is achieved from the measured scattering intensity.
 
-Follwing the notation from Ref. \cite{kucerka10}, the form factor can be written as 
+Following the notation from Ref. \cite{kucerka10}, the form factor can be written as 
 \begin{equation}\label{FF}
 |F(q)|=|\int_{-D/2}^{D/2}(\sum_\alpha f_\alpha(q_z)n_\alpha(z) - \rho_s)(\cos(zq_z) + i \sin(zq_z)) {\rm d}z|,
 \end{equation}
@@ -1143,7 +1143,7 @@ $f_\alpha(q_z)$ is the scattering length density, $\rho_s$ is the solvent scatte
 and integral spans over bilayer with total thickness $D$.
 Neutron scattering length density or X-ray atomic form factors are used for $f_\alpha(q_z)$ depending
 on the used scattering technique. The values for these are available in the literature \cite{??}.
-The last term disappers for symmetric bilayer but not for asymmetric \cite{??}.
+The last term disappears for symmetric bilayer but not for asymmetric \cite{??}.
 If bilayer symmetry and delta functions for electron densities around atom center are assumed, the Eq. \ref{FF}
 becomes to the commonly used form for x-ray scattering
 \begin{equation}\label{FFsimpl}
@@ -1151,88 +1151,128 @@ becomes to the commonly used form for x-ray scattering
 \end{equation}
 where $\Delta \rho_e(z)$ is the difference between solvent and the total electron densities.
 
-\todo{Discussion about related issues can be found at:
-{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/1}}
+The form factor can be measured from unilamellar vesicles, multilamellar vesicles or from order bilayer samples. 
+The results from samples with different topologies are in good agreement, indicating that the bilayer
+structure is similar independently of the lamellar phase topology~\cite{??}.
+Different sample topologies gives the highest resoution with different $q$ ranges,
+thus the combination of form factors measured from different topologies are of the used
+to maximize the available form factor information~\cite{??}. In addition, the neutron scattering
+resolution is highest with small $q$ values this giving more accurate on longer scales in real spave, like 
+on bilayer thickness. On the other hand, x-ray scattering has larger resolution with larger $q$ values
+thus giving more accurate information on fine details of the bilayer density profile. Consequently,
+the neutron and x-ray scattering measurements complement each others and the combining the information
+from both gives the most comprehensible picture on bilayer strucuture~\cite{??}.
 
 Form factors are quite accurate given that experimental care has been taken. A delicate issue 
 can be subtraction of background (from water and capillary).  \\
+
+\onecolumngrid
+\todo{Discussion about related issues can be found at:
+{\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/1}}
+
+
 \todo{The discussion is going in at: \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/2} \\
 Key questions now:\\
 Do we get independetly measured Form Factors plotted to the same figure? \\
 Are there good references for the accuracy?
 }
-
+\twocolumngrid
 
 \subsection{Form factor calculation from simulations}
 To calculate the scattering form factors from simulations the number density from
 simulations can be substituted into Eq. \ref{FF}. In the case of neutrons the scattering 
-length densities $f_\alpha(q_z)$ are assumed to not depend on $q$ and numerical are usually 
-taken from \cite{??}. For 
+length densities $f_\alpha(q_z)$ are assumed not to depend on $q$ and numerical are usually 
+taken from \cite{??}. For x-ray scattering it is often assumed that all electrons pointwisely 
+located in the atom position in simulation~\cite{??}. Also in most simulations the bilayer is symmetric,
+thus the electron density is simply calculated and substituted into Eq.~\ref{FFsimpl}. 
+On the other hand, in some studies gaussian distribution for electrons around atom positions~\cite{benz05} 
+or analytical expression for atom scattering length density $f_\alpha(q_z)=\sum_{j=1}^4a_je^{-b_j(q/4\pi)^2}+c$
+are assumed~\cite{benz05,kucerka10,??}. In the case of the analytical expression the parameters 
+$a_j$, $b_j$ and $c$ are taken from~\cite{??}. For example, the widely used SIMtoEXP software is using
+the analytical form~\cite{kucerka10}. The effect of these choises on electron density profiles was discussed
+by Benz et al.~\cite{benz05}, however, it is not clear how significant this is when form factors are
+compared between simulations and experiments.
 
-In the case of x-ray scattering this is the electron density profile along membrane normal.
-Since electrons are not explicitly present in classical MD simulations, those exact locations
-needs to be placed when calculating the electron density profile. The most common practise
-is to assume that all the electrons belonging to each atom are pointwisely located at nucleus location
-in the MD simulation \cite{??}. Electrons are also assumed to be distributed as gaussian \cite{??} or ? functions \cite{??}
-around the atom positions. Very popular SimtoExp program uses the last approch \cite{??} while most 
-molecular dynamics simulation modelling papers are using the first option \cite{??}. However,
-the results are not expected to strongly depend on this choise since this affects only to very
-fine details of the electron density profile and the thermal motion of atoms in MD simulations
-will coarse the diffrences furhter \cite{??}.
+The small bilayer patches used in simulations might depress bilayer undulation modes which are present in large 
+scale experiments~\cite{braun14}. Braun et al. showed that undulations seen in large enough simulations do
+not change the locations of form factor minimaz but depress the peak hights in the lobes~\cite{braun14}.
+Since the undulations are expected to be present in the experiments, the potential discrepancies 
+between simulations and experiments in the lobe heights may be explained by the lack of undulation 
+motions in experiments.
 
-The neutron scattering length density is typically calculated from atom positions using the
-neutran scattering lenghts known for different atoms \cite{??}.
+The simulations give the form factors on absolute scale while experiments obtain them only on relative scale,
+thus the experimental form factors from different sources has to be scaled for comparison~\cite{kucerka08,kucerka10}.
+In SIMtoEXP program the scaling is performed using the scaling factor $k$ determined from equation
+\begin{equation}
+k=\frac{\sum_{i=1}^N\frac{|F_s(q_i)||F_e(q_i)|}{(\Delta F_e(q_i))^2}}{\sum_{i=1}^N\frac{|F_e(q_i)|^2}{(\Delta F_e(q_i))^2}},
+\end{equation} 
+where $F_e(q)$ and $F_s(q)$ are experimental and simulated form factors, respectively, $\Delta F_e(q)$ is the uncertainty
+of the experimental form factor and the summation goes over all $N$ data points~\cite{kucerka08,kucerka10}.
+In many studies which compare the form factors between experiments and simulations, the details on the scaling
+factor used is not given~\cite{??}. 
 
+\onecolumngrid
 \todo{More discussion at: \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/3} \\
 and \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/4} \\
-The most important question is now to check the discussion about undulations in the literature
+I still think that I have seen undulation correction for experimental data mentioned in the literature.
 }
-
+\twocolumngrid
 
 \subsection{Interplay between simulations and scattering experiments: Validation and interpretation}
-Similarly to NMR order parameter, the form factor gives accurate information about lipid
+Similarly to NMR order parameters, the form factor gives accurate information about lipid
 bilayer structure but the structure cannot be uniquely resolved from the experimental data only.
-To solve the structure different models have been introduced \cite{??}. The general idea of
-these models is to introduce plausible functional form for the scattering length density profile arising
-from different molecular components of lipids and then fit the weights of these components such that
-the experimental form factor is reproduced \cite{??}. Also MD simulations have been used in structural
-interpretation \cite{??}. Also combination of other structural models and MD simulations have been used \cite{??}.
+To give structural intepretation of order parameters, the model for sampled conformations of 
+single molecules are needed while to interpret the scattering form factor data the model
+for the atom number densities, $n_\alpha(z)$ in Eq.~\ref{FF}, is needed.
+Several models developed and used for this purpose are reviewed by Heberle et al.~\cite{heberle12}.
 
-The stuctural models based on pure fitting to scattering data are shown to easily produce unphysical structures
-arising from the fact that several scattering density distributions can produce correct form factors \cite{??}.
-However, when the most obvious unphysicalities are removed, the models based on fitting produce form factors
-with better agreeement with experiments than MD simulation models \cite{??}. Careful comparison
-between structures from MD models and fittings to x-ray and neutron data shows that the structures 
-from different approaches are very similar but not exatcly same \cite{??}. Differences are found
-especially in the lipid headgroup region which is in agreement with the NMR order parameter studies
-which has shown that glycerol backbone and choline structures are not reproduced within experimental
-error in MD simulations \cite{botan15}.
-  
-Ideally the MD simulations would correctly reproduce the experimental form factors in zero tension
-giving the atomistic resolution interpretation for the experiment and simultaneously confirming the
-quality of the used model. This comparison is nowdays routinely done in almost all force field parametrization
-publications instead of comparing area per molecules as previously done \cite{??}. 
-The agreement is often concluded to be good, however, almost always detectable differences
-between experiments and simulations can be seen \cite{??}. The attempts to run simulations 
-with fixed area per molecule (generating tension in bilayer) in order or intepret the experiments
-have shown that this can be improve the agreement, however, the models based on fitting gives
-better agreement and slightly different structure \cite{??}. On the other hand, different simulation
-models with different electron density profiles and form factors are concluded both to be in good 
-agreement with experiments \cite{??}. This is possible since the absolute electron density is not
-known from experiments and is thus fitted to the simulation results when comparing \cite{??}. 
+Similarly to the NMR order parameters, also MD simulations can be used in the structural
+interpretation if they reproduce the experimental form factors. And in turn,
+if simulation model do not reproduce the experimental form factor its structure is not 
+realistic. The comparison between experimental and simulated form factors has been done 
+in several studies for both purposes, to validate the simulations model~\cite{??} and to
+intepret the experiments~\cite{??}. The simulations have been also used to improve the 
+fitting based structural models~\cite{??}.
 
-In conclusion, all the state of the art simulation models gives form factor very close to experimental
-data, however, it seems still the best agreement can be produced by fitting the scattering density models
-to the experimental data \cite{??}. The problems to exactly reproduce the scattering data has been often 
-related to the lipid headgroup structure which agrees with the conclusions from the NMR studies \cite{??}.
+The comparison to experimental area per molecule values to validate the lipid density simulations~\cite{tieleman97} has
+been often replaced nowdays with more direct comparison~\cite{nagle00} using x-ray form 
+factors~\cite{hogberg08,chiu09,klauda10,dickson12,jambeck12,lim12,klauda12,jambeck13,chowdhary13,lee14,maciejewski14,dickson14,tjornhammar14,madej15,kulig15b}.
+In some studies the comparison is complemented with the comparison to the neutron scattering data~\cite{dickson12,jambeck12,lee14,dickson14,tjornhammar14,madej15}
+In general the models reproduce form factors in good agreement with experiments, especially with lower $q$ values
+indicating that the bilayer dimensions, like thickness, are in good agreement. However, the agreement gets often worse
+with higher $q$ values~\cite{chiu09,klauda10,klauda12,dickson12,lim12,jambeck12,chowdhary13,jambeck13,lee14,maciejewski14,dickson14,kulig15b,madej15}
+indicating some differences in detailed electron density profiles~\cite{??}.
 
+Also changes in form factor due to temperature~\cite{jambeck12,zhuang14}, cholesterol concentration~\cite{jambeck13,madej15} and acyl chain polyunsaturation~\cite{eldho03,klauda12} 
+has been compared between simulations and experiments~\cite{eldho03,kucerka05,pan08,hodzic08,kucerka08,pan09,khelasvili10,kucerka11}.
+Simulation generally reproduce the decreased thickness and increased area with increasing temperature~\cite{jambeck12,zhuang14} and polyunsaturation level~\cite{eldho03,klauda12}, 
+as well as increased thickness and decreased area with increasing cholesterol concentration~\cite{jambeck13,madej15}.
+However, the temperature dependence is underestimated for some systems~\cite{jambeck12,zhuang14} while cholesterol
+effect is overestimated~\cite{jambeck13,madej15}.
 
+In studies where the main goal is to interpret the form factors using MD simulations instead of validating the model,
+the area per molecule is often fixed to a certain value in order to reproduce the experimental form factor better~\cite{sachs03,klauda06,kucerka08a,kucerka08b,braun13}.
+With this contaraint is indeed, possible to get the form factors close to the experiments, however, 
+careful comparisons between experimental form factors, MD simulations and SDP model suggest small but measurable 
+structural differences~\cite{kucerka08a,braun13}. The form factor from the SDP model is in better agreement
+with simulations and the extracted stuctural parameters indicate differences especially in the headgroup region~\cite{kucerka08a,braun13} 
+which is in agreement with the comparions between simulations and NMR order parameter indicating issues in the same region~\cite{botan15}, 
+see also section~\ref{??}.
+
+In conclusion, all the state of the art simulation models gives form factors close to experimental
+data in various conditions indicating that the average bilayer dimensions are in good agreement with simulations
+and experiments. Also the qualitative changes are reproduced, however, sometimes over-or underestimated.
+In general, the conclusions from scattering data agrees with conclusions from NMR data:
+the hydprohopic acyl chains are often well described in simulations, while in glycerol backbone and headgroup 
+regions there is room for improvement.
+
+\onecolumngrid
 \todo{The more detailed discussion can be found at: \\
 {\tt https://github.com/NMRLipids/NMRLipids\_V-Review/issues/5}}
-
+\twocolumngrid
 
 
 \section{Conclusions}
@@ -1310,7 +1350,7 @@ this the protein might be incorrectly folded already in the bulk water \cite{??}
 
 %\newpage
 %\section{APPENDIX: The NMR results reported by Tiago Ferreira}
-
+\onecolumngrid
 \listoftodos
 
 \end{document}
