@@ -232,7 +232,7 @@ bilayer \cite{seelig77c,jacobs81,davis83,gross97,dvinskikh05a,ferreira13,botan15
 Also the signs~\cite{hong95a,hong95b,gross97} and stereospecifity of C--H segments 
 in the same carbon ({\it forking})~\cite{seelig75,gally81,engel81,gross97,dvinskikh05a,ferreira13}
 are experimentally available. Consequently, a realistic atomistic resolution model,
-for example, for POPC molecule in liquid crystalline bilayer has to reproduce 82 experimental
+for example, for POPC molecule (see Fig.~\ref{allOPs} B)) in liquid crystalline bilayer has to reproduce 82 experimental
 order parameter values.
 If these parameters are not reproduced for certain segments, the model deficiencies are easy to localize
 since order parameter is very local quantity depending only on the position of two atoms (C-H pair).
@@ -240,6 +240,44 @@ This is an advance over several other accurately measured NMR quantities
 %like $^{31}$P chemical shift anisotropy~\cite{chowdhary13} and $^{31}$P-$^{13}$C dipolar couplings~\cite{prakash10}
 depending on the position of several atoms \cite{prakash10,chowdhary13}, thus complicating the localization of strucutral differences 
 in the case of disagreement between model and experiments.
+\begin{figure*}[]
+%  \centering
+  \includegraphics[width=17.2cm]{../Fig/allOPs.eps}
+  \caption{\label{allOPs}
+    A)  Order parameters from simulations and experimens for phosphatidylcholine headgroup and glycerol 
+    backbone segments adapted from Botan et al.~\cite{botan15}. The blue shaded regions show the
+    subjective sweetspots where the simulation data should fall to agree with experiments, 
+    based on estimated quantitative accuracy of order parameter measurements by Botan et al.
+    B) Chemical structure of 1-palmitoyl-2-oleoylphosphatidylcholine (POPC).
+    C) Order parameters $|S_{{\rm CH}}|$ for POPC acyl chains 
+    from $^1$H-$^{13}$C NMR at 300K (black dots)~\cite{ferreira13},
+    from $^2$H NMR at 300K (blue triangles, literature)~\cite{seelig78,perly85} and 
+    from MD simulations at 298K (red dots)~\cite{ferreira13}.
+    The experimental values shown in A):
+    DMPC 303~K \cite{gross97},
+    DMPC 314~K \cite{dvinskikh05a},
+    DPPC 322~K \cite{gally75},
+    DPPC 323~K \cite{akutsu81},
+    POPC 296~K \cite{bechinger91}, and
+    POPC 300~K \cite{ferreira13}.
+    The force fields in A):
+    Berger \cite{berger97},
+    Hogberg08 \cite{hogberg08},
+    Poger \cite{poger10},
+    Ulmschneiders \cite{ulmschneider09},
+    Kukol \cite{kukol09},
+    Chiu \cite{chiu09},
+    CHARMM36 \cite{klauda10},
+    GAFFlipid \cite{dickson12},
+    Slipid \cite{jambeck12},
+    MacRog \cite{maciejewski14},
+    Tj{\"o}rnhammar14 \cite{tjornhammar14},
+    Lipid14 \cite{dickson14},
+    CHARMM36-UA \cite{lee14}. 
+    The interactive version of this figure is available at  https://plot.ly/$\sim$HubertSantuz/72/lipid-force-field-comparison/.   
+  }
+\end{figure*}
+
 
 Experimental order parameter data for single component lipid bilayers is very 
 well available in the literature~\cite{castro07,castro08,leftin11,marsh13,ferreira13,leftin13,leftin14,botan15}. 
@@ -350,43 +388,7 @@ are in good agreement when compared by several authors~\cite{gross97,dvinskikh05
 however the 0.02 accuracy might not be achieved for some segments.\todo{Maybe specify to which ones?}.
 The comparison by Ferreira et al.~\cite{ferreira13} for POPC acyl chains is also shown in Fig.~\ref{allOPs} C). 
 
-\begin{figure*}[]
-%  \centering
-  \includegraphics[width=17.2cm]{../Fig/allOPs.eps}
-  \caption{\label{allOPs}
-    A)  Order parameters from simulations and experimens for phosphatidylcholine headgroup and glycerol 
-    backbone segments adapted from Botan et al.~\cite{botan15}. The blue shaded regions show the
-    subjective sweetspots where the simulation data should fall to agree with experiments, 
-    based on estimated quantitative accuracy of order parameter measurements by Botan et al.
-    B) Chemical structure of 1-palmitoyl-2-oleoylphosphatidylcholine (POPC).
-    C) Order parameters $|S_{{\rm CH}}|$ for POPC acyl chains 
-    from $^1$H-$^{13}$C NMR at 300K (black dots)~\cite{ferreira13},
-    from $^2$H NMR at 300K (blue triangles, literature)~\cite{seelig78,perly85} and 
-    from MD simulations at 298K (red dots)~\cite{ferreira13}.
-    The experimental values shown in A):
-    DMPC 303~K \cite{gross97},
-    DMPC 314~K \cite{dvinskikh05a},
-    DPPC 322~K \cite{gally75},
-    DPPC 323~K \cite{akutsu81},
-    POPC 296~K \cite{bechinger91}, and
-    POPC 300~K \cite{ferreira13}.
-    The force fields in A):
-    Berger \cite{berger97},
-    Hogberg08 \cite{hogberg08},
-    Poger \cite{poger10},
-    Ulmschneiders \cite{ulmschneider09},
-    Kukol \cite{kukol09},
-    Chiu \cite{chiu09},
-    CHARMM36 \cite{klauda10},
-    GAFFlipid \cite{dickson12},
-    Slipid \cite{jambeck12},
-    MacRog \cite{maciejewski14},
-    Tj{\"o}rnhammar14 \cite{tjornhammar14},
-    Lipid14 \cite{dickson14},
-    CHARMM36-UA \cite{lee14}. 
-    The interactive version of this figure is available at  https://plot.ly/$\sim$HubertSantuz/72/lipid-force-field-comparison/.   
-  }
-\end{figure*}
+
 
 
 
@@ -394,112 +396,100 @@ The comparison by Ferreira et al.~\cite{ferreira13} for POPC acyl chains is also
 
 \subsection{Qualitative accuracy of experimental order parameter values}
 
-When order parameters are measured as function of changing condition (e.g. temperature, hydration level, ion concentration, etc.), 
-the prefactors connecting the order parameter and the experimentally measured couplings can be considered 
+When order parameter changes are measured with varying conditions, like temperature \cite{seelig74,seelig77,douliez95}, 
+hydration level~\cite{bechinger91,ulrich94,mallikarjunaiah11,dvinskikh05a}, presense of ions~\cite{akutsu81,altenbach84,seelig87,scherer89}, 
+cholesterol~\cite{brown78,douliez95,ferreira13,leftin14} or proteins~\cite{kuchinka89,roux90,leftin13},
+the prefactors connecting the order parameters and the measured couplings in Eqs.~\ref{HNMRop} and~\ref{CNMRop} can be considered 
 to be unchanged. Therefore, accuracy of the measured change is determined by the accuracy of the splitting measurement
-in contrast to the previous section. Here we refer to this as a qualitative accuracy. Due to the high resolution of
-splitting measurements, especially in $ 2$H NMR, the qualitative accuracy is much higher than the
+in contrast to the prefactor in previous section. Here we refer to this as a qualitative accuracy. Due to the high resolution of
+splitting measurements, especially in $^2$H NMR, the qualitative accuracy is much higher than the
 quantitative accuracy discussed in previous section.
 
-The high qualitative accuracy of $^2$H NMR experiments is exemplified in Fig.~\ref{opIONeffect} by using the
-the classical experiment by Akutsu and Seelig~\cite{akutsu81}, where the effect of different ions on 
-the quadrupolar splittings of choline headgroup $\alpha$ and $\beta$ segments was measured, 
-\footnote{These changes were later shown to be consistent with the addition of different charges into the bilayer, and the electrometer 
-concept was introduced to measure the amount of charge incorporated in the bilayer interface~\cite{scherer89}.}
-see Fig.~\ref{QUADsplitIONeffect}. 
-The effects of different ions on the quadrupole splittings are clearly differentiable with the experimental 
-accuracy in Fig.~\ref{QUADsplitIONeffect} A). However, when transformed to the order parameter units, 
-these changes correspond only changes below 0.03 units for $\beta$ and 0.05 for $\alpha$ as shown in 
-Fig.~\ref{QUADsplitIONeffect} B). 
+The high qualitative accuracy of order parameter measurements is demonstrated in Figs.~\ref{opIONeffect} and~\ref{opDEHYDeffect}
+showing the measured changes as a function of ion concetrations and hydration level, respectively.
+Systematically observed order parameter decrease of choline $\alpha$ and $\beta$ segments due to penetrating 
+positive charges~\cite{akutsu81,altenbach84,seelig87,scherer89} from $^2$H NMR are shown in Fig.~\ref{opIONeffect} A).
+The quadrupole splittings reported in the original work~\cite{akutsu81} and corresponding order parameters 
+are shown. The clearly measurable quadrupolar splitting changes correspond order parameter changes below 0.03 and 
+0.05 units for $\beta$ and $\alpha$, respectively. Systematically observed increase for choline $\beta$ and $\alpha$
+segments due to decreased hydration level is shown in Fig.~\ref{opDEHYDeffect}. 
+Similar increase is observed for different phosphatidycholine lipids in slightly different temperatures measured by
+different groups by using both $^2$H NMR~\cite{bechinger91,ulrich94} and $^{13}$C NMR~\cite{dvinskikh05b}.
+The results demonstrate the systematic changes only slightly above 0.01 units can be detected also with $^{13}$C NMR~\cite{dvinskikh05b}.
+
 \begin{figure*}[]
 %  \centering
   \includegraphics[width=17.2cm]{../Fig/QPandOPwithIONS.eps}
   \caption{\label{opIONeffect}
-    A) Quadrupolar splittings as function of different ion concetrations measured by Akutsu and Seelig with $^2$H NMR~\cite{akutsu81}. 
-    B) The data from A) translated to order parameters ($S_{{\rm CD}}=0.00784 \times \Delta \nu_{{\rm Q}}$). Also the sign of $\beta$ order parameter is put negative according
-    to more recent experiments~\cite{hong95a,hong95b,gross97} (see also Ref.~\cite{botan15} and Section~\ref{signSECTION}).
+    A) Quadrupolar splittings of DPPC $\alpha$ and $\beta$ segments as a function of different 
+    ion concetrations measured by Akutsu and Seelig with $^2$H NMR~\cite{akutsu81}. 
+    B) The measured quadrupolar splittings with NaCl and CaCl$_2$ translated to order parameters ($S_{{\rm CD}}=0.00784 \times \Delta \nu_{{\rm Q}}$). 
+    The negative sign for $\beta$ order parameter is assigned according to more recent experiments~\cite{hong95a,hong95b,gross97} 
+    (see also Ref.~\cite{botan15} and Section~\ref{signSECTION}). These changes were later shown to be consistent with the 
+    addition of different charges into the bilayer, and the electrometer concept was introduced to measure the amount of charge 
+    incorporated in the bilayer interface~\cite{akutsu81,altenbach84,seelig87,scherer89}.
   } 
 \end{figure*}
 
-%The resolution of $^{13}$C NMR experiment depends somewhat on the pulse sequence used. 
-As another example of the high qualitative accuracy of order parameter experiments, the measured order parameters
-for $\beta$ and $\alpha$ carbons as a function of hydration level for different PC lipids are shown in 
-Fig.~\ref{opDEHYDeffect}. Quantitative numbers from different experiments show slight variation between
-different temperatures and lipid compositions. However, in all experiments the
-order parameters increase with decreasing hydration.
-\footnote{This increase is related to the P-N vector tilting more parallel to the membrane plane \cite{botan15}
-which is in agreement with electrometer concept suggesting that penetrating charge has opposite 
-effect on headgroup tilt leading to decrease of order parameters \cite{scherer89,ionpaper}.}
-The smallest order parameter change is only slightly above 0.01 units, measured by Dvinskikh et al. 
-with $ 13$C NMR~\cite{dvinskikh05b}, demonstrating that high qualitative accuracy can be
-also achieved with $ 13$C NMR. 
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/OrderParameterDEHYDexp.eps}
 \newline
   \caption{\label{opDEHYDeffect}
-    Dehydration changes on $\alpha$ and $\beta$ order parameters measured with different methods. 
-    The data taken from Dvinskikh et al.~\cite{dvinskikh05b}, Ulrich et al.~\cite{ulrich94} and Bechinger et al.~\cite{bechinger91}
-    Also the sign of $\beta$ order parameter is put negative according
-    to more recent experiments~\cite{hong95a,hong95b,gross97} (see also Ref.~\cite{botan15} and Section~\ref{signSECTION}).
+    Systematic increase of phosphatidylcholine $\alpha$ and $\beta$ order parameters with decreasing hydration level,
+    observed with both $^2$H NMR~\cite{bechinger91,ulrich94} and $^{13}$C NMR~\cite{dvinskikh05b}.
+    The negative sign for $\beta$ order parameter is assigned according to more recent experiments~\cite{hong95a,hong95b,gross97} 
+    (see also Ref.~\cite{botan15} and Section~\ref{signSECTION}).
+    The choline order parameter increase is related to the P-N vector tilting more parallel to the membrane plane~\cite{botan15}
+    while relation between order parameter decrease and tilting more perpendicular has been suggested~\cite{scherer89}.
   } 
 \end{figure}
 
-In conclusion, the experimental qualitative accuracy order parameter measurements is very high.
-It is much higher than the accuracy achieved with state of the art MD simulations.
-Thus, the accuracy order parameter change comparison between simulations and experiments is
-limited by the simulation accuracy, not experimental. 
-
-On the other hand, it should be noted that since even very small splitting changes can 
-be detected experimentally one should always connect these to the changes in real molecules
-to avoid overinterpretation. For example, it has been measured that cholesterol induces 
-a measurable change (less than 2~kHz) in  quadrupolar splitting~\cite{brown78}. This may tempt to conclude that
-cholesterol affects to the choline structure, however, this quadrupolar splitting corresponds
-0.016 unit change in the order parameter which indicates almost negligible conformational change~\cite{botan15}.
+In conclusion, the order parameter changes can be measured with very high accuracy,
+thus even very small structural changes can be observed. Molecular models are necessary
+to analyze the measured changes to avoid overinterpretation from tiny changes observed in experiments.
+For example, high concentration of cholesterol induces measurable changes (less than 2~kHz) to the DPPC $\alpha$ and $\beta$ 
+quadrupolar splittings, however, the related structural changes are probably almost negligible~\cite{brown78,botan15}.
 
 
 \subsection{Signs of order parameters}\label{signSECTION}
 
-While only the absolute values of order parameters are accessible with $^2$H NMR, two different 
-$^1$H-$^{13}$C NMR techniques allow also the measurement of the sign: 
-first Hong et al. first measured order parameter signs for eggPC~\cite{hong95a} and DMPC~\cite{hong95b}; 
-then later Gross et al. used a different NMR technique to measure signs for DMPC~\cite{gross97}. 
-All the experiments report negative order parameters for almost all the segments, only $\alpha$ and $\gamma$ are positive.
-
-Furthermore, the signs~\cite{hong95a,hong95b,gross97}  and magnitudes~\cite{gally81,ferreira13,botan15} of choline headgroup 
+The $^2$H NMR~\cite{seelig77c} and standard $^1$H-$^{13}$C NMR~\cite{hong95a,gross97,dvinskikh05a,ferreira13} techniques measure 
+only the absolute value of order parameter. However, two different $^1$H-$^{13}$C NMR techniques applied to eggPC~\cite{hong95a} 
+and DMPC~\cite{hong95a,gross97} allow also the measurement of the sign.
+The experiments report negative order parameters for almost all the segments, only $\alpha$ and $\gamma$ are positive.
+Furthermore, the signs~\cite{hong95a,hong95b,gross97} and magnitudes~\cite{gally81,ferreira13,botan15} of choline headgroup 
 and glycerol backbone order parameters are practically unaffected by the acyl tail contents of the bilayers. 
-Thus, it can be fairly assumed that the order parameter signs for these segments are the same in all PC lipids in bilayer. 
+The results indicate that the order parameter signs for these segments can be assumed to be the same in all PC lipids in bilayer. 
 On the other hand, the positive signs for g$_1$, g$_3$ and C$_2$ has been reported by Aussenac et al.~\cite{aussenac03} 
-which has led to some confusion in comparison between simulations and experiments~\cite{hogberg08}. 
+which has led to some confusion in simulation community~\cite{hogberg06,hogberg08,signPOST}. 
 However, these signs are not directly measured but extracted from the model used to interpret 
-$^2$H NMR order parameters from DMPC bicelles. Thus, it is reasonable conclude that 
+$^2$H NMR order parameters from DMPC bicelles~\cite{aussenac03}. Thus, it is reasonable to conclude that 
 order parameters are negative for all segments except for $\alpha$ and $\gamma$, as 
 directly measured with $^1$H-$^{13}$C NMR~\cite{hong95a,hong95b,gross97}.
 
-Even though the sign was not measurable with $^2$H NMR, the sign was believed to be negative for acyl chains because $\theta$ was expected to fluctuate 
-around 90$^o$ leading to negative order parameters~\cite{seelig77c}. This was later confirmed by using $^{13}$C NMR measurements~\cite{hong95a}. 
-Also MD simulations always produce negative order parameters for acyl chains.
+%Even though the sign was not measurable with $^2$H NMR, the sign was believed to be negative for acyl chains because $\theta$ was expected to fluctuate 
+%around 90$^o$ leading to negative order parameters~\cite{seelig77c}. This was later confirmed by using $^{13}$C NMR measurements~\cite{hong95a}. 
+%Also MD simulations always produce negative order parameters for acyl chains.
 
-%In conclusion, it seems reasonable to assume that the signs measured with $^{13}$C NMR methods~\cite{hong95a,hong95b,gross97}
-%can be used for all PC lipids in bilayer, i.e. the signs for almost all the carbons are negative, only  $\alpha$ and $\gamma$ are positive.
-
-Typically when the response of order parameters to varying conditions (ions, dehydration and cholesterol) is measured, only the absolute 
-values are reported~\cite{akutsu81,altenbach84,bechinger91,ulrich94,dvinskikh05b,ferreira13}. Where clear responses are observed, 
-like with multivalent ions~\cite{akutsu81,altenbach84} and dehydration~\cite{bechinger91,ulrich94,dvinskikh05b}, the experiments are done by gradually 
-changing the conditions and the order parameter response is systematic, see Figs.~\ref{opIONeffect} and~\ref{opDEHYDeffect}. 
-Thus, it is reasonable to assume that also the signs are not suddenly changing. However, it seems that the sign of 
-the $\alpha$ carbon order parameter does change in response to a large amount of bound charge, such as multivalent ions. In this case, 
-the absolute value of the order parameter first decreases to zero and then starts to increase again~\cite{altenbach84,seelig87}, 
-as seen from the nicely illustrated spectra shown Fig.~\ref{qsCACLeffect} by Altenbach et al.~\cite{altenbach84}.
+In the measurements of order parameter changes respect to varying 
+conditions~\cite{seelig74,seelig77,bechinger91,ulrich94,mallikarjunaiah11,dvinskikh05a,akutsu81,altenbach84,seelig87,scherer89,brown78,douliez95,ferreira13,leftin14,kuchinka89,roux90,leftin13} 
+only the absolute values are measured. However, the experiments are usually done by gradually changing the conditions and systematic 
+order parameter responses are observed~\cite{akutsu81,altenbach84,bechinger91,ulrich94,dvinskikh05b,mallikarjunaiah11,ferreira13} 
+(see also Figs.~\ref{opIONeffect} and~\ref{opDEHYDeffect}), indicating that sudden changes of sign are not present. 
+On the other hand, large amount of bound positive charge may decrease the $\alpha$ carbon order parameter below zero
+as demonstrated by the spectra measured by Altenbach and Seelig~\cite{altenbach84} for POPC with high concetrations of CaCl$_2$,
+shown in Fig.~\ref{qsCACLeffect}.
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/QUADsplitCACLeffect.eps}
 \newline
   \caption{\label{qsCACLeffect}
-    Quadrupolar splitting $\Delta \nu_Q$ of $\alpha$ of POPC as a function of CaCl$_2$ concentration, related to the order parameter as $S_{{\rm CD}}=0.00784 \times \Delta \nu_Q$. 
-    We know nowadays that the order parameter of $\alpha$ in the absense of CaCl$_2$ is positive~\cite{hong95a,hong95b,gross97}.
-    Thus, the most obvious interpertation for the result is that the $\alpha$ order parameter decreases to zero when CaCl$_2$ concentration reaches 2.0M, and 
-    above these concentrations becomes increasingly negative with further addition of CaCl$_2$. Reprinted with permission from Altenbach and Seelig, Biochemistry, 23, 3913 (1984). Copyright 1984 American Chemical Society.    
+    Quadrupolar splitting $\Delta \nu_Q$ for $\alpha$ segment in POPC as a function of CaCl$_2$ concentration measured by Altenbach and Seelig~\cite{altenbach84}.
+    The splitting is related to the order parameter as $S_{{\rm CD}}=0.00784 \times \Delta \nu_Q$. 
+    More recent studies show that the $\alpha$ order parameter is positive in the absense of CaCl$_2$~\cite{hong95a,hong95b,gross97}.
+    Thus, the most obvious interpertation is that the $\alpha$ order parameter decreases to zero when CaCl$_2$ concentration reaches 2.0M, and 
+    becomes increasingly negative with further addition of CaCl$_2$. Reprinted with permission from Altenbach and Seelig, Biochemistry, 23, 3913 (1984). Copyright 1984 American Chemical Society.    
   } 
 \end{figure}
 
@@ -507,107 +497,83 @@ as seen from the nicely illustrated spectra shown Fig.~\ref{qsCACLeffect} by Alt
 
 \subsection{Forking of order parameters}
 
-It is possible that the CH$_2$ segment is sampling such orientations that the order parameters
-for different hydrogens in the same carbon have different values. We call this phenomena as 
-{\it forking}, as done also previously to avoid confusion with splittings measured with NMR.
-The forking is detected with both $^2$H NMR~\cite{seelig75,seelig78,engel81,gally81} and 
-$^1$H-$^{13}$C NMR techniques~\cite{gross97,dvinskikh05a,ferreira13} as two different quadrupolar or dipolar splitting values,
-respectively, related to the same CH$_2$ segment.
+The order parameters for two C--H bonds in the same CH$_2$ segment are equal for the most segments in 
+lipids~\cite{seelig74,seelig77,seelig78,gally81,gross97,dvinskikh05a,ferreira13}.
+However, this is not the case for g$_1$, g$_3$, and  C$_2$ carbon in the \textit{sn}-2 chain segments in
+a fluid PC lipid bilayer as observed with both $^2$H NMR~\cite{seelig75,seelig78,engel81,gally81} and 
+$^1$H-$^{13}$C NMR techniques~\cite{gross97,dvinskikh05a,ferreira13}, see also Fig.~\ref{allOPs}.
+We call this phenomena as {\it forking}, as done also previously to avoid confusion with splittings measured with NMR~\cite{botan15}.
 
-The forking is observed for g$_1$, g$_3$, and  C$_2$ carbon in the \textit{sn}-2 chain segments in
-a fluid PC lipid bilayer, for other CH$_2$ segments the equal order parameters are observed for 
-both hydrogens are equal~\cite{seelig74,seelig77,seelig78,gally81,gross97,dvinskikh05a,ferreira13}.
 The forking has been studied in detail with $^2$H NMR techniques by separately deuterating the 
-R or S position in CH$_2$ segment to assign order parameters to correct hydrogens \cite{gally81,engel81}.
-
-
-$^2$H NMR studies also show that the forking really arises from differently sampled orientations 
+R or S position in CH$_2$ segments to assign order parameters to correct hydrogens \cite{gally81,engel81}.
+These studies also show that the forking arises from differently sampled orientations 
 of the two C--H bonds, not from two separate populations of lipid conformations~\cite{engel81,gally81}.
-This means that realistic atomistic resolution molecular models has to reproduce the forking 
-correctly. Thus, the simulated order parameters has to be calculated separately for each hydrogen
-by taking into account the isomeric position for the structural comparison to the experimentals.
-Recent work by Botan et al. shows that several simulation models has problems in this respect \cite{botan15}
-(see also Fig. \ref{allOPs}). 
-
+This means that the realistic atomistic resolution molecular model has to reproduce the forking 
+correctly and the isomeric positions of hydrogens must be taken into account when calculating
+order parameters from simulations~\cite{botan15}.
 
 
 
 \subsection{Order parameters from simulations}
-In atomistic resolution molecular dynamics simulations molecules are sampling the defined ensemble
-according to the used simulation parameters and the coordinates of each atom as a function of time are saved
-to the trajectory files. The coordinates in the trajectory file can be straighforwardly used to calculate 
-order parameters directly from the definition in Eq.~\ref{orderP}. The average is taken over the molecules and time.
 
-For simulations with united atom models without explicit hydrogen atoms~\cite{ollila07a,vermeer07,botan15}, the hydrogen positions 
-can be generated post-simulationally from the positions of the heavy atoms and the known hydrocarbon geometries.
-This can be done explicitly by creating a trajectory with added hydrogens~\cite{ollila07a,botan15}, or by using equations
-which directly calculate order parameters from heavy atom positions~\cite{tieleman97,vermeer07}.
-For C--H and C--H$_2$ segments without forking these two approaches gives essentially identical results
-when applied correctly. However, the latter is valid only for the cases with no forking, i.e. order 
-parameters are equal for both hydrogens attached to the same carbon. Since this is not known {\it a priori}
-for the analyzed model, it is better to use the first approach with explicitly added hydrogens.
+Since all the atom coordinates are available from molecular dynamics simulations trajectory,
+the order parameters can be calculated directly from the definition in Eq.~\ref{orderP}.
+The ensemble average is taken over the time and all the molecules in simulation.
+The hydrogen positions can be generated post-simulationally for united atom simulations without explicit hydrogens 
+by creating a trajectory with added hydrogens~\cite{ollila07a,botan15}, or by using equations to directly calculate 
+order parameters~\cite{tieleman97,vermeer07} based on heavy atoms positions and the known hydrocarbon geometries.
+The first approach necessary for accurate structural studies since it allows the analysis of forking in contrast to the latter.
 
-The difference in the forking analysis is most likely reason for different choline and glycerol
-backbone order parameters reported in the literature for the same model~\cite{poger12,botan15}.
-Also different order parameters from the same model for C-H bonds has been reported in literature~\cite{bachar04,ollila07a}
-which most likely arises from incorrect implementation of widely used version of {\it g\_order} program in the Gromacs package
-for this segment. Also, the {\it g\_order} program prints -S$_{{\rm CH}}$ which is most likely the reason to
+The difference in the analysis methods for the forked segments is most likely reason for different choline and glycerol
+backbone order parameters reported for the same models by different authors~\cite{poger12,botan15}.
+Also different order parameters for C--H segments attached to double bond are reported for the same model~\cite{bachar04,ollila07a}
+due to bug in widely used version of {\it g\_order} program in the Gromacs package.
+The {\it g\_order} program also prints -S$_{{\rm CH}}$ which is most likely the reason to
 the reported positive order parameters for acyl chains in some studies~\cite{ekkabut07}.
-When these issues are taken into account, the order parameters from the same models reported in the
-literature are generally in good agreement.
+When these technical issues are taken into account, the different order parameters calculations from simulations are 
+in good agreement.
 
-The statistical error estimates for order parameters in simulations are estimated by
-using the error of the mean calculated averaging over time blocks~\cite{ollila07a}, over independent 
-simulations~\cite{poger12} and over different lipids~\cite{botan15}. The maximum error bars given by
-all these approaches are $\sim \pm$0.01.
+The statistical error for order parameters is estimated by using the error of the mean for time blocks~\cite{ollila07a},  
+independent simulations~\cite{poger12} and different lipids~\cite{botan15}. All these approaches gives the maximum error 
+bars of $\sim \pm$0.01.
 
 It was recently pointed out that the sampling of individual dihedral angles might be very
 slow compared to the typical (100~ns) simulation timescales~\cite{vogel12}.
-This result raises a question if typical simulation time scales are long enough to allow
-the molecules to sample the full phase phase. On the other, another recent study showed
+This result raises a question if the molecules sample the full phase phase
+during typical simulation time scales. On the other, another recent study showed
 that the slowest rotational auto-correlation function observed (for g$_1$ segment) 
 in the Berger model reached a plateau ($S_\mathrm{CH}^2$) after $\sim$200~ns
 and its relaxation was significantly too slow compared to NMR relaxation experiments~\cite{ferreira15}. 
-This indicates that if the typical simulation times are too short for the full sampling
-of the structures, then the dynamics is unrealistically slow in the simulation model.
+This indicates that the typical simulation times are long enough for full conformational 
+phase space sampling for the models with realistic dynamics~\cite{ferreira15}.
+
 
 
 \subsection{Comparison between order parameters from simulations and experiments}
 
-Since the early days of lipid bilayer simulations the acyl chain order parameters are commonly calculated and compared to experiments
-when validating simulation studies~\cite{ploeg82,egberts88,stouch93,egberts94,essex94,robinson94,hyvonen95,kothekar96,tieleman96,shinoda97,berger97,tieleman97,klauda08b}. 
-Practically all the state of the art force field parametrization publications report these
-to be in good agreement with experiments~\cite{berger97,hogberg08,poger10,ulmschneider09,kukol09,chiu09,klauda10,dickson12,jambeck12,chowdhary13,maciejewski14,tjornhammar14,dickson14,lee14}.
-It is remarkable that the experimental order parameters for acyl chains in fully hydrated pure lipid bilayers
-can be reproduced within experimental error, see also Fig \ref{allOPs} C). 
-
-Exception is the C$_2$ segment in {\it sn-2} chain in all PC lipids which is known
-to have measurable forking and lower magnitudes compared to other order parameters in 
-the beginning of the acyl chain~\cite{seelig74,seelig75,gross97,dvinskikh05a,ferreira13}. This important structural fingerprint is
-related to the different conformations between carboxyl segments in the beginning of chains~\cite{schindler75}.
+The acyl chain order parameters are compared between simulations and experiments since the early days of lipid bilayer 
+simulations~\cite{ploeg82,egberts88,stouch93,egberts94,essex94,robinson94,hyvonen95,kothekar96,tieleman96,shinoda97,berger97,tieleman97,klauda08b}. 
+Good agreement has been generally found~\cite{berger97,hogberg08,poger10,ulmschneider09,kukol09,chiu09,klauda10,dickson12,jambeck12,chowdhary13,maciejewski14,tjornhammar14,dickson14,lee14}.
+except for C$_2$ segment in {\it sn-2} chain which has low magnitude and significant forking in all PC lipids, in constrast to C$_2$ in 
+{\it sn}-1~\cite{seelig74,seelig75,gross97,dvinskikh05a,ferreira13}, for example see Fig.~\ref{allOPs} C). 
 This feature is, however, not analyzed or not reproduced for several lipid models~\cite{hogberg08,siu08,chiu09,kukol09,ulmschneider09,jambeck12,dickson12,chowdhary13,tjornhammar14,maciejewski14}
 while some models report the lower magnitude but the forking is not reproduced correctly or analyzed~\cite{siu08,klauda10,chowdhary13,dickson14}.
 The united atom CHARMM36 is really close the experimental results~\cite{lee14}.
 
-In addition to the quantitatively good agreement in pure bilayers, the changes in 
-acyl chain order parameters as a function of changing conditions are generally reasonable.
-For example, experimentally observed increase of order parameters as a function of cholesterol 
-concentration~\cite{dufourc84,lafleur90,douliez95,urbina95,vermeer07,ferreira13} and with dehydration~\cite{mallikarjunaiah11,dvinskikh05b} 
-are reproduced in simulations \cite{mashl01,hogberg06,vermeer07,zhu07,lim12,ferreira13,jambeck13,madej15}. 
-However, systematic and quantitative comparisons of these effects between experiments and simulations are rare~\cite{ferreira13,madej15}.
-Comparison between widely used model (Berger lipids \cite{berger97} and H{\"o}ltje cholesterol model \cite{holtje01}
-\footnote{In this work CH$_2$/CH$_3$ groups in cholesterol were changed to LP$_2$/LP$_3$ groups to make it more consistent with the Berger
-parameters. This is not usually done in the studies done with these model.})
-for cholesterol containing lipid bilayer revealed that even though the acyl chain response is reasonable,
-the simulation model cannot be considered to agree with experiments with 34\% and higher cholesterol concentrations.
-CHARMM36 model has been shown to slightly underestimate the cholesterol ordering effect in DMPC bilayer~\cite{lim12},
-while Slipids~\cite{jambeck13} and Lipid14~\cite{madej15} models show satisfactory agreement. Lipid14 is also compared to the same
-extensive experimental data for POPC/cholesterol as Berge/H{\"o}ltje model~\cite{ferreira13} and the agreement is 
-significantly better~\cite{madej15}, see Fig. \ref{cholTAILmadej}. 
-Also the orientation of cholesterol itself is reasonable in all models \cite{vermeer07,lim12,ferreira13,madej15}, however, the cholesterol
-acyl chain has some issues in H{\"o}ltje model~\cite{ferreira13} (too low order parameters) and in Lipid14~\cite{madej15} (significant forking) while
-CHARMM36 reproduces experiments well~\cite{lim12}. 
-%Despite of the problems the Höltje model is used to study the cholesterol acyl chain length effect on bilayer properties \cite{??}.  
+Also acyl chain order changes with varying conditions are compared between simulations and experiments
+by several authors. Experimentally observed order parameter increase with cholesterol 
+concentration~\cite{dufourc84,lafleur90,douliez95,urbina95,vermeer07,ferreira13} and dehydration~\cite{mallikarjunaiah11,dvinskikh05b} 
+is observed also in simulations~\cite{mashl01,hogberg06,vermeer07,zhu07,lim12,ferreira13,jambeck13,madej15},
+as well as the temperature induced order parameter decrease~\cite{douliez95,zhuang14}.
+More careful comparison reveals, however, that the temperature and dehydration effects are slightly underestimated in simulations 
+compared to experiments~\cite{hogberg06,zhuang14}. Also cholesterol effect to DMPC bilayer is underestimated in CHARMM36 model~\cite{lim12},
+while Slipids~\cite{jambeck13} and Amber Lipid14~\cite{madej15} models show satisfactory agreement.
+The comparison of Berger/H{\"o}ltje~\cite{berger97,holtje01} based model to the extensive data set with various POPC/cholesterol mixtures shows a 
+good agreement with experiments for low cholesterol concetrations, however, with 34\% and higher cholesterol concentrations the agreement gets worse~\cite{ferreira13}. 
+Recent comparison of the Amber Lipid14 model to the same data shows signifincantly better agreement~\cite{madej15} as also
+shown in Fig.~\ref{cholTAILmadej}. The orientation of cholesterol ring structure is reasonable in all models \cite{vermeer07,lim12,ferreira13,madej15}, 
+however, the cholesterol acyl chain has too low order parameters in Berger/H{\"o}ltje~\cite{berger97,holtje01} based model and 
+too much forking in Amber Lipid14~\cite{madej15} while CHARMM36 reproduces experiments well~\cite{lim12}. 
 \begin{figure*}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/cholTAILmadej.eps}
@@ -620,20 +586,19 @@ CHARMM36 reproduces experiments well~\cite{lim12}.
 \end{figure*}
 
 
-The decrease of acyl chain order parameters due to the addition of double bonds is also 
-generally reproduced by different simulation 
+The acyl chain order parameter decrease due to double bonds is generally reproduced by different simulation 
 models~\cite{hyvonen97,hyvonen97b,feller97,saiz01,huber02,feller02,bachar04,rog04,hyvonen05,ollila07a,dickson12,klauda10,klauda12,ferreira13,jambeck13,lee14,dickson14}. 
-Very good agreement for oleyl chain in POPC bilayer with one {\it cis} double bond is demonstrated in Fig.~\ref{allOPs} 
-taken from Ferreira et al.~\cite{ferreira13}.
-Also the effect of multiple double bonds (polyunsaturation)~\cite{hyvonen97,hyvonen97b,saiz01,huber02,feller02,bachar04,hyvonen05,ollila07a,klauda12} (see Fig. \ref{polyunsat})
-and difference between {\it cis} and {\it trans} double bonds can be reproduced in MD simulations \cite{kulig15b}.
+Especially good agreement often achieved for oleyl chain in POPC bilayer with one {\it cis} double bond is demonstrated in Fig.~\ref{allOPs} C).
+Also the further order parameter decrease due to multiple double bonds (polyunsaturation)~\cite{hyvonen97,hyvonen97b,saiz01,huber02,feller02,bachar04,hyvonen05,ollila07a,klauda12} 
+is usually well reproduced, as demonstrated in Fig. \ref{polyunsat} for Berger~\cite{berger97} based model with double bond description by Bachar et al.~\cite{bachar04}.
+Also difference between {\it cis} and {\it trans} double bonds can be reproduced in MD simulations \cite{kulig15b}.
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/polyunsat.eps}
 \newline
   \caption{\label{polyunsat}
    Figure comparing order parameters in polyunsaturated acyl chains between simulations and 
-   experiments taken from \cite{ollila07a}.
+   experiments adapted from~\cite{ollila07a}.
    Order parameters for the sn-1 (squares) and sn-2 (triangles)
    chains of (A) DPPC, (B) POPC, (C) PLPC, (D) PAPC, and (E) PDPC.
    Simulation results are shown in full black, and experimental results
@@ -659,47 +624,47 @@ and difference between {\it cis} and {\it trans} double bonds can be reproduced 
 \end{figure}
 
 
-In contrast to acyl chains, the order parameters for the glycerol backbone are not routinely
-reported in simulation literature and when reported, the agreement with experiments is concluded to
-be poor \cite{hogberg06,poger12,botan15} or good \cite{hogberg06,hogberg08,kapla12} depending on the authors.
-The difference arises from different estimations for the accuracy of experimental and simulated order parameters,
-see also section \ref{QUANTaccuracySECTION}.
-The NMRLipids collaboration recently carefully compared glycerol backbone and choline order parameters  
-from 13 different models to the experiments and concluded that none of the available models
-reproduces these within experimental error, see Fig.~\ref{HGorderparameters}.
-Also responses of glycerol backbone and choline order parameters to 
-dehydration, cholesterol concetration and charge penetration were 
-studied by the NMRLipids collaboration \cite{botan15,ionpaper}.
-Despite of the incorrect structures in simulation models the experimentally measured choline order
-parameter increase due to dehydration \cite{botan15} and decrease due to penetrating 
-ions \cite{ionpaper} (see Fig. \ref{changesDUEna}) were qualitatively reproduced. 
-The comparison reveals, however, that the Na$ +$ penetration is significantly
-overestimated by many models \cite{ionpaper}. 
-Also the effect of cholesterol on glycerol backbone and choline was overestimated
-by the Berger/Höltje model while CHARMM36 and MacRog performed better \cite{botan15}. 
+In contrast to acyl chains, the glycerol backbone and choline order parameters are not routinely
+compared between simulations and experiments. In most comparisons the experimentally available sings,
+stereospecific labeling and high accuracy are not fully exploited~\cite{shinoda97,hogberg06,klauda10,poger12,dickson12,botan15,hogberg08,kapla12}.
+These issues were recently dicussed by Botan et al. who also compared order parameters 
+between 13 different simulation models and experiments~\cite{botan15}. The results, shown also in Fig.~\ref{allOPs} A),
+reveal significant differences between models and experiments, and none of the available models
+reproduces all order parameters within experimental error.
+On the other hand, experimentally observed choline order parameter increase and decrease with 
+dehydration~\cite{bechinger91,ulrich94,dvinskikh05b} and cation penetration~\cite{akutsu81,altenbach84}, 
+respectively, were reproduced in simulations~\cite{botan15,ionpaper}.
+However, especially the effect induced by Na$^+$ ion penetration is strongly overestimated
+in most models which arises most likely from artificially high partition coefficient~\cite{ionpaper},
+as also demonstrated in Fig.~\ref{changesDUEna}.
+The effect of cholesterol on glycerol backbone and choline was overestimated
+by the Berger/H{\"o}ltje based model while CHARMM36 and MacRog performed better~\cite{botan15}. 
 \begin{figure}[]
 %  \centering
   \includegraphics[width=8.6cm]{../Fig/changesDUEna.eps}
 \newline
   \caption{\label{changesDUEna}
-    Changes in order parameters as a function of Na$ +$ concentration (left column) and
-    ion density distributions (right column). With Berger model significant order parameter
-    reduction and ion partition is observed while with CHARMM36 modest order parameter change
-    and ion parition observed. The results confirm the concept by Seelig et al. which allows
-    the ion partition to be measured by changes in $\alpha$ and $\beta$ order parameters.
-    The results clearly show that Berger model has too strong Na partition. 
+    Changes in choline order parameters (left column) and ion density distributions (right column)
+    as a function of NaCl concentration. Significant order parameter
+    reduction and Na$^+$ partition is observed with Berger model while only modest order parameter change
+    and ion parition observed with CHARMM36. The results are in line with the electrometer concept
+    connecting the ion partition and choline order parameters changes~\cite{akutsu81,altenbach84,seelig87,scherer89}.
+    Consequently, the results show that Na$^+$ partition is significantly overestimated in the Berger model. 
     For more discussion see \cite{ionpaper}.
   } 
 \end{figure}
 
-In conclusion, the experimental order parameters for acyl chains and their changes are resonably
-reproduced all state of the art lipid models (except for C$_2$ segment in {\it sn}-2).
-However, all models have difficulties with varying severity to reproduce the glycerol backbone
-and choline order parameters, and their changes.
+In conclusion, the acyl chain order parameters and their qualitative changes are 
+generally well described in atomistic MD models, except for C$_2$ segment in {\it sn}-2.
+However, all models have difficulties with varying severity to describe the glycerol backbone
+and choline order parameters.
 
 
 
 \subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
+
+This important structural fingerprint is
+related to the different conformations between carboxyl segments in the beginning of chains~\cite{schindler75}.
 
 As reviewed here, the order parameters can be measured with high accuracy for each hydrocarbon segment in lipid
 in bilayer and the values are available in the literature for wide range of different lipids in different conditions.
@@ -745,8 +710,7 @@ acyl chain order parameters within experimental error in cholesterol mixtures \c
 This indicates that these models are not yet accurate enough to give atomistic resolution interpretation
 to delicate lipid cholesterol interactions which are known to induce liquid-ordereded and liquid-disordered
 phase coexistence \cite{ipsen87}. The recent Amber model \cite{madej15} seems promising in this respect, see also Fig. \ref{cholTAILmadej}. 
-Careful quantitative comparison of dehydration induced ordering effect has not been made but it is mentioned to be 
-weaker in simulations compared to experiments~\cite{hogberg06}. 
+
 %Thus it is not clear if currect simulations
 %can be used to, e.g. intepretate atomistic resolution acyl chain ordering due to dehydration which has been
 %suggested to play an important role in hydration repulsion \cite{??}.
