@@ -663,62 +663,48 @@ and choline order parameters.
 
 \subsection{Interplay between simulations and NMR order parameters: Validation and interpretation}
 
-This important structural fingerprint is
-related to the different conformations between carboxyl segments in the beginning of chains~\cite{schindler75}.
+Since the acyl chain order parameters from MD models generally 
+agree with experiments for single component lipid bilayers in full hydration, 
+the conformations sampled in simulations
+can be considered as realistic atomistic resolution structures for 
+the acyl chains (except for the C$_2$ segment in the {\it sn}-2 chain).
+As also the acyl chain rotational dynamics has correct order of magnitude 
+(see Section~\ref{dynamicsSECTION}), the dynamical nature of 
+hydrophopic region of lipid bilayers seen in simulation videos
+can be considered as a realistic representation. 
+This is significant advancement to the traditional static structural 
+models~\cite{seelig74,schindler75,seelig78,baenziger91}.
+Since lipid bilayers are considered as a simple models for cell- and other 
+biological membranes, the intuitive understanding of their dynamical nature 
+has a significant impact on biomembrane physics and chemistry. 
 
-As reviewed here, the order parameters can be measured with high accuracy for each hydrocarbon segment in lipid
-in bilayer and the values are available in the literature for wide range of different lipids in different conditions.
-Thus, the experimental order parameters give very detailed and local information about the orientations
-sampled by each C--H bonds in the lipid bilayer system. The order parameters can 
-be also calculated from MD simulations with high accuracy and compared to the experiments.
-If the order parameters agree within experimental error, the simulated structures can considered as
-an structural intepretation for order parameter experiments. On the other hand, if the agreement is not good, 
-the simulation is sampling incorrect structures.
+Also more detailed structural interpretation has been succesfull for
+acyl chain region, especially for order parameter decrease due to {\it cis} double
+bonds~\cite{feller02,huber02,eldho03,stillwell03,gawrisch03,bachar04,ollila07a}.
+From NMR experiments alone it was not possible to judge if 
+the order parameter decrease arises from reduced chain order or the changes in 
+average $\theta$ angle in Eq.~\ref{orderP}~\cite{??,stillwell03,gawrisch03}.
+The interpretation of NMR experiments with the help of MD simulations and other calculations revealed that
+double bonds, indeed, decrease the chain order due to the flexible dihedral
+potentials next to the rigid double bonds~\cite{feller02,huber02,eldho03,stillwell03,gawrisch03,bachar04,ollila07a}.
 
-As discussed in the previous section, the order parameters for acyl chain region from MD simulations generally 
-agree well with experiments (except for the C$_2$ segment in the {\it sn}-2 chain). Thus, the acyl chain structure 
-is most likely realistic in simulations and they can used for structural interpretation for this region. 
-This is a significant advancement to the traditional structural models build based on the 
-fittings to the order paramters~\cite{seelig74,schindler75,seelig78,baenziger91}. The dynamical visualization of simulation trajectory immediately 
-reveals very dynamical nature of acyl chains, rapidly sampling large amount of different conformations 
-(for dynamics see the Section~\ref{dynamicsSECTION}). These videos published by several authors in supplementary information~\cite{??}
-gives significantly better intuitive understanding of dynamical nature of lipid bilayers compared to the static ones from 
-traditional models. Since the lipid bilayers can be considered as a simplistic models for cell
-membranes and other biological lipid layers, this understanding has significant impact on
-biophysics and biochemistry. 
-
-Also the order parameter changes with changing conditions are qualitatively reproduced in the acyl chain region, 
-however the systematic quantitative comparison of changes is rare~\cite{ollila07a,ferreira13,madej15}.
-The MD simulations have been especially useful to explain the origin of order parameter decrease
-due to {\it cis} double bonds in the acyl chain~\cite{feller02,huber02,eldho03,stillwell03,gawrisch03,bachar04,ollila07a}. The order parameter decrease might arise
-from reduced order of the chain or from the changed average $\theta$ angle in Eq.~\ref{orderP}.
-From NMR experiments alone it was impossible to judge which is the correct explanation for
-the decreased order parameters due double bonds~\cite{feller02,huber02,eldho03,stillwell03,gawrisch03}. Several simulation studies by different
-authors using different models has showed that the decreased order parameter order parameter due to {\it cis} double
-bonds can be reproduced by introducing proper dihedral potentials next to double bonds,
-and due to the fexility of these dihedrals the polyunsaturated acyl chain becomes more flexible and
-the order is reduced~\cite{feller02,eldho03,stillwell03,gawrisch03,bachar04,ollila07a}. 
-These studies concluded that order parameter decrease due to double 
-bonds arises from genuine disorder of the chain, not from the changes in average angle~\cite{stillwell03,gawrisch03}.
-This is a prime example of the case where MD simulations have significant advance over more traditional 
-modeling approaches~\cite{stillwell03}.
-
-The increase of acyl chain order parameters and related bilayer thickening due to addition of cholesterol 
-is also qualitatively reproduced by simulations giving also intuitive visualizations for these effects~\cite{ferreira13,madej15}. 
-However, quantitative comparison reviewed in previous section revels that some models do not reproduce the 
-acyl chain order parameters within experimental error in cholesterol mixtures \cite{lim12,ferreira13}.
-This indicates that these models are not yet accurate enough to give atomistic resolution interpretation
-to delicate lipid cholesterol interactions which are known to induce liquid-ordereded and liquid-disordered
-phase coexistence \cite{ipsen87}. The recent Amber model \cite{madej15} seems promising in this respect, see also Fig. \ref{cholTAILmadej}. 
-
-%Thus it is not clear if currect simulations
-%can be used to, e.g. intepretate atomistic resolution acyl chain ordering due to dehydration which has been
-%suggested to play an important role in hydration repulsion \cite{??}.
+The acyl chain order parameter increase and related bilayer thickening with cholesterol concentration~\cite{??,ferreira13,madej15},
+dehydration~\cite{hogberg06,mashl01} and reduced temperature~\cite{zhuang14} are qualitatively reproduced 
+by simulations giving intuitive visualizations for these effects. However, the order parameter
+changes are often under- or overestimated \cite{hogberg06,lim12,zhuang14,ferreira13,madej15,??}, thus
+it is not clear how well the models can be used for atomistic resolution intepretation of these changes.
+For example, delicate lipid-cholesterol interactions are known to induce liquid-ordereded and liquid-disordered
+phase coexistence \cite{ipsen87}. To give atomistic resolution interpreation for this phenomena, the atomistic
+resolution structures and interactions should be correct, which does not seem to the case for Berger/H{\"o}ltje
+based model while recent Amber Lipid14 model performs better \cite{madej15}.
 
 Simulation studies have also predicted changes in the acyl chain region which are yet to be experimentally 
 confirmed, e.g. order parameter decrease due to lipid oxidation and changes in order parameter sign in oxidized 
-acyl chain~\cite{ekkabut07}. %A new experimental data can confirm if these predictions can be verified. 
+acyl chain~\cite{ekkabut07}. %These are actually confirmed but not published yet. 
 
+
+This important structural fingerprint is
+related to the different conformations between carboxyl segments in the beginning of chains~\cite{schindler75}.
 
 As discussed in the previous section, simulations models are not able to reproduce the glycerol backbone 
 and choline headgroup order parameters within experimental error~\cite{botan15} in contrast to acyl chains.
